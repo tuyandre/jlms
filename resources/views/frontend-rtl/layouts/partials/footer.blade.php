@@ -12,7 +12,7 @@
                         <div class="col-md-4">
                             <div class="footer-widget ">
                                 <div class="footer-logo mb35">
-                                    <img src="{{asset("storage/logos/".config('logo_b_image'))}}" alt="logo">
+                                    <img src="{{asset('img/frontend/logo.png')}}" alt="logo">
                                 </div>
                                 @if($footer_data->short_description->status == 1)
                                     <div class="footer-about-text">

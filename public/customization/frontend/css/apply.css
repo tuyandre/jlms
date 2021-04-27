@@ -1,0 +1,57 @@
+html {
+    height: 100%;
+    width: 100%;
+    -ms-overflow-style: none;
+    clear: both;
+}
+
+::-webkit-scrollbar {
+    display: none;
+    width: 0 !important
+}
+
+.container-main {
+    background-color: #ffffff;
+    margin-top: 20px;
+    padding-top: 50px;
+    padding-bottom: 100px;
+    min-height: 75vh;
+}
+.wizard .content {
+    min-height: 100px;
+}
+
+.wizard .content>.body {
+    width: 100%;
+    height: auto;
+    padding: 15px;
+    position: relative;
+}
+
+.btn-file {
+    margin-left: 0px;
+}
+
+.btn {
+    padding: 0px 15px !important;
+}
+
+.kv-file-zoom {
+    display: none !important;
+}
+
+#agree-error {
+    display: none !important;
+}
+
+.header-top {
+    /*display: none !important;*/
+}
+
+.hidd {
+    height: 1px !important;
+    width: 2px !important;
+    background: none !important;
+    border: none !important;
+    color: #ccc !important;
+}

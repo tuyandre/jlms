@@ -155,6 +155,10 @@ class UserRepository extends BaseRepository
 
         // Upload profile image if necessary
         if ($image) {
+//            $extension = $image->getClientOriginalExtension();
+//            $filename =time().$image['name'].'.'.$extension;
+//            $image->move(public_path('students/passport'),$filename);
+//            $user->avatar_location = $filename;
             $user->avatar_location = $image->store('/avatars', 'public');
         } else {
             // No image being passed

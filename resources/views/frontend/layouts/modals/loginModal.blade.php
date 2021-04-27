@@ -57,7 +57,7 @@
 
                     <div class="gradient-bg"></div>
                     <div class="popup-logo">
-                        <img src="{{asset("storage/logos/".config('logo_popup'))}}" alt="">
+                        <img src="{{asset('img/frontend/logo.png')}}" style="height: 45px" alt="">
                     </div>
                     <div class="popup-text text-center">
                         <h2>@lang('labels.frontend.modal.my_account') </h2>

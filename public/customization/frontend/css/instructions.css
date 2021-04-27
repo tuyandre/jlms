@@ -1,0 +1,39 @@
+ol>li,
+ul>li {
+    line-height: 2.4em;
+    color: #555;
+    font-weight: normal;
+}
+
+li {
+    list-style: inherit;
+    font-weight: normal;
+}
+
+.header-top {
+    /*display: none !important;*/
+    /*display: none !important;*/
+}
+
+.logo {
+    text-align: center !important;
+}
+html {
+    height: 100%;
+    width: 100%;
+    -ms-overflow-style: none;
+    clear: both;
+}
+
+::-webkit-scrollbar {
+    display: none;
+    width: 0 !important
+}
+
+.container-main {
+    background-color: #ffffff;
+    margin-top: 20px;
+    padding-top: 50px;
+    padding-bottom: 100px;
+    min-height: 75vh;
+}

@@ -13,7 +13,7 @@
                     <div class="col-md-4">
                         <div class="footer-widget ">
                             <div class="footer-logo mb35">
-                                <img src="{{asset("storage/logos/".config('logo_b_image'))}}" alt="logo">
+                                <img src="{{asset('img/frontend/logo.png')}}" style="height: 65px !important;" alt="logo">
                             </div>
                             @if($footer_data->short_description->status == 1)
                                 <div class="footer-about-text">
@@ -98,7 +98,7 @@
                     @if($footer_data->copyright_text->status == 1)
                     <div class="col-md-6">
                         <div class="copy-right-text">
-                            <p>Powered By <a href="https://www.neonlms.com/" target="_blank" class="mr-4"> NeonLMS</a>  {!!  $footer_data->copyright_text->text !!}</p>
+                            <p>Powered By <a href="https://www.jddauditors.com/" target="_blank" class="mr-4"> JDD AUDITORS</a>  {!!  $footer_data->copyright_text->text !!}</p>
                         </div>
                     </div>
                     @endif

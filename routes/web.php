@@ -9,6 +9,32 @@ use App\Http\Controllers\Frontend\HomeController;
  */
 
 
+Route::get('/instructions','Frontend\FrontendController@instructions')->name('frontend.instructions');
+Route::get('/jsms/apply','Frontend\FrontendController@apply')->name('frontend.jsms.apply');
+Route::post('/studentApplication/passport','Frontend\ApplicationController@uploadPassport')->name('application.jsms.uploadPassport');
+Route::post('/studentApplication/certificate','Frontend\ApplicationController@uploadCertificate')->name('application.jsms.uploadCertificate');
+Route::post('/studentApplication/academicRecords','Frontend\ApplicationController@academicRecord')->name('application.jsms.academicRecord');
+Route::post('/studentApplication/applicationPayment','Frontend\ApplicationController@applicationPayment')->name('application.jsms.applicationPayment');
+Route::get('/studentApplication/getApplicationFee/program/{program}','Frontend\ApplicationController@getApplicationFee')->name('application.jsms.getApplicationFee');
+
+
+
+Route::get('/jdd-portal/jsms/adminLogin','Frontend\ApplicationController@getAdminLogin')->name('frontend.auth.adminLogin');
+Route::get('/jdd-portal/jsms/adminRegister','Frontend\ApplicationController@getAdminRegister')->name('frontend.auth.getAdminRegister');
+
+
+
+Route::post('/studentApplication/submitApplication','Frontend\ApplicationController@submitApplication')->name('application.jsms.submitApplication');
+
+
+
+
+Route::post('/JSMS/student/submitLogin','Auth\LoginController@studentLogin')->name('application.jsms.studentLogin');
+
+
+
+
+
 
 // Switch between the included languages
 Route::get('lang/{lang}', [LanguageController::class, 'swap']);

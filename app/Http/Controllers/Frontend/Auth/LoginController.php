@@ -37,6 +37,9 @@ class LoginController extends Controller
     /**
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
+    public function clientLogin(){
+        return view('customized.login');
+    }
     public function showLoginForm()
     {
         if(request()->ajax()){
@@ -77,6 +80,7 @@ class LoginController extends Controller
                     if(auth()->user()->isAdmin()){
                         $redirect = 'dashboard';
                     }else{
+
                         $redirect = 'back';
                     }
                     auth()->user()->update([

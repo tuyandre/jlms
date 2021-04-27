@@ -27,16 +27,16 @@
                 {{--@include('includes.partials.lang')--}}
             {{--</li>--}}
         {{--@endif--}}
-        @if(config('locale.status') && count($locales) > 1)
+{{--        @if(config('locale.status') && count($locales) > 1)--}}
 
-            <li class="nav-item px-3 dropdown">
-                <a class="nav-link dropdown-toggle nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                    <span class="d-md-down-none">@lang('menus.language-picker.language') ({{ strtoupper(app()->getLocale()) }})</span>
-                </a>
+{{--            <li class="nav-item px-3 dropdown">--}}
+{{--                <a class="nav-link dropdown-toggle nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">--}}
+{{--                    <span class="d-md-down-none">@lang('menus.language-picker.language') ({{ strtoupper(app()->getLocale()) }})</span>--}}
+{{--                </a>--}}
 
-                @include('includes.partials.lang')
-            </li>
-        @endif
+{{--                @include('includes.partials.lang')--}}
+{{--            </li>--}}
+{{--        @endif--}}
     </ul>
 
     <ul class="nav navbar-nav ml-auto mr-4">
@@ -60,7 +60,9 @@
         <li class="nav-item dropdown">
           <a class="nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
               @if( $logged_in_user->picture != null)
-            <img src="{{ $logged_in_user->picture }}" class="img-avatar" alt="{{ $logged_in_user->email }}">
+{{--                  <img src="{{asset('students/passport/'.$logged_in_user->avatar_location)}}" class="img-avatar" alt="{{ $logged_in_user->email }}">--}}
+
+                  <img src="{{$logged_in_user->picture}}" class="img-avatar" alt="{{ $logged_in_user->email }}">
               @endif
               <span style="right: 0;left: inherit" class="badge d-md-none d-lg-none d-none mob-notification badge-success">!</span>
             <span class="d-md-down-none">{{ $logged_in_user->full_name }}</span>

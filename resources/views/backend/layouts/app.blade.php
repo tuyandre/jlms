@@ -19,7 +19,7 @@
             <meta name="author" content="@yield('meta_author', 'Anthony Rappa')">
             @if(config('favicon_image') != "")
                 <link rel="shortcut icon" type="image/x-icon"
-                      href="{{asset('storage/logos/'.config('favicon_image'))}}"/>
+                      href="{{asset('img/frontend/logo.png')}}"/>
             @endif
             @yield('meta')
             <link rel="stylesheet" href="{{asset('css/select2.min.css')}}">

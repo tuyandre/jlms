@@ -15,6 +15,7 @@ class AddHelpasToUsersTable extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             $table->string('program')->nullable();
+            $table->string('username')->unique()->nullable();
             $table->string('helpas')->nullable();
             $table->string('nid')->unique()->nullable();
             $table->string('education')->nullable();
@@ -35,7 +36,7 @@ class AddHelpasToUsersTable extends Migration
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn(['residence','phone2','about','information','payment_mode','sponsorship','education','nid','helpas','program']);
+            $table->dropColumn(['username','residence','phone2','about','information','payment_mode','sponsorship','education','nid','helpas','program']);
 
         });
     }

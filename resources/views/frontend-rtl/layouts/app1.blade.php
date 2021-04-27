@@ -214,7 +214,7 @@
                             <div class="mobile-menu">
                                 <div class="logo">
                                     <a href="{{url('/')}}">
-                                        <img src={{asset("storage/logos/".config('logo_w_image'))}} alt="Logo">
+                                        <img src="{{asset('img/frontend/logo.png')}}" alt="Logo">
                                     </a>
                                 </div>
                                 <nav>
