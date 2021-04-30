@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0bb6bf07-0f62-494f-83e7-479d346bf2f2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/emails/studentRegistrationMail.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Frontend/ApplicationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Frontend/ApplicationController.php" afterDir="false" />
@@ -11,6 +10,7 @@
       <change beforePath="$PROJECT_DIR$/public/images/brt-1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/brt-1.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/lang/en/buttons.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en/buttons.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/lang/en/strings.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en/strings.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/includes/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/includes/sidebar.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/customized/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/customized/login.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/customized/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/customized/register.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/frontend/layouts/app1.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/layouts/app1.blade.php" afterDir="false" />
@@ -33,117 +33,18 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Frontend/ApplicationController.php">
+        <entry file="file://$PROJECT_DIR$/resources/views/backend/includes/sidebar.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1240">
-              <caret line="167" column="14" selection-start-line="167" selection-start-column="14" selection-end-line="167" selection-end-column="14" />
-              <folding>
-                <element signature="e#49#85#0#PHP" expanded="true" />
-              </folding>
+            <state relative-caret-position="100">
+              <caret line="365" column="9" selection-start-line="365" selection-start-column="9" selection-end-line="378" selection-end-column="25" />
             </state>
           </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-400">
-              <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/frontend/layouts/app2.blade.php">
-          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/routes/web.php">
+        <entry file="file://$PROJECT_DIR$/resources/views/backend/settings/general.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="339">
-              <caret line="22" column="12" selection-start-line="22" selection-start-column="12" selection-end-line="22" selection-end-column="42" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes/backend/auth.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1457" />
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/database/migrations/2019_06_07_073739_add_columns_in_users_table.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-40">
-              <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Frontend/Auth/LoginController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2140">
-              <caret line="22" column="6" selection-start-line="22" selection-start-column="6" selection-end-line="22" selection-end-column="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/js/backend.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-184904">
-              <caret line="27" column="4" selection-start-line="27" selection-start-column="4" selection-end-line="27" selection-end-column="4" />
-              <folding>
-                <element signature="e#678806#680129#0" />
-                <element signature="e#681824#686162#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/customization/frontend/js/application.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="13882" column="33" selection-start-line="13882" selection-start-column="33" selection-end-line="13882" selection-end-column="33" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-                <element signature="e#125#371#0" />
-                <element signature="n#style#0;n#a#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#0;n#li#0;n#ul#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="e#26#32#1" expanded="true" />
-                <element signature="e#106#113#1" expanded="true" />
-                <element signature="e#39#46#1" expanded="true" />
-                <element signature="e#739680#739873#0" />
-                <element signature="n#style#0;n#button#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#button#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/js/frontend.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-90">
-              <caret line="17138" column="66" selection-start-line="17138" selection-start-column="66" selection-end-line="17138" selection-end-column="66" />
-              <folding>
-                <element signature="e#115#540102#0" />
-                <element signature="e#540226#540685#0" />
-                <element signature="e#540803#545141#0" />
-                <element signature="e#545251#545472#0" />
-                <element signature="e#545552#545605#0" />
-                <element signature="e#545690#545743#0" />
-                <element signature="e#545824#545877#0" />
-                <element signature="e#545944#546208#0" />
-              </folding>
-            </state>
+            <state relative-caret-position="-15861" />
           </provider>
         </entry>
       </file>
@@ -181,7 +82,6 @@
         <option value="$PROJECT_DIR$/resources/views/frontend/layouts/app3.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/frontend/layouts/app4.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/backend/includes/footer.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/backend/includes/sidebar.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Traits/FileUploadTrait.php" />
         <option value="$PROJECT_DIR$/config/currencies.php" />
         <option value="$PROJECT_DIR$/config/invoices.php" />
@@ -224,6 +124,7 @@
         <option value="$PROJECT_DIR$/app/Notifications/Frontend/Auth/StudentRegistration.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Frontend/ApplicationController.php" />
         <option value="$PROJECT_DIR$/public/customization/frontend/js/application.js" />
+        <option value="$PROJECT_DIR$/resources/views/backend/includes/sidebar.blade.php" />
       </list>
     </option>
   </component>
@@ -508,70 +409,7 @@
             <path>
               <item name="jlms" type="b2602c69:ProjectViewProjectNode" />
               <item name="jlms" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="jlms" type="b2602c69:ProjectViewProjectNode" />
-              <item name="jlms" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
-              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="jlms" type="b2602c69:ProjectViewProjectNode" />
-              <item name="jlms" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
-              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
-              <item name="Frontend" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="jlms" type="b2602c69:ProjectViewProjectNode" />
-              <item name="jlms" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
-              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
-              <item name="Frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="Auth" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="jlms" type="b2602c69:ProjectViewProjectNode" />
-              <item name="jlms" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Notifications" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="jlms" type="b2602c69:ProjectViewProjectNode" />
-              <item name="jlms" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Notifications" type="462c0819:PsiDirectoryNode" />
-              <item name="Frontend" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="jlms" type="b2602c69:ProjectViewProjectNode" />
-              <item name="jlms" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Notifications" type="462c0819:PsiDirectoryNode" />
-              <item name="Frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="Auth" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="jlms" type="b2602c69:ProjectViewProjectNode" />
-              <item name="jlms" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Providers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="jlms" type="b2602c69:ProjectViewProjectNode" />
-              <item name="jlms" type="462c0819:PsiDirectoryNode" />
               <item name="database" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="jlms" type="b2602c69:ProjectViewProjectNode" />
-              <item name="jlms" type="462c0819:PsiDirectoryNode" />
-              <item name="database" type="462c0819:PsiDirectoryNode" />
-              <item name="migrations" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="jlms" type="b2602c69:ProjectViewProjectNode" />
@@ -597,7 +435,15 @@
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
               <item name="backend" type="462c0819:PsiDirectoryNode" />
-              <item name="account" type="462c0819:PsiDirectoryNode" />
+              <item name="includes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jlms" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jlms" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
+              <item name="settings" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="jlms" type="b2602c69:ProjectViewProjectNode" />
@@ -691,12 +537,12 @@
       <workItem from="1619061265843" duration="12454000" />
       <workItem from="1619120346237" duration="24290000" />
       <workItem from="1619462055312" duration="25189000" />
-      <workItem from="1619581374097" duration="28987000" />
+      <workItem from="1619581374097" duration="30433000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="90920000" />
+    <option name="totallyTimeSpent" value="92366000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -728,12 +574,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/views/includes/partials/lang.blade.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/frontend/layouts/partials/contact_area.blade.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/frontend/layouts/modals/loginModal.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="832">
@@ -766,13 +606,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="332">
           <caret line="195" column="77" lean-forward="true" selection-start-line="195" selection-start-column="24" selection-end-line="195" selection-end-column="77" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Frontend/Auth/RegisterController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="135" column="9" lean-forward="true" selection-start-line="129" selection-start-column="4" selection-end-line="135" selection-end-column="9" />
         </state>
       </provider>
     </entry>
@@ -1045,16 +878,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Frontend/ApplicationController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1240">
-          <caret line="167" column="14" selection-start-line="167" selection-start-column="14" selection-end-line="167" selection-end-column="14" />
-          <folding>
-            <element signature="e#49#85#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2019_06_07_073739_add_columns_in_users_table.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-40">
@@ -1074,7 +897,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/backend/auth.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1457" />
+        <state relative-caret-position="-1443" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/web.php">
@@ -1082,6 +905,35 @@
         <state relative-caret-position="339">
           <caret line="22" column="12" selection-start-line="22" selection-start-column="12" selection-end-line="22" selection-end-column="42" />
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Frontend/ApplicationController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3100">
+          <caret line="167" column="14" selection-start-line="167" selection-start-column="14" selection-end-line="167" selection-end-column="14" />
+          <folding>
+            <element signature="e#49#85#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Frontend/Auth/RegisterController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="135" column="9" lean-forward="true" selection-start-line="129" selection-start-column="4" selection-end-line="135" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/backend/includes/sidebar.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="365" column="9" selection-start-line="365" selection-start-column="9" selection-end-line="378" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/backend/settings/general.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-15861" />
       </provider>
     </entry>
   </component>
