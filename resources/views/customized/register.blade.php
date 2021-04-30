@@ -613,16 +613,16 @@
 
                                     <h3>Sponsorship And Contact</h3>
                                     <section>
-                                        <label for="address">Address <font style="color: crimson">*</font></label>
+                                        <label for="address">Student Address <font style="color: crimson">*</font></label>
 
                                         <input type="text" name="address" class="form-control required" id="address" placeholder="Your Address">
 
-                                        <label for="email">Email Address <font style="color: crimson">*</font></label>
+                                        <label for="email">Student Email Address <font style="color: crimson">*</font></label>
 
                                         <input type="email" name="email" class="form-control required email" id="email" placeholder="youremail@domain.com">
 
 
-                                        <label for="contact1">Tel No1<font style="color: crimson">*</font></label>
+                                        <label for="contact1">Student Tel No1<font style="color: crimson">*</font></label>
 
                                         <input type="text" name="phoneNo" class="form-control required" id="contact1" placeholder="eg... +250 754678564">
 
@@ -929,7 +929,7 @@
                                             </div>
                                         </div>
 
-                                        <div id="loader-icon" style="display:none;"><img src="{{asset('frontend/img/loading.gif')}}" /></div>
+                                        <div id="loader-icon" style="display:none;text-align: center"><img src="{{asset('customization/frontend/img/loading.gif')}}" style="height: 100px !important;" /></div>
                                     </section>
                                 </form>
                             </div>

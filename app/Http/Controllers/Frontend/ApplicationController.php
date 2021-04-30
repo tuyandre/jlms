@@ -3,11 +3,14 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Mail\Frontend\Auth\AdminRegistered;
 use App\Models\Auth\User;
+use App\Notifications\Frontend\Auth\StudentRegistration;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Notification;
 
 class ApplicationController extends Controller
 {
@@ -153,6 +156,16 @@ class ApplicationController extends Controller
             return response()->json(['success' => fail], 500);
         }
 //        return response()->json(['customers' => $request->all()], 200);
+    }
+
+    private function sendAdminMail($user)
+    {
+        $admins = User::role('administrator')->get();
+
+        foreach ($admins as $admin) {
+            \Mail::to($admin->email)->send(new AdminRegistered($user));
+        }
+        Notification::send($user, new StudentRegistration($user));
     }
     public function checkEmail(Request $request){
 

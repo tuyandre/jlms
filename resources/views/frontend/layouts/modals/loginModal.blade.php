@@ -259,8 +259,9 @@
 
                 });
                 $(document).on('click', '.go-register', function () {
-                    $('#login').removeClass('active').addClass('fade')
-                    $('#register').addClass('active').removeClass('fade')
+                    // $('#login').removeClass('active').addClass('fade')
+                    // $('#register').addClass('active').removeClass('fade')
+                    window.location.href = "{{route('frontend.instructions')}}"
                 });
 
                 $(document).on('click', '#openLoginModal', function (e) {

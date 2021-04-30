@@ -13425,6 +13425,110 @@ $.validator.addMethod('maxImageWidth', function(value, element, maxWidth) {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+    "use strict";
+    /* harmony import */
+    var __WEBPACK_IMPORTED_MODULE_0_lodash__ = __webpack_require__("./node_modules/lodash/lodash.js");
+    /* harmony import */
+    var __WEBPACK_IMPORTED_MODULE_0_lodash___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_lodash__);
+    /* harmony import */
+    var __WEBPACK_IMPORTED_MODULE_1_axios__ = __webpack_require__("./node_modules/axios/index.js");
+    /* harmony import */
+    var __WEBPACK_IMPORTED_MODULE_1_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_axios__);
+    /* harmony import */
+    var __WEBPACK_IMPORTED_MODULE_2_sweetalert2__ = __webpack_require__("./node_modules/sweetalert2/dist/sweetalert2.all.js");
+    /* harmony import */
+    var __WEBPACK_IMPORTED_MODULE_2_sweetalert2___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_sweetalert2__);
+    /* harmony import */
+    var __WEBPACK_IMPORTED_MODULE_3_jquery__ = __webpack_require__("./node_modules/jquery/dist/jquery.js");
+    /* harmony import */
+    var __WEBPACK_IMPORTED_MODULE_3_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_jquery__);
+    /* harmony import */
+    var __WEBPACK_IMPORTED_MODULE_4_popper_js_dist_umd_popper__ = __webpack_require__("./node_modules/popper.js/dist/umd/popper.js");
+    /* harmony import */
+    var __WEBPACK_IMPORTED_MODULE_4_popper_js_dist_umd_popper___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_popper_js_dist_umd_popper__);
+    /* harmony import */
+    var __WEBPACK_IMPORTED_MODULE_5_bootstrap__ = __webpack_require__("./node_modules/bootstrap/dist/js/bootstrap.js");
+    /* harmony import */
+    var __WEBPACK_IMPORTED_MODULE_5_bootstrap___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_bootstrap__);
+    /**
+     * This bootstrap file is used for both frontend and backend
+     */
+
+
+// import 'jquery-ui-dist/jquery-ui.min'; // Required for BS4
+    // Required for BS4
+
+
+    /**
+     * Font Awesome >=5.1
+     *
+     * Is recommended import just the icons that you use, for decrease considerably the file size.
+     * You can see at next link, how it works: https://github.com/FortAwesome/Font-Awesome/blob/master/UPGRADING.md#no-more-default-imports
+     * Also you can import the icons separately on the frontend and backend
+     */
+//
+// import { library, dom } from '@fortawesome/fontawesome-svg-core';
+// import { fab } from '@fortawesome/free-brands-svg-icons';
+// import { far } from '@fortawesome/free-regular-svg-icons';
+// import { fas } from '@fortawesome/free-solid-svg-icons';
+//
+// library.add(fab, far, fas);
+
+// Kicks off the process of finding <i> tags and replacing with <svg>
+// dom.watch();
+
+    /**
+     * We'll load jQuery and the Bootstrap jQuery plugin which provides support
+     * for JavaScript based Bootstrap features such as modals and tabs. This
+     * code may be modified to fit the specific needs of your application.
+     */
+
+    window.$ = window.jQuery = __WEBPACK_IMPORTED_MODULE_3_jquery___default.a;
+    window.swal = __WEBPACK_IMPORTED_MODULE_2_sweetalert2___default.a;
+    window._ = __WEBPACK_IMPORTED_MODULE_0_lodash___default.a; // Lodash
+
+    /**
+     * We'll load the axios HTTP library which allows us to easily issue requests
+     * to our Laravel back-end. This library automatically handles sending the
+     * CSRF token as a header based on the value of the "XSRF" token cookie.
+     */
+
+    window.axios = __WEBPACK_IMPORTED_MODULE_1_axios___default.a;
+    window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+
+    /**
+     * Next we will register the CSRF Token as a common header with Axios so that
+     * all outgoing HTTP requests automatically have it attached. This is just
+     * a simple convenience so we don't have to attach every token manually.
+     */
+
+    var token = document.head.querySelector('meta[name="csrf-token"]');
+
+    if (token) {
+        window.axios.defaults.headers.common['X-CSRF-TOKEN'] = token.content;
+    } else {
+        console.error('CSRF token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token');
+    }
+
+
+});
+
 // const Swal = require('sweetalert2');
 var form = $("#studentReg");
 var progressbar = $('.progress-bar');
@@ -13712,32 +13816,6 @@ var validator = form.validate({
             });
         return false; // required to block normal submit since you used ajax
 
-
-
-        // $(form).ajaxSubmit({
-        //     beforeSubmit: function() {
-        //         $("#progress-bar").width('0%');
-        //     },
-        //     success: function(res) {
-        //         $('#loader-icon').hide();
-        //         window.location = icparContext + "/studentApplication/application-success";
-        //     },
-        //     error: function(res) {
-        //
-        //         alert('An error has occured! Check your form and correct any mistakes in your data')
-        //         $("#progress-bar").css({
-        //             'display': 'none'
-        //         })
-        //     },
-        //     uploadProgress: function(event, position, total, percentComplete) {
-        //         $('#progress-div').css({
-        //             'display': 'block'
-        //         });
-        //         $("#progress-bar").width(percentComplete + '%');
-        //         $("#progress-bar").html('<div id="progress-status">' + 'Sending...' + percentComplete + ' %</div>');
-        //     }
-        //
-        // });
     }
 });
 
@@ -13767,6 +13845,25 @@ form.steps({
     onFinished: function(event, currentIndex) {
         // const Swal = require('sweetalert2')
         // alert('success');
+        swal.fire({
+            title: 'Are you sure?',
+            text: "You want to sent this Registration!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, Send It!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                Swal.fire(
+                    'Sent!',
+                    'Your Your Registration Sent.',
+                    'success'
+                )
+            }
+        })
+        $("#progress-bar").width('0%');
+        $('#loader-icon').show();
         var form = $(this);
         $("#progress-bar").width('0%');
         $.ajax({
@@ -13778,25 +13875,24 @@ form.steps({
             .done(function (response) {
                 console.log(response);
                 if (response.success == 'success') {
-                    alert('Your Registration Completed Succfull, Check Your Email or Phone SMS');
-                    // Swal.fire({
-                    //     position: 'center',
-                    //     icon: 'success',
-                    //     title: 'Your Registration Completed Succfull, Check Your Email or Phone SMS',
-                    //     showConfirmButton: false,
-                    //     timer: 2500
-                    // });
-                    window.location="/jdd-portal/Student/home";
+                    swal.fire({
+                        position: 'top-end',
+                        icon: 'success',
+                        title: 'Your Registration has been successfuly; Please check Your Email',
+                        showConfirmButton: false,
+                        timer: 5000
+                    })
+                    $('#loader-icon').hide();
+                    $("#progress-bar").html('<div id="progress-status">Your Registration Completed Succfull, Check Your Email or Phone SMS</div>');
+
+                    window.location.href = "/";
+                    // window.location="/jdd-portal/Student/home";
                     // window.location="/jdd-portal/Student/home";
                 } else {
                     alert('Your Registration not  Completed, Please try Again');
-                    // Swal.fire({
-                    //     position: 'center',
-                    //     icon: 'warning',
-                    //     title: 'Your Registration not  Completed, Please try Again',
-                    //     showConfirmButton: false,
-                    //     timer: 2500
-                    // });
+                    $('#loader-icon').hide();
+                    $("#progress-bar").html('<div id="progress-status">Your Registration not  Completed, Please try Again</div>');
+
                 }
             });
         return false;

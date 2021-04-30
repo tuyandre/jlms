@@ -43,6 +43,7 @@ return array (
     array (
       'confirm_account' => 'Confirm Account',
       'reset_password' => 'Reset Password',
+      'login_button' => 'Login',
     ),
   ),
 );

@@ -112,9 +112,10 @@
 
 
                                                 <p class="forgot col-sm-12">
-                                                    @if (Route::has('password.request'))
-                                                    <a href="{{ route('password.request') }}">Forgot Password?</a></p>
-                                                @endif
+                                                    <a class="text-info p-0 d-block text-right my-2"
+                                                       href="{{ route('frontend.auth.password.reset') }}">@lang('labels.frontend.passwords.forgot_password')</a>
+
+                                                </p>
                                                 <div class="form-group" style="margin-bottom: 49px;">
 
                                                     <div class="col-md-4 ">
