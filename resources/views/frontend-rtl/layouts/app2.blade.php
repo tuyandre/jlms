@@ -101,8 +101,10 @@
                     <div class="container">
                         <div class="navbar-default">
                             <div class="navbar-header float-left">
-                                <a class="navbar-brand text-uppercase" href="{{url('/')}}"><img
-                                            src={{asset("storage/logos/".config('logo_w_image'))}} alt="logo"></a>
+                                <a class="navbar-brand text-uppercase" href="{{url('/')}}">
+{{--                                    <img src={{asset("storage/logos/".config('logo_w_image'))}} alt="logo"></a>--}}
+                                    <img style="height: 65px" src="{{asset('img/frontend/logo.png')}}" alt="logo">
+                                </a>
                             </div><!-- /.navbar-header -->
 
 
@@ -176,8 +178,7 @@
                                         @else
                                             <li class="log-in mt-0">
                                                 @if(!auth()->check())
-                                                    <a id="openLoginModal" data-target="#myModal"
-                                                       href="#">@lang('navs.general.login')</a>
+                                                    <a href="{{url('/jsms/login')}}">@lang('navs.general.login')</a>
                                                     <!-- The Modal -->
                                                     {{--@include('frontend.layouts.modals.loginModal')--}}
 
@@ -185,31 +186,13 @@
                                             </li>
                                         @endif
 
-                                        @if(count($locales) > 1)
-                                            <li class="menu-item-has-children ul-li-block">
-                                                <a href="#">
-                                                    <span class="d-md-down-none">@lang('menus.language-picker.language')
-                                                        ({{ strtoupper(app()->getLocale()) }})</span>
-                                                </a>
-                                                <ul class="sub-menu">
-                                                    @foreach($locales as $lang)
-                                                        @if($lang != app()->getLocale())
-                                                            <li>
-                                                                <a href="{{ '/lang/'.$lang }}"
-                                                                   class=""> @lang('menus.language-picker.langs.'.$lang)</a>
-                                                            </li>
-                                                        @endif
-                                                    @endforeach
-                                                </ul>
-                                            </li>
-                                        @endif
                                     </ul>
                                 </div>
                             </nav>
 
                             <div class="mobile-menu">
-                                <div class="logo"><a href="{{url('/')}}"><img
-                                                src={{asset("storage/logos/".config('logo_w_image'))}} alt="Logo"></a>
+                                <div class="logo"><a href="{{url('/')}}">
+                                        <img src="{{asset('img/frontend/logo.png')}}" alt="Logo"></a>
                                 </div>
                                 <nav>
                                     <ul>
@@ -255,30 +238,11 @@
                                             </li>
                                         @else
                                             <li class="">
-                                                <a id="openLoginModal" data-target="#myModal"
-                                                   href="#">@lang('navs.general.login')</a>
+                                                <a href="{{url('/jsms/login')}}">@lang('navs.general.login')</a>
                                                 <!-- The Modal -->
                                             </li>
                                         @endif
 
-                                        @if(count($locales) > 1)
-                                            <li class="menu-item-has-children ul-li-block">
-                                                <a href="#">
-                                                    <span class="d-md-down-none">@lang('menus.language-picker.language')
-                                                        ({{ strtoupper(app()->getLocale()) }})</span>
-                                                </a>
-                                                <ul class="">
-                                                    @foreach($locales as $lang)
-                                                        @if($lang != app()->getLocale())
-                                                            <li>
-                                                                <a href="{{ '/lang/'.$lang }}"
-                                                                   class=""> @lang('menus.language-picker.langs.'.$lang)</a>
-                                                            </li>
-                                                        @endif
-                                                    @endforeach
-                                                </ul>
-                                            </li>
-                                        @endif
                                     </ul>
                                 </nav>
 

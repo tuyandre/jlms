@@ -103,48 +103,12 @@
     ============================================= -->
         <header>
             <div id="main-menu" class="main-menu-container header-style-2">
-                <div class="header-top">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="header-top-text">
-                                    <span>Welcome to {{env('APP_NAME')}}</span>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="header-top-bar ul-li float-right">
-                                    <ul class="d-inline-block w-100 bg-white">
-                                        @if(count($locales) > 1)
-
-                                            <li class="menu-item-has-children ul-li-block">
-                                                <a href="#">
-                                                    <span class="d-md-down-none">@lang('menus.language-picker.language')
-                                                        ({{ strtoupper(app()->getLocale()) }})</span>
-                                                </a>
-                                                <ul class="sub-menu bg-white" style="z-index: 1">
-                                                    @foreach($locales as $lang)
-                                                        @if($lang != app()->getLocale())
-                                                            <li class="border-0 border-bottom">
-                                                                <a href="{{ '/lang/'.$lang }}"
-                                                                   class=""> @lang('menus.language-picker.langs.'.$lang)</a>
-                                                            </li>
-                                                        @endif
-                                                    @endforeach
-                                                </ul>
-                                            </li>
-                                        @endif
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
                 <div class="main-menu">
                     <div class="container">
                         <div class="navbar-default">
                             <div class="navbar-header float-left">
-                                <a class="navbar-brand text-uppercase" href="{{url('/')}}"><img
-                                            src="{{asset("storage/logos/".config('logo_b_image'))}}" alt="logo"></a>
+                                <a class="navbar-brand text-uppercase" href="{{url('/')}}">
+                                    <img style="height: 65px" src="{{asset('img/frontend/logo.png')}}" alt="logo"></a>
                             </div><!-- /.navbar-header -->
                             <div class="cart-search float-right ul-li">
                                 <ul>

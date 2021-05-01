@@ -205,32 +205,12 @@
                                     @else
                                         <li>
                                             <div class="login">
-                                                <a data-toggle="modal" data-target="#myModal"
-                                                   href="#">@lang('navs.general.login')</a>
+                                                <a  href="{{url('/jsms/login')}}">@lang('navs.general.login')</a>
                                                 {{--@include('frontend.layouts.modals.loginModal')--}}
 
                                             </div>
                                         </li>
                                     @endif
-
-                                        @if(count($locales) > 1)
-                                            <li class="menu-item-has-children ul-li-block">
-                                                <a href="#">
-                                                    <span class="d-md-down-none">@lang('menus.language-picker.language')
-                                                        ({{ strtoupper(app()->getLocale()) }})</span>
-                                                </a>
-                                                <ul class="sub-menu">
-                                                    @foreach($locales as $lang)
-                                                        @if($lang != app()->getLocale())
-                                                            <li>
-                                                                <a href="{{ '/lang/'.$lang }}"
-                                                                   class=""> @lang('menus.language-picker.langs.'.$lang)</a>
-                                                            </li>
-                                                        @endif
-                                                    @endforeach
-                                                </ul>
-                                            </li>
-                                        @endif
                                 </ul>
                             </div>
                         </nav>
@@ -326,34 +306,6 @@
                             @endif
                         @endforeach
                     @endif
-
-                        @if(count($locales) > 1)
-
-
-                            <li class="card">
-                                <div class="card-header" id="headingLang">
-                                    <button class="menu-link" data-toggle="collapse"
-                                            data-target="#collapseLang"
-                                            aria-expanded="true" aria-controls="collapseLang">
-                                        @lang('menus.language-picker.language')
-                                        ({{ strtoupper(app()->getLocale()) }})
-                                    </button>
-                                </div>
-                                <ul id="collapseLang" class="submenu collapse "
-                                    aria-labelledby="headingLang"
-                                    data-parent="#accordion" style="">
-                                    @foreach($locales as $lang)
-                                        @if($lang != app()->getLocale())
-                                            <li>
-                                                <a href="{{ '/lang/'.$lang }}"
-                                                   class=""> @lang('menus.language-picker.langs.'.$lang)</a>
-                                            </li>
-                                        @endif
-                                    @endforeach
-                                </ul>
-                            </li>
-
-                        @endif
                 </ul>
             </div>
         </div>

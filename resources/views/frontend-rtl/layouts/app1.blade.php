@@ -182,30 +182,29 @@
                                         @else
                                             <li>
                                                 <div class="log-in mt-0">
-                                                    <a id="openLoginModal" data-target="#myModal"
-                                                       href="#">@lang('navs.general.login')</a>
+                                                    <a href="{{url('/jsms/login')}}">@lang('navs.general.login')</a>
                                                     <!-- The Modal -->
                                                     {{--@include('frontend.layouts.modals.loginModal')--}}
                                                 </div>
                                             </li>
                                         @endif
                                         @if(count($locales) > 1)
-                                            <li class="menu-item-has-children ul-li-block">
-                                                <a href="#">
-                                                    <span class="d-md-down-none"> @lang('menus.language-picker.language')
-                                                        ({{ strtoupper(app()->getLocale()) }})</span>
-                                                </a>
-                                                <ul class="sub-menu">
-                                                    @foreach($locales as $lang)
-                                                        @if($lang != app()->getLocale())
-                                                            <li>
-                                                                <a href="{{ '/lang/'.$lang }}"
-                                                                   class=""> @lang('menus.language-picker.langs.'.$lang)</a>
-                                                            </li>
-                                                        @endif
-                                                    @endforeach
-                                                </ul>
-                                            </li>
+{{--                                            <li class="menu-item-has-children ul-li-block">--}}
+{{--                                                <a href="#">--}}
+{{--                                                    <span class="d-md-down-none"> @lang('menus.language-picker.language')--}}
+{{--                                                        ({{ strtoupper(app()->getLocale()) }})</span>--}}
+{{--                                                </a>--}}
+{{--                                                <ul class="sub-menu">--}}
+{{--                                                    @foreach($locales as $lang)--}}
+{{--                                                        @if($lang != app()->getLocale())--}}
+{{--                                                            <li>--}}
+{{--                                                                <a href="{{ '/lang/'.$lang }}"--}}
+{{--                                                                   class=""> @lang('menus.language-picker.langs.'.$lang)</a>--}}
+{{--                                                            </li>--}}
+{{--                                                        @endif--}}
+{{--                                                    @endforeach--}}
+{{--                                                </ul>--}}
+{{--                                            </li>--}}
                                         @endif
                                     </ul>
                                 </div>
@@ -260,29 +259,28 @@
                                         @else
                                             <li>
                                                 <div class=" ">
-                                                    <a id="openLoginModal" data-target="#myModal"
-                                                       href="#">@lang('navs.general.login')</a>
+                                                    <a href="{{url('/jsms/login')}}">@lang('navs.general.login')</a>
                                                     <!-- The Modal -->
                                                 </div>
                                             </li>
                                         @endif
                                         @if(count($locales) > 1)
-                                            <li class="menu-item-has-children ul-li-block">
-                                                <a href="#">
-                                                    <span class="d-md-down-none">@lang('menus.language-picker.language')
-                                                        ({{ strtoupper(app()->getLocale()) }})</span>
-                                                </a>
-                                                <ul class="">
-                                                    @foreach($locales as $lang)
-                                                        @if($lang != app()->getLocale())
-                                                            <li>
-                                                                <a href="{{ '/lang/'.$lang }}"
-                                                                   class=""> @lang('menus.language-picker.langs.'.$lang)</a>
-                                                            </li>
-                                                        @endif
-                                                    @endforeach
-                                                </ul>
-                                            </li>
+{{--                                            <li class="menu-item-has-children ul-li-block">--}}
+{{--                                                <a href="#">--}}
+{{--                                                    <span class="d-md-down-none">@lang('menus.language-picker.language')--}}
+{{--                                                        ({{ strtoupper(app()->getLocale()) }})</span>--}}
+{{--                                                </a>--}}
+{{--                                                <ul class="">--}}
+{{--                                                    @foreach($locales as $lang)--}}
+{{--                                                        @if($lang != app()->getLocale())--}}
+{{--                                                            <li>--}}
+{{--                                                                <a href="{{ '/lang/'.$lang }}"--}}
+{{--                                                                   class=""> @lang('menus.language-picker.langs.'.$lang)</a>--}}
+{{--                                                            </li>--}}
+{{--                                                        @endif--}}
+{{--                                                    @endforeach--}}
+{{--                                                </ul>--}}
+{{--                                            </li>--}}
                                         @endif
                                     </ul>
                                 </nav>

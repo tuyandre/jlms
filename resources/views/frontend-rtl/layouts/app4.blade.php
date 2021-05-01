@@ -98,8 +98,11 @@
             <div class="container">
                 <div class="navbar-default d-inline-block w-100">
                     <div class="navbar-header float-left">
-                        <a class="navbar-brand text-uppercase" href="{{url('/')}}"><img
-                                    src="{{asset("storage/logos/".config('logo_white_image'))}}" alt="logo"></a>
+                        <a class="navbar-brand text-uppercase" href="{{url('/')}}">
+{{--                            <img src="{{asset("storage/logos/".config('logo_white_image'))}}" alt="logo"></a>--}}
+
+                            <img style="height: 65px" src="{{asset('img/frontend/logo.png')}}" alt="logo">
+                        </a>
                     </div><!-- /.navbar-header -->
                     <div class="header-info ul-li float-right">
                         @php
@@ -211,32 +214,13 @@
                                     @else
                                         <li>
                                             <div class="login">
-                                                <a data-toggle="modal" data-target="#myModal"
-                                                   href="#">@lang('navs.general.login')</a>
+                                                <a  href="{{url('/jsms/login')}}">@lang('navs.general.login')</a>
                                                 {{--@include('frontend.layouts.modals.loginModal')--}}
 
                                             </div>
                                         </li>
                                     @endif
 
-                                    @if(count($locales) > 1)
-                                        <li class="menu-item-has-children ul-li-block">
-                                            <a href="#">
-                                                    <span class="d-md-down-none">@lang('menus.language-picker.language')
-                                                        ({{ strtoupper(app()->getLocale()) }})</span>
-                                            </a>
-                                            <ul class="sub-menu">
-                                                @foreach($locales as $lang)
-                                                    @if($lang != app()->getLocale())
-                                                        <li>
-                                                            <a href="{{ '/lang/'.$lang }}"
-                                                               class=""> @lang('menus.language-picker.langs.'.$lang)</a>
-                                                        </li>
-                                                    @endif
-                                                @endforeach
-                                            </ul>
-                                        </li>
-                                    @endif
                                 </ul>
                             </div>
                         </nav>
@@ -256,7 +240,7 @@
 
                         <div class="logo-area">
                             <a href="{{url('/')}}">
-                                <img src="{{asset("storage/logos/".config('logo_w_image'))}}" alt="Logo_not_found">
+                                <img src="{{asset('img/frontend/logo.png')}}" alt="Logo_not_found">
                             </a>
                         </div>
 
@@ -265,7 +249,7 @@
                                 @if(!auth()->check())
                                     <li>
                                         <div class="login">
-                                            <a data-toggle="modal" data-target="#myModal" href="#"><i
+                                            <a  href="{{url('/jsms/login')}}"><i
                                                         class="fa fa-user"></i></a>
                                         </div>
                                     </li>
@@ -335,33 +319,6 @@
                         @endforeach
                     @endif
 
-                    @if(count($locales) > 1)
-
-
-                        <li class="card">
-                            <div class="card-header" id="headingLang">
-                                <button class="menu-link" data-toggle="collapse"
-                                        data-target="#collapseLang"
-                                        aria-expanded="true" aria-controls="collapseLang">
-                                    @lang('menus.language-picker.language')
-                                    ({{ strtoupper(app()->getLocale()) }})
-                                </button>
-                            </div>
-                            <ul id="collapseLang" class="submenu collapse "
-                                aria-labelledby="headingLang"
-                                data-parent="#accordion" style="">
-                                @foreach($locales as $lang)
-                                    @if($lang != app()->getLocale())
-                                        <li>
-                                            <a href="{{ '/lang/'.$lang }}"
-                                               class=""> @lang('menus.language-picker.langs.'.$lang)</a>
-                                        </li>
-                                    @endif
-                                @endforeach
-                            </ul>
-                        </li>
-
-                    @endif
                 </ul>
             </div>
         </div>
