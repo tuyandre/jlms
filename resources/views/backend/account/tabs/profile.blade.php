@@ -12,6 +12,34 @@
             <th>@lang('labels.frontend.user.profile.email')</th>
             <td>{{ $user->email }}</td>
         </tr>
+        <tr>
+            <th>@lang('labels.frontend.user.profile.nid')</th>
+            <td>{{ $user->nid }}</td>
+        </tr>
+        <tr>
+            <th>@lang('labels.frontend.user.profile.education')</th>
+            <td>{{ $user->education }}</td>
+        </tr>
+        <tr>
+            <th>@lang('labels.frontend.user.profile.program')</th>
+            <td>{{ $user->program }}</td>
+        </tr>
+        <tr>
+            <th>@lang('labels.frontend.user.profile.sponsorship')</th>
+            <td>{{ $user->sponsorship }}</td>
+        </tr>
+        <tr>
+            <th>@lang('labels.frontend.user.profile.phone')</th>
+            <td>{{ $user->phone }}</td>
+        </tr>
+        <tr>
+            <th>@lang('labels.frontend.user.profile.address')</th>
+            <td>{{ $user->address }}</td>
+        </tr>
+        <tr>
+            <th>@lang('labels.frontend.user.profile.city')</th>
+            <td>{{ $user->city }}</td>
+        </tr>
         @if($logged_in_user->hasRole('teacher'))
             <tr>
                 <th>@lang('labels.backend.access.users.tabs.content.overview.status')</th>

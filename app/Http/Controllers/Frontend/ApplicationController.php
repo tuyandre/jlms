@@ -140,7 +140,8 @@ class ApplicationController extends Controller
         if ($user){
 
             $userForRole = User::find($user->id);
-            $userForRole->confirmed = 1;
+            $userForRole->confirmed = 0;
+            $userForRole->confirmmation_code = md5(uniqid(rand(), true));;
             $userForRole->save();
             $userForRole->assignRole('student');
 
@@ -149,7 +150,7 @@ class ApplicationController extends Controller
             }
 
 
-            Auth::login($user);
+//            Auth::login($user);
 
                 return response()->json(['success' => "success"], 200);
         }else{

@@ -28,6 +28,14 @@ Route::group(['middleware' => 'role:administrator'], function () {
     Route::delete('teachers_perma_del/{id}', ['uses' => 'Admin\TeachersController@perma_del', 'as' => 'teachers.perma_del']);
     Route::post('teacher/status', ['uses' => 'Admin\TeachersController@updateStatus', 'as' => 'teachers.status']);
 
+//    ==== ORDER TRANSACTION PAYMENTS  ====//
+    Route::get('transaction/bank-deposit',
+        ['uses' => 'Admin\PaymentController@bankDeposit',
+         'as' => 'transaction.bankDeposit']);
+    Route::get('bank-deposit/get-data',
+        ['uses' => 'Admin\PaymentController@bankDepositGetData',
+            'as' => 'transaction.bankDeposit.getData']);
+
 
     //===== FORUMS Routes =====//
     Route::resource('forums-category', 'Admin\ForumController');

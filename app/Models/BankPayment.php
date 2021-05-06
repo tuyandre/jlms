@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Auth\User;
 
 class BankPayment extends Model
 {
@@ -15,6 +16,10 @@ class BankPayment extends Model
 
     public function User()
     {
-        return $this->belongsTo('App\User');
+        return $this->belongsTo(User::class);
+    }
+    public function Order()
+    {
+        return $this->belongsTo(Order::class);
     }
 }

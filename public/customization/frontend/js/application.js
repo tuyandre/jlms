@@ -13889,7 +13889,12 @@ form.steps({
                     // window.location="/jdd-portal/Student/home";
                     // window.location="/jdd-portal/Student/home";
                 } else {
-                    alert('Your Registration not  Completed, Please try Again');
+                    swal.fire({
+                        icon: 'warning',
+                        title: 'Oops...',
+                        text: 'Your Registration not  Completed, Please try Again!'
+                    })
+                    // alert('Your Registration not  Completed, Please try Again');
                     $('#loader-icon').hide();
                     $("#progress-bar").html('<div id="progress-status">Your Registration not  Completed, Please try Again</div>');
 

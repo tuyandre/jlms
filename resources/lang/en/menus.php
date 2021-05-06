@@ -152,6 +152,13 @@ return array (
         'students' => 'Students',
         'sales' => 'Sales',
       ),
+        'payment' =>
+            array (
+                'title' => 'Payment Transaction',
+                'bank' => 'Bank Deposit',
+                'momo' => 'Mobile Money Payment',
+                'offline' => 'Offline Payment',
+            ),
       'coupons' =>
       array (
         'title' => 'Coupons',

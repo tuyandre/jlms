@@ -25,6 +25,31 @@
                 </li>
             @endcan
             @if ($logged_in_user->isAdmin())
+                <li class="nav-item nav-dropdown {{ active_class(Active::checkUriPattern(['user/reports*']), 'open') }}">
+                    <a class="nav-link nav-dropdown-toggle {{ active_class(Active::checkUriPattern('admin/*')) }}"
+                       href="#">
+                        <i class="nav-icon icon-bag"></i>@lang('menus.backend.sidebar.payment.title')
+
+                    </a>
+                    <ul class="nav-dropdown-items">
+                        <li class="nav-item ">
+                            <a class="nav-link {{ $request->segment(1) == 'bank-payment' ? 'active' : '' }}"
+                               href="{{ route('admin.transaction.bankDeposit') }}">
+                                @lang('menus.backend.sidebar.payment.bank')
+                            </a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link {{ $request->segment(2) == 'momo-payment' ? 'active' : '' }}"
+                               href="{{ route('admin.reports.students') }}">@lang('menus.backend.sidebar.payment.momo')
+                            </a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link {{ $request->segment(3) == 'offline-payment' ? 'active' : '' }}"
+                               href="{{ route('admin.reports.students') }}">@lang('menus.backend.sidebar.payment.offline')
+                            </a>
+                        </li>
+                    </ul>
+                </li>
                 <li class="nav-item ">
                     <a class="nav-link {{ $request->segment(2) == 'teachers' ? 'active' : '' }}"
                        href="{{ route('admin.teachers.index') }}">
@@ -304,6 +329,7 @@
             @endif
 
             @if ($logged_in_user->isAdmin())
+
                 <li class="nav-item ">
                     <a class="nav-link {{ $request->segment(1) == 'contact-requests' ? 'active' : '' }}"
                        href="{{ route('admin.contact-requests.index') }}">

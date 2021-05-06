@@ -32,7 +32,7 @@ return [
         /*
          * Whether or not the user has to confirm their email when signing up
          */
-        'confirm_email' => env('CONFIRM_EMAIL', false),
+        'confirm_email' => env('CONFIRM_EMAIL', true),
 
         /*
          * Whether or not the users email can be changed on the edit profile screen
@@ -53,7 +53,7 @@ return [
          * Whether or not new users need to be approved by an administrator before logging in
          * If this is set to true, then confirm_email is not in effect
          */
-        'requires_approval' => env('REQUIRES_APPROVAL', false),
+        'requires_approval' => env('REQUIRES_APPROVAL', true),
 
         /*
          * Login username to be used by the controller.
@@ -84,7 +84,7 @@ return [
         /*
          * When new user register then admin can receive  mail or not
          */
-        'registration_mail' => env('REGISTRATION_MAIL', false),
+        'registration_mail' => env('REGISTRATION_MAIL', true),
 
         /*
          * When new order create then admin can receive  mail or not
