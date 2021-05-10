@@ -10,9 +10,11 @@ use App\Helpers\Payments\RazorpayWrapper;
 use App\Mail\Frontend\AdminOrederMail;
 use App\Mail\OfflineOrderMail;
 use App\Models\Auth\User;
+use App\Models\BankPayment;
 use App\Models\Bundle;
 use App\Models\Coupon;
 use App\Models\Course;
+use App\Models\MobilePayment;
 use App\Models\Order;
 use App\Models\OrderItem;
 use App\Models\Tax;
@@ -268,6 +270,106 @@ class CartController extends Controller
         return Redirect::route('cart.paypal.status');
     }
 
+    public function bankPayment(Request $request){
+        if ($this->checkDuplicate()) {
+            return $this->checkDuplicate();
+        }
+        //Making Order
+        $order = $this->makeOrder();
+        $order->payment_type = 0;
+        $order->status = 0;
+        $order->save();
+        $content = [];
+        $items = [];
+        $counter = 0;
+        foreach (Cart::session(auth()->user()->id)->getContent() as $key => $cartItem) {
+            $counter++;
+            array_push($items, ['number' => $counter, 'name' => $cartItem->name, 'price' => $cartItem->price]);
+        }
+
+        $content['items'] = $items;
+        $content['total'] =  number_format(Cart::session(auth()->user()->id)->getTotal(),2);
+        $content['reference_no'] = $order->reference_no;
+
+        try {
+            \Mail::to(auth()->user()->email)->send(new OfflineOrderMail($content));
+            $this->adminOrderMail($order);
+        } catch (\Exception $e) {
+            \Log::info($e->getMessage() . ' for order ' . $order->id);
+        }
+
+        if($request->hasFile('file'))
+        {
+            $file=$request->file('file');
+            $extension = $file->getClientOriginalExtension();
+            $filename =time().$request['name'].'.'.$extension;
+            $file->move(public_path('students/payments'),$filename);
+
+            $payment=new BankPayment();
+            $payment->user_id=auth()->user()->id;
+            $payment->order_id=$order->id;
+            $payment->bankDepositPaymentRefNo=$request["bankDepositPaymentRefNo"];
+            $payment->accountNumber="900-1122-32";
+            $payment->branch=$request["bankBranch"];
+            $payment->service="App\Models\Courses";
+            $payment->bankDepositorNames=$request["depositor_name"];
+            $payment->bankAttachment=$filename;
+            $payment->bankDepositAmount=$request["bankDepositAmount"];
+            $payment->bankDepositDate=$request["bankDepositDate"];
+
+            $payment->save();
+        }
+
+        Cart::session(auth()->user()->id)->clear();
+        \Session::flash('success', trans('labels.frontend.cart.bank_request'));
+        return redirect()->route('courses.all');
+    }
+    public function mobilePayment(Request $request){
+        if ($this->checkDuplicate()) {
+            return $this->checkDuplicate();
+        }
+        //Making Order
+        $order = $this->makeOrder();
+        $order->payment_type = 1;
+        $order->status = 0;
+        $order->save();
+        $content = [];
+        $items = [];
+        $counter = 0;
+        foreach (Cart::session(auth()->user()->id)->getContent() as $key => $cartItem) {
+            $counter++;
+            array_push($items, ['number' => $counter, 'name' => $cartItem->name, 'price' => $cartItem->price]);
+        }
+
+        $content['items'] = $items;
+        $content['total'] =  number_format(Cart::session(auth()->user()->id)->getTotal(),2);
+        $content['reference_no'] = $order->reference_no;
+
+        try {
+            \Mail::to(auth()->user()->email)->send(new OfflineOrderMail($content));
+            $this->adminOrderMail($order);
+        } catch (\Exception $e) {
+            \Log::info($e->getMessage() . ' for order ' . $order->id);
+        }
+
+
+            $payment=new MobilePayment();
+            $payment->user_id=auth()->user()->id;
+            $payment->order_id=$order->id;
+            $payment->service="App\Models\Courses";
+            $payment->mobileMoneyDate=$request['mobileMoneyDate'];
+            $payment->mobileMoneyPaymentRefNo=$request['mobileMoneyPaymentRefNo'];
+            $payment->mobileMoneyDepositorNames=$request['mobileMoneyDepositorNames'];
+            $payment->serviceProvider="MTN";
+            $payment->mobileMoneyPhoneNumber=$request['mobileMoneyPhoneNumber'];
+            $payment->mobileMoneyAmount=$request['mobileMoneyAmount'];
+            $payment->save();
+
+        Cart::session(auth()->user()->id)->clear();
+        \Session::flash('success', trans('labels.frontend.cart.mobile_request'));
+        return redirect()->route('courses.all');
+
+    }
     public function offlinePayment(Request $request)
     {
         if ($this->checkDuplicate()) {
@@ -275,7 +377,7 @@ class CartController extends Controller
         }
         //Making Order
         $order = $this->makeOrder();
-        $order->payment_type = 3;
+        $order->payment_type = 2;
         $order->status = 0;
         $order->save();
         $content = [];

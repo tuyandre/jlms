@@ -40,14 +40,14 @@
                         </li>
                         <li class="nav-item ">
                             <a class="nav-link {{ $request->segment(2) == 'momo-payment' ? 'active' : '' }}"
-                               href="{{ route('admin.reports.students') }}">@lang('menus.backend.sidebar.payment.momo')
+                               href="{{ route('admin.transaction.mobileDeposit') }}">@lang('menus.backend.sidebar.payment.momo')
                             </a>
                         </li>
-                        <li class="nav-item ">
-                            <a class="nav-link {{ $request->segment(3) == 'offline-payment' ? 'active' : '' }}"
-                               href="{{ route('admin.reports.students') }}">@lang('menus.backend.sidebar.payment.offline')
-                            </a>
-                        </li>
+{{--                        <li class="nav-item ">--}}
+{{--                            <a class="nav-link {{ $request->segment(3) == 'offline-payment' ? 'active' : '' }}"--}}
+{{--                               href="{{ route('admin.transaction.offlinePayment') }}">@lang('menus.backend.sidebar.payment.offline')--}}
+{{--                            </a>--}}
+{{--                        </li>--}}
                     </ul>
                 </li>
                 <li class="nav-item ">
@@ -487,21 +487,21 @@
                     </ul>
                 </li>
 
-                <li class="nav-item ">
-                    <a class="nav-link {{ $request->segment(1) == 'translation-manager' ? 'active' : '' }}"
-                       href="{{ asset('user/translations') }}">
-                        <i class="nav-icon icon-docs"></i>
-                        <span class="title">@lang('menus.backend.sidebar.translations.title')</span>
-                    </a>
-                </li>
+{{--                <li class="nav-item ">--}}
+{{--                    <a class="nav-link {{ $request->segment(1) == 'translation-manager' ? 'active' : '' }}"--}}
+{{--                       href="{{ asset('user/translations') }}">--}}
+{{--                        <i class="nav-icon icon-docs"></i>--}}
+{{--                        <span class="title">@lang('menus.backend.sidebar.translations.title')</span>--}}
+{{--                    </a>--}}
+{{--                </li>--}}
 
-                <li class="nav-item ">
-                    <a class="nav-link {{ $request->segment(1) == 'backup' ? 'active' : '' }}"
-                       href="{{ route('admin.backup') }}">
-                        <i class="nav-icon icon-shield"></i>
-                        <span class="title">@lang('menus.backend.sidebar.backup.title')</span>
-                    </a>
-                </li>
+{{--                <li class="nav-item ">--}}
+{{--                    <a class="nav-link {{ $request->segment(1) == 'backup' ? 'active' : '' }}"--}}
+{{--                       href="{{ route('admin.backup') }}">--}}
+{{--                        <i class="nav-icon icon-shield"></i>--}}
+{{--                        <span class="title">@lang('menus.backend.sidebar.backup.title')</span>--}}
+{{--                    </a>--}}
+{{--                </li>--}}
 {{--                <li class="nav-item ">--}}
 {{--                    <a class="nav-link {{ $request->segment(1) == 'update-theme' ? 'active' : '' }}"--}}
 {{--                       href="{{ route('admin.update-theme') }}">--}}

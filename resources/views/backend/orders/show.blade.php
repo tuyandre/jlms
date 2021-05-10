@@ -59,10 +59,10 @@
                             <th>@lang('labels.backend.orders.fields.payment_type.title')</th>
                             <td>
 
-                                @if($order->payment_type == 1)
-                                    {{trans('labels.backend.orders.fields.payment_type.stripe') }}
-                                @elseif($order->payment_type == 2)
-                                    {{trans('labels.backend.orders.fields.payment_type.paypal')}}
+                                @if($order->payment_type == 0)
+                                    {{trans('labels.backend.orders.fields.payment_type.bank') }}
+                                @elseif($order->payment_type == 1)
+                                    {{trans('labels.backend.orders.fields.payment_type.mobile')}}
                                 @else
                                     {{trans('labels.backend.orders.fields.payment_type.offline')}}
                                 @endif

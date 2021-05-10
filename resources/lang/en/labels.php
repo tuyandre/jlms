@@ -83,6 +83,8 @@ return array (
         array (
           'stripe' => 'Credit / Debit Card (Stripe Payment Gateway)',
           'paypal' => 'Paypal',
+          'bank' => 'Bank Deposit/Transfer',
+          'mobile' => 'Mobile Money Payment',
           'offline' => 'Offline',
           'title' => 'Payment Type',
         ),
@@ -1385,6 +1387,8 @@ return array (
       'try_again' => 'Error! Please Try again.',
       'payment_done' => 'Payment done successfully !',
       'payment_failed' => 'Error! Payment Failed!',
+      'bank_request' => 'Your Bank payment Detail received successfully! check your registered email for further details.',
+      'mobile_request' => 'Your Mobile Payment Detail received successfully! check your registered email for further details.',
       'offline_request' => 'Request received successfully! check your registered email for further details.',
       'purchase_successful' => 'Congratulations! You\'ve purchased this course.',
       'unknown_error' => 'Unknown error occurred',

@@ -3,8 +3,10 @@
 namespace App\Http\Controllers\Backend\Admin;
 
 use App\Helpers\General\EarningHelper;
+use App\Models\BankPayment;
 use App\Models\Bundle;
 use App\Models\Course;
+use App\Models\MobilePayment;
 use App\Models\Order;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -112,6 +114,17 @@ class OrderController extends Controller
         $order = Order::findOrfail($request->order);
         $order->status = 1;
         $order->save();
+        if($order->payment_type==0){
+            $bank=BankPayment::where('order_id','=',$order->id)->first();
+            $bank->status=1;
+            $bank->save();
+
+        }
+        if($order->payment_type==1){
+            $mobile=MobilePayment::where('order_id','=',$order->id)->first();
+            $mobile->status=1;
+            $mobile->save();
+        }
 
         (new EarningHelper)->insert($order);
 
@@ -154,6 +167,15 @@ class OrderController extends Controller
         $order = Order::findOrFail($id);
         $order->items()->delete();
         $order->delete();
+        if($order->payment_type==0){
+            $bank=BankPayment::where('order_id','=',$order->id)->first();
+            $bank->delete();
+
+        }
+        if($order->payment_type==1){
+            $mobile=MobilePayment::where('order_id','=',$order->id)->first();
+            $mobile->delete();
+        }
         return redirect()->route('admin.orders.index')->withFlashSuccess(trans('alerts.backend.general.deleted'));
     }
 

@@ -35,6 +35,45 @@ Route::group(['middleware' => 'role:administrator'], function () {
     Route::get('bank-deposit/get-data',
         ['uses' => 'Admin\PaymentController@bankDepositGetData',
             'as' => 'transaction.bankDeposit.getData']);
+    Route::get('bank-payment/show/{order}',
+        ['uses' => 'Admin\PaymentController@showBankPayment',
+            'as' => 'transactions.showBankPayment']);
+//    Route::post('bank-payment/complete',
+//        ['uses' => 'Admin\PaymentController@completeBankPayment',
+//            'as' => 'transaction.completeBankPayment']);
+    Route::delete('bank-payment/destroy/{id}',
+        ['uses' => 'Admin\PaymentController@destroyBankPayment',
+            'as' => 'transaction.destroyBankPayment']);
+
+
+    Route::get('bank_receipt/download/{order}', ['uses' => 'Admin\PaymentController@downloadBankReceipt', 'as' => 'bank_receipt.download']);
+    Route::get('bank_receipt/view/{code}', ['uses' => 'Admin\PaymentController@viewBankReceipt', 'as' => 'bank_receipt.view']);
+
+
+    Route::get('transaction/mobile-deposit',
+        ['uses' => 'Admin\PaymentController@mobileDeposit',
+            'as' => 'transaction.mobileDeposit']);
+    Route::get('mobile-deposit/get-data',
+        ['uses' => 'Admin\PaymentController@mobilePaymentGetData',
+            'as' => 'transaction.mobilePayment.getData']);
+    Route::get('mobile-payment/show/{order}',
+        ['uses' => 'Admin\PaymentController@showMobilePayment',
+            'as' => 'transaction.showMobilePayment']);
+//    Route::post('mobile-payment/complete',
+//        ['uses' => 'Admin\PaymentController@completeMobilePayment',
+//            'as' => 'transaction.completeMobilePayment']);
+    Route::delete('mobile-payment/destroy/{id}',
+        ['uses' => 'Admin\PaymentController@destroyMobilePayment',
+            'as' => 'transaction.destroyMobilePayment']);
+
+
+    Route::get('transaction/offline-deposit',
+        ['uses' => 'Admin\PaymentController@offlinePayment',
+            'as' => 'transaction.offlinePayment']);
+    Route::get('offline-deposit/get-data',
+        ['uses' => 'Admin\PaymentController@offlinePaymentData',
+            'as' => 'transaction.offlinePayment.getData']);
+
 
 
     //===== FORUMS Routes =====//

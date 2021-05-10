@@ -8,7 +8,7 @@
 
     <div class="card">
         <div class="card-header">
-            <h3 class="page-title d-inline mb-0">Offline Transaction</h3>
+            <h3 class="page-title d-inline mb-0">Mobile Money Payment Transaction</h3>
             {{--            <h3 class="page-title d-inline mb-0">@lang('labels.backend.orders.title')</h3>--}}
 
         </div>
@@ -32,7 +32,7 @@
                         <th>@lang('labels.general.sr_no')</th>
                         <th>Student Name</th>
                         <th>Depositor Name</th>
-                        <th>Branch Name</th>
+                        <th>Phone Number</th>
                         <th>Deposited Amount <small>(in {{$appCurrency['symbol']}})</small></th>
                         <th>Payment</th>
                         <th>Deposited Date</th>
@@ -50,7 +50,7 @@
 @push('after-scripts')
     <script>
         $(document).ready(function () {
-            var route = '{{route('admin.transaction.bankDeposit.getData')}}';
+            var route = '{{route('admin.transaction.mobilePayment.getData')}}';
 
             @if(request('offline_requests') == 1)
                 route = '{{route('admin.orders.get_data',['offline_requests' => 1])}}';
@@ -87,7 +87,7 @@
                     {data: "DT_RowIndex", name: 'DT_RowIndex', searchable: false},
                     {data: "user_name", name: 'user_name'},
                     {data: "depositor", name: 'depositor'},
-                    {data: "branch", name: 'branch'},
+                    {data: "phone", name: 'phone'},
                     {data: "amount", name: 'amount'},
                     {data: "payment", name: 'payment'},
                     {data: "date", name: "date"},

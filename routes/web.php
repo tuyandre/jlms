@@ -189,6 +189,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('status', function () {
         return view('frontend.cart.status');
     })->name('status');
+    Route::post('cart/bank-payment', ['uses' => 'CartController@bankPayment', 'as' => 'cart.bank.payment']);
+    Route::post('cart/mobile-payment', ['uses' => 'CartController@mobilePayment', 'as' => 'cart.mobile.payment']);
     Route::post('cart/offline-payment', ['uses' => 'CartController@offlinePayment', 'as' => 'cart.offline.payment']);
     Route::post('cart/getnow',['uses'=>'CartController@getNow','as' =>'cart.getnow']);
 });

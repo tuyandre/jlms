@@ -7,11 +7,11 @@
 
         <div class="card-header">
             <h3 class="page-title mb-0 float-left">@lang('labels.backend.orders.title')</h3>
-            @if($order->invoice != "")
+            @if($order->order->invoice != "")
                 @if(Auth::user()->isAdmin())
                     @php
                         $hashids = new \Hashids\Hashids('',5);
-                             $order_id = $hashids->encode($order->id);
+                             $order_id = $hashids->encode($order->order_id);
                     @endphp
 
                     <div class="float-right">
@@ -45,7 +45,7 @@
                         <tr>
                             <th>@lang('labels.backend.orders.fields.items')</th>
                             <td>
-                                @foreach($order->items as $key=>$item)
+                                @foreach($order->order->items as $key=>$item)
                                     @php $key++ @endphp
                                     {{$key.'. '.$item->item->title}}<br>
                                 @endforeach
@@ -53,16 +53,16 @@
                         </tr>
                         <tr>
                             <th>@lang('labels.backend.orders.fields.amount')</th>
-                            <td>{{ $order->amount.' '.$appCurrency['symbol'] }}</td>
+                            <td>{{ $order->order->amount.' '.$appCurrency['symbol'] }}</td>
                         </tr>
                         <tr>
                             <th>@lang('labels.backend.orders.fields.payment_type.title')</th>
                             <td>
 
-                                @if($order->payment_type == 1)
-                                    {{trans('labels.backend.orders.fields.payment_type.stripe') }}
-                                @elseif($order->payment_type == 2)
-                                    {{trans('labels.backend.orders.fields.payment_type.paypal')}}
+                                @if($order->payment_type == 0)
+                                    {{trans('labels.backend.orders.fields.payment_type.bank') }}
+                                @elseif($order->payment_type == 1)
+                                    {{trans('labels.backend.orders.fields.payment_type.mobile')}}
                                 @else
                                     {{trans('labels.backend.orders.fields.payment_type.offline')}}
                                 @endif
@@ -78,26 +78,57 @@
                                     <a class="btn btn-xs mb-1 mr-1 btn-success text-white" style="cursor:pointer;"
                                        onclick="$(this).find('form').submit();">
                                         {{trans('labels.backend.orders.complete')}}
-                                        <form action="{{route('admin.orders.complete', ['order' => $order->id])}}"
+                                        <form action="{{route('admin.orders.complete', ['order' => $order->order_id])}}"
                                               method="POST" name="complete" style="display:none">
                                             @csrf
                                         </form>
                                     </a>
                                 @elseif($order->status == 1)
-                                    {{trans('labels.backend.orders.fields.payment_status.completed')}}
+                                    <span class="btn btn-success">   {{trans('labels.backend.orders.fields.payment_status.completed')}}</span>
                                 @else
+                                    <span class="btn btn-warning">
                                     {{trans('labels.backend.orders.fields.payment_status.failed')}}
+                                    </span>
                                 @endif
 
                             </td>
                         </tr>
 
-
+                        <tr>
+                            <th>Bank Depositor Name</th>
+                            <td>{{ $order->bankDepositorNames}}</td>
+                        </tr>
+                        <tr>
+                            <th>Bank Branch</th>
+                            <td>{{ $order->branch}}</td>
+                        </tr>
+                        <tr>
+                            <th>Bank Receipt Ref</th>
+                            <td>{{ $order->bankDepositPaymentRefNo}}</td>
+                        </tr>
+                        <tr>
+                            <th>Bank Deposit Date</th>
+                            <td>{{ $order->bankDepositDate}}</td>
+                        </tr>
                         <tr>
                             <th>@lang('labels.backend.orders.fields.date')</th>
                             <td>{{ $order->created_at->format('d M, Y | h:i A') }}</td>
                         </tr>
-
+                        <tr>
+                            <th>View Bank Receipt</th>
+                            <td>
+                                @php
+                                    $hashids = new \Hashids\Hashids('',5);
+                                         $order_id = $hashids->encode($order->id);
+                                @endphp
+                                <a class="btn btn-success" target="_blank" href="{{route('admin.bank_receipt.view', ['code' => $order_id])}}">
+                                    View Receipt
+                                </a>
+                                <a class="btn btn-primary" href="{{route('admin.bank_receipt.download',['order'=>$order_id])}}">
+                                   Download Receipt
+                                </a>
+                            </td>
+                        </tr>
 
                     </table>
                 </div>
