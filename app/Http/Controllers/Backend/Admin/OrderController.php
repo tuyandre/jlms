@@ -72,12 +72,16 @@ class OrderController extends Controller
             ->addColumn('items', function ($q) {
                 $items = "";
                 foreach ($q->items as $key => $item) {
+                    if ($item->item_type=="Registration") {
+                        $items .="Registration Fees";
+                    }
+                else{
                     if($item->item != null){
                         $key++;
                         $items .= $key . '. ' . $item->item->title . "<br>";
                     }
 
-                }
+                }}
                 return $items;
             })
             ->addColumn('user_email', function ($q) {
