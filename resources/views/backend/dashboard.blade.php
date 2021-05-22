@@ -576,6 +576,7 @@
                                     @foreach($recent_orders as $item)
                                         <tr>
                                             <td>
+                                                {{--{{$item->user->name}}--}}
                                                 {{$item->user->full_name}}
                                             </td>
                                             <td>{{$item->amount.' '.$appCurrency['symbol']}}</td>

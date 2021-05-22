@@ -5,6 +5,10 @@ namespace App\Http\Controllers\Frontend;
 use App\Http\Controllers\Controller;
 use App\Mail\Frontend\Auth\AdminRegistered;
 use App\Models\Auth\User;
+use App\Models\BankPayment;
+use App\Models\MobilePayment;
+use App\Models\Order;
+use App\Models\OrderItem;
 use App\Notifications\Frontend\Auth\StudentRegistration;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -75,9 +79,9 @@ class ApplicationController extends Controller
     }
     public function getApplicationFee($program){
         if ($program=="CAT"){
-            return response()->json(['amount' => 15000], 200);
+            return response()->json(['amount' => 50000], 200);
         }else{
-            return response()->json(['amount' =>30000 ], 200);
+            return response()->json(['amount' =>50000 ], 200);
         }
     }
 
@@ -141,9 +145,68 @@ class ApplicationController extends Controller
 
             $userForRole = User::find($user->id);
             $userForRole->confirmed = 0;
-            $userForRole->confirmmation_code = md5(uniqid(rand(), true));;
+            $userForRole->confirmation_code = md5(uniqid(rand(), true));;
             $userForRole->save();
             $userForRole->assignRole('student');
+
+            $amounts=0;
+            $pay_type=0;
+            if ($request['payment']=="BankDeposit"){
+                $amounts=$request["bankDepositAmount"];
+                $pay_type=0;
+            }elseif (($request['payment']=="MobileMoneyDeposit")){
+                $amounts=$request['mobileMoneyPhoneNumber'];
+                $pay_type=1;
+            }
+
+            $order = new Order();
+            $order->user_id = $user->id;
+            $order->reference_no = str_random(8);
+            $order->amount = $amounts;
+            $order->status = 0;
+            $order->coupon_id = 0;
+            $order->payment_type = $pay_type;
+            $order->save();
+            if ($order){
+                $items=new OrderItem();
+                $items->order_id=$order->id;
+                $items->item_id=0;
+                $items->price=50000;
+                $items->type=0;
+                $items->item_type="Registration";
+                $items->save();
+
+                if ($request['payment']=="BankDeposit"){
+
+                    $payment=new BankPayment();
+                    $payment->user_id=$user->id;
+                    $payment->order_id=$order->id;
+                    $payment->bankDepositPaymentRefNo=$request["bankDepositPaymentRefNo"];
+                    $payment->accountNumber=$request["accountNumber"];
+                    $payment->branch=$request["branch"];
+                    $payment->service="Registration";
+                    $payment->bankDepositorNames=$request["bankDepositorNames"];
+                    $payment->bankAttachment=$request["bankAttachment"];
+                    $payment->bankDepositAmount=$request["bankDepositAmount"];
+                    $payment->bankDepositDate=$request["bankDepositDate"];
+
+                    $payment->save();
+                }elseif (($request['payment']=="MobileMoneyDeposit")){
+                    $payment=new MobilePayment();
+                    $payment->user_id=auth()->user()->id;
+                    $payment->order_id=$order->id;
+                    $payment->service="Registration";
+                    $payment->mobileMoneyDate=$request['mobileMoneyDate'];
+                    $payment->mobileMoneyPaymentRefNo=$request['mobileMoneyPaymentRefNo'];
+                    $payment->mobileMoneyDepositorNames=$request['mobileMoneyDepositorNames'];
+                    $payment->serviceProvider=$request['serviceProvider'];
+                    $payment->mobileMoneyPhoneNumber=$request['mobileMoneyPhoneNumber'];
+                    $payment->mobileMoneyAmount=$request['mobileMoneyAmount'];
+                    $payment->save();
+                }
+
+            }
+
 
             if(config('access.users.registration_mail')) {
                 $this->sendAdminMail($user);

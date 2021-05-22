@@ -284,11 +284,19 @@ if (!function_exists('generateInvoice')) {
         $invoice->number($order->id);
 
         foreach ($order->items as $item) {
-            $title = $item->item->title;
-            $price = $item->item->price;
-            $qty = 1;
-            $id = 'prod-'.$item->item->id;
-            $invoice->addItem($title, $price, $qty, $id);
+            if ($item->item_type=="Registration"){
+                $title = "Registration Fees";
+                $price = $item->price;
+                $qty = 1;
+                $id = 'prod-' . $item->id;
+                $invoice->addItem($title, $price, $qty, $id);
+            }else {
+                $title = $item->item->title;
+                $price = $item->item->price;
+                $qty = 1;
+                $id = 'prod-' . $item->item->id;
+                $invoice->addItem($title, $price, $qty, $id);
+            }
         }
 //        $invoice->number($order->id);
         $total = $order->items->sum('price');

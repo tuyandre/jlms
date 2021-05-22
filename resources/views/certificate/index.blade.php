@@ -3,7 +3,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
-    <title>Neon LMS : Certificate of Completion</title>
+    <title>JDD AUDITORS : Certificate of Completion</title>
 
     {{--<link href="https://fonts.googleapis.com/css?family=Dancing+Script:400,700" rel="stylesheet">--}}
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -115,7 +115,7 @@
 <div class="container-fluid px-0" style="height: 500px">
     <div style="position: relative;text-align: center"
          class="row h-100 justify-content-center text-center position-relative m-0">
-        <img class="logo" src="{{public_path('storage/logos/'.config('logo_b_image'))}}">
+        <img style="width: 100px !important;" class="logo" src="{{public_path('storage/logos/'.config('logo_b_image'))}}">
 
         <div class="col-12 text-block align-self-center">
             <p class="text-center mb-0">This is to certify that <span class="font-weight-bold" style="font-family: DejaVu Sans;">{{$data['name']}}</span> successfully completed

@@ -12987,7 +12987,7 @@ if ("undefined" == typeof jQuery) throw new Error("Bootstrap's JavaScript requir
     function stripHtml(value) {
         // remove html tags and space chars
         return value.replace(/<.[^<>]*?>/g, ' ').replace(/&nbsp;|&#160;/gi, ' ')
-            // remove punctuation
+        // remove punctuation
             .replace(/[.(),;:!?%#$'"_+=\/\-]*/g, '');
     }
 
@@ -13761,13 +13761,13 @@ var validator = form.validate({
             maxImageWidth: 'The image width should not exceed 200 pixels'
         },
         bankDepositAmount: {
-            min: "Application fee should be 55000"
+            min: "Application fee should be 50000"
         },
         sponsorDepositAmount: {
-            min: "Application fee should be 55000"
+            min: "Application fee should be 50000"
         },
         mobileMoneyAmount: {
-            min: "Application fee should be 55000"
+            min: "Application fee should be 50000"
 
         },
         bankAttachment: {
@@ -13899,7 +13899,19 @@ form.steps({
                     $("#progress-bar").html('<div id="progress-status">Your Registration not  Completed, Please try Again</div>');
 
                 }
-            });
+            }).fail(function (response) {
+            console.log(response);
+
+            swal.fire({
+                icon: 'warning',
+                title: 'Oops...',
+                text: 'Your Registration not  Completed, Please try Again!'
+            })
+            // alert('Your Registration not  Completed, Please try Again');
+            $('#loader-icon').hide();
+            $("#progress-bar").html('<div id="progress-status">Your Registration not  Completed, Please try Again</div>');
+
+        });
         return false;
         form.submit();
     }
@@ -13984,7 +13996,7 @@ var memberValidator = memberForm.validate({
 
         },
         bankDepositAmount: {
-            min: 15000,
+            min: 50000,
             required: function() {
                 return $('.payment').val() == 'BankDeposit';
             }
@@ -14017,7 +14029,7 @@ var memberValidator = memberForm.validate({
 
         },
         bankDepositAmountb: {
-            min: 15000,
+            min: 50000,
             required: true
 
         },
@@ -14044,10 +14056,10 @@ var memberValidator = memberForm.validate({
             maxImageWidth: 'The image width should not exceed 200 pixels'
         },
         bankDepositAmount: {
-            min: "Application fee should be 55000"
+            min: "Application fee should be 50000"
         },
         mobileMoneyAmount: {
-            min: "Application fee should be 55000"
+            min: "Application fee should be 50000"
 
         },
         bankAttachment: {

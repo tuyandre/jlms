@@ -205,6 +205,7 @@
                                     @else
                                         <li>
                                             <div class="login">
+                                                <a href="{{url('/instructions')}}">Apply</a>
                                                 <a  href="{{url('/jsms/login')}}">@lang('navs.general.login')</a>
                                                 {{--@include('frontend.layouts.modals.loginModal')--}}
 
@@ -239,8 +240,8 @@
                                 @if(!auth()->check())
                                     <li>
                                         <div class="login">
-                                            <a data-toggle="modal" data-target="#myModal" href="#"><i
-                                                        class="fa fa-user"></i></a>
+                                            <a href="{{url('/instructions')}}"><i class="fa fa-user-plus"></i></a>
+                                            <a  href="{{url('/jsms/login')}}"><i class="fa fa-user"></i></a>
                                         </div>
                                     </li>
                                 @else

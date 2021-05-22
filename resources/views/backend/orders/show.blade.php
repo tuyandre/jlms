@@ -46,8 +46,12 @@
                             <th>@lang('labels.backend.orders.fields.items')</th>
                             <td>
                                 @foreach($order->items as $key=>$item)
+                                    @if($item->item_type=="Registration")
+                                        {{$item->item_type}}
+                                        @else
                                     @php $key++ @endphp
                                     {{$key.'. '.$item->item->title}}<br>
+                                        @endif
                                 @endforeach
                             </td>
                         </tr>

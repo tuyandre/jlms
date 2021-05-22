@@ -182,6 +182,7 @@
                                         @else
                                             <li>
                                                 <div class="log-in mt-0">
+                                                    <a href="{{url('/instructions')}}">Apply</a>
                                                     <a href="{{url('/jsms/login')}}">@lang('navs.general.login')</a>
                                                     <!-- The Modal -->
                                                     {{--@include('frontend.layouts.modals.loginModal')--}}
@@ -259,6 +260,7 @@
                                         @else
                                             <li>
                                                 <div class=" ">
+                                                    <a href="{{url('/instructions')}}">Apply</a>
                                                     <a href="{{url('/jsms/login')}}">@lang('navs.general.login')</a>
                                                     <!-- The Modal -->
                                                 </div>

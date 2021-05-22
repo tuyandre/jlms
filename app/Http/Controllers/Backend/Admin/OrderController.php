@@ -133,12 +133,14 @@ class OrderController extends Controller
 
         foreach ($order->items as $orderItem) {
             //Bundle Entries
-            if($orderItem->item_type == Bundle::class){
-               foreach ($orderItem->item->courses as $course){
-                   $course->students()->attach($order->user_id);
-               }
+            if ($orderItem->item_type!="Registration") {
+                if ($orderItem->item_type == Bundle::class) {
+                    foreach ($orderItem->item->courses as $course) {
+                        $course->students()->attach($order->user_id);
+                    }
+                }
+                $orderItem->item->students()->attach($order->user_id);
             }
-            $orderItem->item->students()->attach($order->user_id);
         }
         return back()->withFlashSuccess(trans('alerts.backend.general.updated'));
     }

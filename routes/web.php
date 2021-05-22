@@ -24,7 +24,7 @@ Route::get('/jdd-portal/jsms/adminRegister','Frontend\ApplicationController@getA
 
 
 
-Route::post('JSMS/JSMS/JREGISTER/studentApplication/submitApplication','Frontend\ApplicationController@submitApplication')->name('application.jsms.submitApplication');
+Route::post('/JSMS/submitApplication','Frontend\ApplicationController@submitApplication')->name('application.jsms.submitApplication');
 
 
 

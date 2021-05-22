@@ -15,8 +15,8 @@
     <link rel="stylesheet" href="{{asset('customization/fontawesome/css/all.css')}}" />
     <link rel="stylesheet" href="{{asset('customization/fontawesome/css/all.min.css')}}" />
     <link rel="stylesheet" href="{{asset('customization/frontend/css/welcome.css')}}" />
-{{--    <link rel="stylesheet" href="{{asset('bootstrap/dist/css/bootstrap.css')}}" />--}}
-{{--    <link rel="stylesheet" href="{{asset('bootstrap/dist/css/bootstrap.min.css')}}" />--}}
+    {{--<link rel="stylesheet" href="{{asset('bootstrap/dist/css/bootstrap.css')}}" />--}}
+    {{--<link rel="stylesheet" href="{{asset('bootstrap/dist/css/bootstrap.min.css')}}" />--}}
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script type="text/javascript">

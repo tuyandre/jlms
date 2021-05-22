@@ -182,8 +182,8 @@
                                         @else
                                             <li class="log-in mt-0">
                                                 @if(!auth()->check())
-                                                    <a id="openLoginModal" data-target="#myModal"
-                                                       href="#">@lang('navs.general.login')</a>
+                                                    <a href="{{url('/instructions')}}">Apply</a>
+                                                    <a href="{{url('/jsms/login')}}">@lang('navs.general.login')</a>
                                                     <!-- The Modal -->
                                                     {{--@include('frontend.layouts.modals.loginModal')--}}
 
@@ -244,8 +244,8 @@
                                             </li>
                                         @else
                                             <li class="">
-                                                <a id="openLoginModal" data-target="#myModal"
-                                                   href="#">@lang('navs.general.login')</a>
+                                                <a href="{{url('/instructions')}}">Apply</a>
+                                                <a href="{{url('/jsms/login')}}">@lang('navs.general.login')</a>
                                                 <!-- The Modal -->
                                             </li>
                                         @endif

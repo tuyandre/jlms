@@ -15,8 +15,8 @@
             <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
             <meta name="csrf-token" content="{{ csrf_token() }}">
             <title>@yield('title', app_name())</title>
-            <meta name="description" content="@yield('meta_description', 'Laravel 5 Boilerplate')">
-            <meta name="author" content="@yield('meta_author', 'Anthony Rappa')">
+            <meta name="description" content="@yield('meta_description', 'JDD AUDITORS')">
+            <meta name="author" content="@yield('meta_author', 'TUYIZERE ANDRE')">
             @if(config('favicon_image') != "")
                 <link rel="shortcut icon" type="image/x-icon"
                       href="{{asset('img/frontend/logo.png')}}"/>
