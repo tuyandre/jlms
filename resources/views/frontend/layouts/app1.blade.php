@@ -174,7 +174,7 @@
                                             <li>
                                                 <div class="log-in mt-0">
                                                     <a href="{{url('/instructions')}}">Apply</a>
-                                                    <a href="{{url('/jsms/login')}}">@lang('navs.general.login')</a>
+                                                    {{--<a href="{{url('/jsms/login')}}">@lang('navs.general.login')</a>--}}
                                                     {{--@include('frontend.layouts.modals.loginModal')--}}
 
                                                 </div>
