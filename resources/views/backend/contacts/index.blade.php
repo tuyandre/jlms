@@ -32,6 +32,7 @@
                                 <th>@lang('labels.backend.contacts.fields.phone')</th>
                                 <th>@lang('labels.backend.contacts.fields.message')</th>
                                 <th>@lang('labels.backend.contacts.fields.time')</th>
+                                <th>Action</th>
                             </tr>
                             </thead>
 
@@ -83,6 +84,7 @@
                     {data: "number", name: 'number'},
                     {data: "message", name: "message"},
                     {data: "created_at", name: "time"},
+                    {data: "actions", name: "actions"}
                 ],
                 @if(request('show_deleted') != 1)
                 columnDefs: [

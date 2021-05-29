@@ -34,6 +34,17 @@ class ContactController extends Controller
 
         return DataTables::of($contacts)
             ->addIndexColumn()
+            ->addColumn('actions', function ($q) use ($request) {
+                $view = "";
+                    $delete = view('backend.datatable.action-delete')
+                        ->with(['route' => route('admin.contacting.full_delete', ['contact' => $q->id])])
+                        ->render();
+
+                    $view .= $delete;
+//
+                return $view;
+
+            })
             ->editColumn('created_at', function ($q) {
                return $q->created_at->format('d M, Y | H:i A');
             })
@@ -44,6 +55,12 @@ class ContactController extends Controller
                     return $q->number;
                 }
             })
+            ->rawColumns(['actions'])
             ->make();
+    }
+    public function full_delete($contact){
+        $cont = Contact::findOrFail($contact);
+        $cont->delete();
+        return redirect()->route('admin.contact-requests.index')->withFlashSuccess(trans('alerts.backend.general.deleted'));
     }
 }

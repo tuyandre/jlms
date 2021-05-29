@@ -20,6 +20,10 @@ Route::group(['middleware' => 'role:teacher|administrator'], function () {
 });
 Route::group(['middleware' => 'role:administrator'], function () {
 
+
+    Route::delete('contact_requesting/{contact}', ['uses' => 'ContactController@full_delete', 'as' => 'contacting.full_delete']);
+
+
     //===== Teachers Routes =====//
     Route::resource('teachers', 'Admin\TeachersController');
     Route::get('get-teachers-data', ['uses' => 'Admin\TeachersController@getData', 'as' => 'teachers.get_data']);
