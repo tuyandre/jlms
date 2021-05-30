@@ -82,8 +82,10 @@
                                                 </td>
                                                 <td>
                                                     @foreach($item->items as $key=>$subitem)
-                                                        @if($item->item_type=="Registration")
-                                                            {{$item->item_type}}
+                                                        {{--{{$subitem->item_type}}--}}
+                                                        @if($subitem->item_type=="Registration")
+                                                            {{--{{$subitem->item_type}}--}}
+                                                            Registration Fees
                                                         @else
                                                         @php $key++ @endphp
                                                         @if($subitem->item != null)
@@ -93,7 +95,7 @@
                                                     @endforeach
                                                 </td>
                                                 <td>
-                                                    {{$item->amount}}
+                                                    {{number_format( $item->amount)}}
                                                 </td>
                                                 <td>
                                                     @if($item->status == 0)

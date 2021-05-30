@@ -94,14 +94,14 @@ class LoginController extends Controller
                     return
                         response([
                             'success' => false,
-                            'message' => 'Login failed. Account is not active'
+                            'message' => 'Login failed. Account is not active Please Contact Administration'
                         ], Response::HTTP_FORBIDDEN);
                 }
             }else{
                 return
                     response([
                         'success' => false,
-                        'message' => 'Login failed. Account not found'
+                        'message' => 'Login failed. Account not found Or Incorrect Password '
                     ], Response::HTTP_FORBIDDEN);
             }
 
