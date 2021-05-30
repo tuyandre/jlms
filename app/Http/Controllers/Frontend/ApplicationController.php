@@ -120,6 +120,7 @@ class ApplicationController extends Controller
         $user=User::create([
             'username' => $reg,
             'helpas' => $password,
+            'active' => 0,
             'avatar_type' => "storage",
             'email' => $request['email'],
             'avatar_location' => $request['passportPhoto'],

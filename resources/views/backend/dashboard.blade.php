@@ -82,9 +82,13 @@
                                                 </td>
                                                 <td>
                                                     @foreach($item->items as $key=>$subitem)
+                                                        @if($item->item_type=="Registration")
+                                                            {{$item->item_type}}
+                                                        @else
                                                         @php $key++ @endphp
                                                         @if($subitem->item != null)
                                                             {{$key.'. '.$subitem->item->title}} <br>
+                                                        @endif
                                                         @endif
                                                     @endforeach
                                                 </td>
