@@ -13545,8 +13545,8 @@ var validator = form.validate({
         },
         passport: {
             accept: "png|jpg|jpeg",
-            fileSize: 2100000,
-            maxImageWidth: 200,
+            fileSize: 5100000,
+            maxImageWidth: 11000,
             required: function() {
                 return $('#passportPhoto').val() == '';
             }
