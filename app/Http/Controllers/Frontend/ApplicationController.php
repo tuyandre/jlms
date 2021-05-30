@@ -172,7 +172,7 @@ class ApplicationController extends Controller
                 $items=new OrderItem();
                 $items->order_id=$order->id;
                 $items->item_id=0;
-                $items->price=50000;
+                $items->price=$amounts;
                 $items->type=0;
                 $items->item_type="Registration";
                 $items->save();
@@ -194,7 +194,7 @@ class ApplicationController extends Controller
                     $payment->save();
                 }elseif (($request['payment']=="MobileMoneyDeposit")){
                     $payment=new MobilePayment();
-                    $payment->user_id=auth()->user()->id;
+                    $payment->user_id=$user->id;
                     $payment->order_id=$order->id;
                     $payment->service="Registration";
                     $payment->mobileMoneyDate=$request['mobileMoneyDate'];

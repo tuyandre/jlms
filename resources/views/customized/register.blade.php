@@ -637,12 +637,12 @@
 
                                         <select name="sponsorshipType" id="sponsorshipType" class="form-control sponsor required">
                                             <option value="">-Choose Sponsorship-</option>
-                                            <option value="SelfSponsored" >Self Sponsored</option>
-                                            <option value="Parent" >Parent</option>
-                                            <option value="Guardian" >Guardian</option>
-                                            <option value="WorkPlace" >WorkPlace</option>
-                                            <option value="School" >School</option>
-                                            <option value="Others" >Others</option>
+                                            <option value="SelfSponsored" selected>Self Sponsored</option>
+                                            {{--<option value="Parent" >Parent</option>--}}
+                                            {{--<option value="Guardian" >Guardian</option>--}}
+                                            {{--<option value="WorkPlace" >WorkPlace</option>--}}
+                                            {{--<option value="School" >School</option>--}}
+                                            {{--<option value="Others" >Others</option>--}}
                                         </select>
                                         <div id="sponsorDetails" style="display: none">
 
@@ -673,11 +673,11 @@
                                         <div class="form-group" style="margin-top: 10px">
                                             <label class="col-md-4 control-label"></label>
 
-                                            <div class="col-md-6">
-                                                <button type="button" id="add_document" style="width: 100px;margin: 0px;height: 40px;padding: 0!important;" class="btn btn-info repeater-button pull-left">
-                                                    <span class="fa fa-plus"></span> Add More
-                                                </button>
-                                            </div>
+                                            {{--<div class="col-md-6">--}}
+                                                {{--<button type="button" id="add_document" style="width: 100px;margin: 0px;height: 40px;padding: 0!important;" class="btn btn-info repeater-button pull-left">--}}
+                                                    {{--<span class="fa fa-plus"></span> Add More--}}
+                                                {{--</button>--}}
+                                            {{--</div>--}}
                                         </div>
 
                                         <div id="educationRecords_0">
@@ -731,7 +731,7 @@
                                         <select name="payment" id="payment" class="form-control required payment">
                                             <option value="">-Select-</option>
                                             <option value="BankDeposit" selected>Bank Deposit</option>
-                                            <option value="SponsorDeposit">Sponsor Deposit</option>
+                                            {{--<option value="SponsorDeposit">Sponsor Deposit</option>--}}
                                             <option value="MobileMoneyDeposit">Mobile Money</option>
                                         </select>
 
@@ -799,7 +799,7 @@
 
                                             <label for="amount">Amount Deposit (frw)<font style="color: crimson">*</font></label>
 
-                                            <input type="number" value=15000 min=15000 name="bankDepositAmount" class="form-control required">
+                                            <input type="number" value=50000 min=50000 name="bankDepositAmount" class="form-control required">
 
 
                                             <p>
@@ -828,12 +828,12 @@
                                             <label>Sponsor Type</label>
                                             <select name="sponsorType" id="sponsorType" class="form-control sponsor required">
                                                 <option value="">-Choose Sponsorship-</option>
-                                                <option value="SelfSponsored" >Self Sponsored</option>
-                                                <option value="Parent" >Parent</option>
-                                                <option value="Guardian" >Guardian</option>
-                                                <option value="School" >School</option>
-                                                <option value="WorkPlace" >WorkPlace</option>
-                                                <option value="Others" >Others</option>
+                                                <option value="SelfSponsored" selected>Self Sponsored</option>
+                                                {{--<option value="Parent" >Parent</option>--}}
+                                                {{--<option value="Guardian" >Guardian</option>--}}
+                                                {{--<option value="School" >School</option>--}}
+                                                {{--<option value="WorkPlace" >WorkPlace</option>--}}
+                                                {{--<option value="Others" >Others</option>--}}
                                             </select>
                                             <div class="required" style="display: none" id="sponsorNameDiv">
                                                 <label>Sponsor Name</label>
@@ -853,7 +853,7 @@
 
                                             <label>Amount (frw)<font style="color: crimson">*</font></label>
 
-                                            <input type="number" name="sponsorDepositAmount" value=5000 min=5000 class="form-control required" placeholder="Amount">
+                                            <input type="number" name="sponsorDepositAmount" value=50000 min=50000 class="form-control required" placeholder="Amount">
 
 
                                             <p>
@@ -901,7 +901,7 @@
 
                                             <label for="amount">Amount (frw)</label>
 
-                                            <input type="number" name="mobileMoneyAmount" value=5000 min=5000 data-validation="required" class="form-control" id="amount" placeholder="Amount">
+                                            <input type="number" name="mobileMoneyAmount" value=50000 min=50000 data-validation="required" class="form-control" id="amount" placeholder="Amount">
 
                                         </div>
 
