@@ -13756,9 +13756,9 @@ var validator = form.validate({
         },
         passport: {
             accept: "Only jpeg, png and jpg formats are allowed!",
-            fileSize: "Photo should not be greater than 2 MBs!",
+            fileSize: "Photo should not be greater than 5 MBs!",
             checkDim: "Max-width(600pixels) and Max-height(600pixels)",
-            maxImageWidth: 'The image width should not exceed 200 pixels'
+            maxImageWidth: 'The image width should not exceed 400 pixels'
         },
         bankDepositAmount: {
             min: "Application fee should be 50000"
@@ -13878,9 +13878,9 @@ form.steps({
                     swal.fire({
                         position: 'top-end',
                         icon: 'success',
-                        title: 'Your Registration has been successfuly; Please check Your Email',
+                        title: 'Your Registration has been successfuly; Please check Your Email and wait confirmation Email',
                         showConfirmButton: false,
-                        timer: 5000
+                        timer: 30000
                     })
                     $('#loader-icon').hide();
                     $("#progress-bar").html('<div id="progress-status">Your Registration Completed Succfull, Check Your Email or Phone SMS</div>');
@@ -13929,8 +13929,8 @@ var memberValidator = memberForm.validate({
 
         passport: {
             accept: "image/*",
-            fileSize: 2100000,
-            maxImageWidth: 200,
+            fileSize: 5100000,
+            maxImageWidth: 2000,
             required: function() {
                 return $('#passportPhoto').val() == '';
             }

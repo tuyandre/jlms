@@ -340,8 +340,8 @@
                                         <div style="display: none" id="passportDiv">
                                             <img alt="Passport photo" id='preview' src="" />
                                             <span class="input-group-btn">
-                    <button class="btn btn-default passportUpload" type="button">Upload</button>
-                </span>
+                                                <button class="btn btn-default passportUpload" type="button">Upload</button>
+                                            </span>
                                         </div>
 
                                         <label>
@@ -642,7 +642,7 @@
                                             {{--<option value="Guardian" >Guardian</option>--}}
                                             {{--<option value="WorkPlace" >WorkPlace</option>--}}
                                             {{--<option value="School" >School</option>--}}
-                                            {{--<option value="Others" >Others</option>--}}
+                                            <option value="Others" >Others</option>
                                         </select>
                                         <div id="sponsorDetails" style="display: none">
 
@@ -833,7 +833,7 @@
                                                 {{--<option value="Guardian" >Guardian</option>--}}
                                                 {{--<option value="School" >School</option>--}}
                                                 {{--<option value="WorkPlace" >WorkPlace</option>--}}
-                                                {{--<option value="Others" >Others</option>--}}
+                                                <option value="Others" >Others</option>
                                             </select>
                                             <div class="required" style="display: none" id="sponsorNameDiv">
                                                 <label>Sponsor Name</label>

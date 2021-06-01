@@ -22,7 +22,7 @@ class ChangePassword implements Rule
         $lowercase = preg_match('@[a-z]@', $value);
         $number = preg_match('@\d@', $value);
 
-        return $uppercase && $lowercase && $number && \strlen($value) >= 8;
+        return $uppercase || $lowercase || $number || \strlen($value) >= 5;
     }
 
     /**

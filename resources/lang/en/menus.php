@@ -197,7 +197,7 @@ return array (
     ),
     'wishlist' =>
     array(
-        'title' => 'Wishlist'
+        'title' => 'Wish List'
     )
     ),
     'access' =>

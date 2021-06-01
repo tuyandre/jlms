@@ -156,7 +156,7 @@ class ApplicationController extends Controller
                 $amounts=$request["bankDepositAmount"];
                 $pay_type=0;
             }elseif (($request['payment']=="MobileMoneyDeposit")){
-                $amounts=$request['mobileMoneyPhoneNumber'];
+                $amounts=$request['mobileMoneyAmount'];
                 $pay_type=1;
             }
 

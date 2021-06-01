@@ -98,7 +98,7 @@
                     @if($footer_data->copyright_text->status == 1)
                     <div class="col-md-6">
                         <div class="copy-right-text">
-                            <p>Powered By <a href="https://www.jddauditors.com/" target="_blank" class="mr-4"> JDD AUDITORS</a>  {!!  $footer_data->copyright_text->text !!}</p>
+                            <p>Powered By <a href="https://www.jddauditors.com/" target="_blank" class="mr-4"> JDD & ASSOCIATES Ltd</a>  {!!  $footer_data->copyright_text->text !!}</p>
                         </div>
                     </div>
                     @endif
