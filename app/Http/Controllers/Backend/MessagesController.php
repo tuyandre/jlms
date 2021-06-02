@@ -20,10 +20,12 @@ class MessagesController extends Controller
         $thread="";
 
 
-        $teachers = User::role('teacher')->get()
+        $teachers = User::role(['teacher','student'])->get()
             ->where('id', '!=', auth()->user()->id)
             ->pluck('name', 'id');
-
+//        $students = User::role('student')->get()
+//            ->where('id', '!=', auth()->user()->id)
+//            ->pluck('name', 'id');
 
         auth()->user()->load('threads.messages.user');
 

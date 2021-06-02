@@ -10,6 +10,7 @@ use App\Models\MobilePayment;
 use App\Models\Order;
 use App\Models\OrderItem;
 use App\Notifications\Frontend\Auth\StudentRegistration;
+use App\Notifications\Frontend\Auth\WelcomeStudent;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -207,8 +208,33 @@ class ApplicationController extends Controller
                 }
 
             }
+            $name=$user->first_name." ".$user->last_name;
 
+            $data = array(
+                "sender"=>'+250788866742',
+                "recipients"=>$user->phone,
+                "message"=>"Welcome ".$name. "Your Registration well done Please wait Confirmation Email or SMS\n "
+            ,);
+            $url = "https://www.intouchsms.co.rw/api/sendsms/.json";
+            $data = http_build_query($data);
+            $username="tuyandre20";
+            $password="kamana1234567";
 
+            $ch = curl_init();
+            curl_setopt($ch,CURLOPT_URL, $url);
+            curl_setopt($ch, CURLOPT_USERPWD, $username . ":" . $password);
+            curl_setopt($ch,CURLOPT_POST,true);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER,1);
+            curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+            curl_setopt($ch,CURLOPT_POSTFIELDS, $data);
+            $result = curl_exec($ch);
+            $httpcode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+            curl_close($ch);
+//            if ($result) {
+//                return response()->json(['success' => "success"], 200);
+//            }else{
+//                return response()->json(['success' => "success"], 200);
+//            }
             if(config('access.users.registration_mail')) {
                 $this->sendAdminMail($user);
             }
@@ -230,7 +256,8 @@ class ApplicationController extends Controller
         foreach ($admins as $admin) {
             \Mail::to($admin->email)->send(new AdminRegistered($user));
         }
-        Notification::send($user, new StudentRegistration($user));
+        Notification::send($user, new WelcomeStudent($user));
+//        Notification::send($user, new StudentRegistration($user));
     }
     public function checkEmail(Request $request){
 
