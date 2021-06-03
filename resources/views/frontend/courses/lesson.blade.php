@@ -207,7 +207,7 @@
                                         <ul class="options-list pl-4">
                                             @foreach ($question->options as $option)
 
-                                                <li class="@if(($option->answered($test_result->id) != null && $option->answered($test_result->id) == 1) || ($option->correct == true)) correct @elseif($option->answered($test_result->id) != null && $option->answered($test_result->id) == 2) incorrect  @endif"> {{ $option->option_text }}
+                                                <li class="@if(($option->answered($test_result->id) != null && $option->answered($test_result->id) == 1)) correct @elseif($option->answered($test_result->id) != null && $option->answered($test_result->id) == 2) incorrect  @endif"> {{ $option->option_text }}
 
                                                     @if($option->correct == 1 && $option->explanation != null)
                                                         <p class="text-dark">
