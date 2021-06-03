@@ -25,6 +25,13 @@
                 </li>
             @endcan
             @if ($logged_in_user->isAdmin())
+                <li class="nav-item ">
+                    <a class="nav-link {{ $request->segment(1) == 'sponsorship' ? 'active' : '' }}"
+                       href="{{ route('admin.sponsorship.index') }}">
+                        <i class="nav-icon icon-user-following"></i>
+                        <span class="title">SponsorShip</span>
+                    </a>
+                </li>
                 <li class="nav-item nav-dropdown {{ active_class(Active::checkUriPattern(['user/reports*']), 'open') }}">
                     <a class="nav-link nav-dropdown-toggle {{ active_class(Active::checkUriPattern('admin/*')) }}"
                        href="#">

@@ -32,7 +32,18 @@ Route::group(['middleware' => 'role:administrator'], function () {
     Route::delete('teachers_perma_del/{id}', ['uses' => 'Admin\TeachersController@perma_del', 'as' => 'teachers.perma_del']);
     Route::post('teacher/status', ['uses' => 'Admin\TeachersController@updateStatus', 'as' => 'teachers.status']);
 
-//    ==== ORDER TRANSACTION PAYMENTS  ====//
+//    sponsorship
+    Route::resource('sponsorship', 'Admin\SponsorshipController');
+    Route::get('get-sponsorship-data', ['uses' => 'Admin\SponsorshipController@getData', 'as' => 'sponsorship.get_data']);
+    Route::get('sponsorship/show/{sponsor}',
+        ['uses' => 'Admin\SponsorshipController@show',
+            'as' => 'sponsorship.show']);
+    Route::delete('sponsorship/destroy/{id}',
+        ['uses' => 'Admin\SponsorshipController@destroy',
+            'as' => 'sponsorship.destroy']);
+
+
+    //    ==== ORDER TRANSACTION PAYMENTS  ====//
     Route::get('transaction/bank-deposit',
         ['uses' => 'Admin\PaymentController@bankDeposit',
          'as' => 'transaction.bankDeposit']);
