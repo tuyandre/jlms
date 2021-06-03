@@ -8,6 +8,7 @@ use App\Models\Bundle;
 use App\Models\Course;
 use App\Models\MobilePayment;
 use App\Models\Order;
+use App\Models\SponsorshipPayment;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Gate;
@@ -129,7 +130,11 @@ class OrderController extends Controller
             $mobile->status=1;
             $mobile->save();
         }
-
+        if($order->payment_type==2){
+            $sponsor=SponsorshipPayment::where('order_id','=',$order->id)->first();
+            $sponsor->status=1;
+            $sponsor->save();
+        }
         (new EarningHelper)->insert($order);
 
         //Generating Invoice

@@ -67,6 +67,8 @@
                                     {{trans('labels.backend.orders.fields.payment_type.bank') }}
                                 @elseif($order->payment_type == 1)
                                     {{trans('labels.backend.orders.fields.payment_type.mobile')}}
+                                @elseif($order->payment_type == 2)
+                                    {{trans('labels.backend.orders.fields.payment_type.sponsor')}}
                                 @else
                                     {{trans('labels.backend.orders.fields.payment_type.offline')}}
                                 @endif

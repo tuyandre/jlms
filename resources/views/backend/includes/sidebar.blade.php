@@ -43,11 +43,11 @@
                                href="{{ route('admin.transaction.mobileDeposit') }}">@lang('menus.backend.sidebar.payment.momo')
                             </a>
                         </li>
-{{--                        <li class="nav-item ">--}}
-{{--                            <a class="nav-link {{ $request->segment(3) == 'offline-payment' ? 'active' : '' }}"--}}
-{{--                               href="{{ route('admin.transaction.offlinePayment') }}">@lang('menus.backend.sidebar.payment.offline')--}}
-{{--                            </a>--}}
-{{--                        </li>--}}
+                        <li class="nav-item ">
+                            <a class="nav-link {{ $request->segment(3) == 'sponsor-payment' ? 'active' : '' }}"
+                               href="{{ route('admin.transaction.sponsorshipDeposit') }}">SponsorShip Payment
+                            </a>
+                        </li>
                     </ul>
                 </li>
                 <li class="nav-item ">

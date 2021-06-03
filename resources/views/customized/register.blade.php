@@ -660,9 +660,9 @@
 
                                             <input type="email" name="sponsorEmail" class="form-control email" id="emailSponsor" placeholder="sponsor@domain.com">
 
-                                            <label for="contactSponsor">Sponsor Contact <font style="color: crimson">*</font></label>
+                                            <label for="contactSponsor">Sponsor Contact/Phone <font style="color: crimson">*</font></label>
 
-                                            <input type="text" name="sponsorContact" class="form-control" id="contactSponsor" placeholder="eg... +250 754678564">
+                                            <input type="text" name="sponsorContact" class="form-control" id="contactSponsor" placeholder="+250 754678564">
                                         </div>
 
                                     </section>
@@ -731,8 +731,8 @@
                                         <select name="payment" id="payment" class="form-control required payment">
                                             <option value="">-Select-</option>
                                             <option value="BankDeposit" selected>Bank Deposit</option>
-                                            {{--<option value="SponsorDeposit">Sponsor Deposit</option>--}}
                                             <option value="MobileMoneyDeposit">Mobile Money</option>
+                                            <option value="SponsorDeposit">Sponsor Deposit</option>
                                         </select>
 
                                         <div id="bankDeposit">
@@ -825,20 +825,24 @@
                                             <label>Payment Date<font style="color: crimson">*</font></label>
 
                                             <input type="date" name="sponsorDepositDate" id="sponsorDepositDate" class="form-control required" placeholder="MM/DD/YYYY">
-                                            <label>Sponsor Type</label>
-                                            <select name="sponsorType" id="sponsorType" class="form-control sponsor required">
-                                                <option value="">-Choose Sponsorship-</option>
-                                                <option value="SelfSponsored" selected>Self Sponsored</option>
-                                                {{--<option value="Parent" >Parent</option>--}}
-                                                {{--<option value="Guardian" >Guardian</option>--}}
-                                                {{--<option value="School" >School</option>--}}
-                                                {{--<option value="WorkPlace" >WorkPlace</option>--}}
-                                                <option value="Others" >Others</option>
-                                            </select>
-                                            <div class="required" style="display: none" id="sponsorNameDiv">
+                                            {{--<label>Sponsor Type</label>--}}
+                                            {{--<select name="sponsorType" id="sponsorType" class="form-control sponsor required">--}}
+                                                {{--<option value="">-Choose Sponsorship-</option>--}}
+                                                {{--<option value="SelfSponsored" selected>Self Sponsored</option>--}}
+                                            {{----}}
+                                                {{--<option value="Others" >Others</option>--}}
+                                            {{--</select>--}}
+                                            <div class="required" style="display: block" id="sponsorNameDiv">
                                                 <label>Sponsor Name</label>
+                                                <?php
+                                                $sponsors=\App\Models\Sponsorship::all();
+                                                ?>
                                                 <select name="sponsorName" id="sponsorName" class="form-control sponsor required">
-                                                    <option value="" selected>Sponsor Name</option>
+                                                    <option value="" selected>Select Sponsor Name</option>
+                                                    <option value="0">Use Current Sponsor Information</option>
+                                                 @foreach($sponsors as $sponsor)
+                                                    <option value="{{$sponsor->id}}" >{{$sponsor->sponsor_name}}</option>
+                                                     @endforeach
                                                 </select>
                                             </div>
 
@@ -846,7 +850,7 @@
 
                                             <input type="text" class="form-control required" name="sponsorDepositPaymentRefNo" placeholder="Payment Ref No">
 
-                                            <div class="required" style="display: none" id="depositorNameDiv">
+                                            <div class="required" style="display: block" id="depositorNameDiv">
                                                 <label for="depositor">Depositor's Names<font style="color: crimson">*</font></label>
                                                 <input type="text" name="sponsorDepositorNames" class="form-control required" placeholder="Depositor's Name">
                                             </div>

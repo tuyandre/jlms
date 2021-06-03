@@ -13880,7 +13880,7 @@ form.steps({
                         icon: 'success',
                         title: 'Your Registration has been successfuly; Please check Your Email and wait confirmation Email',
                         showConfirmButton: false,
-                        timer: 30000
+                        timer: 60000
                     })
                     $('#loader-icon').hide();
                     $("#progress-bar").html('<div id="progress-status">Your Registration Completed Succfull, Check Your Email or Phone SMS</div>');
@@ -14041,7 +14041,7 @@ var memberValidator = memberForm.validate({
             accept: "Only jpeg, png and jpg formats are allowed!",
             fileSize: "Photo should not be greater than 2 MBs!",
             checkDim: "Max-width(600pixels) and Max-height(600pixels)",
-            maxImageWidth: 'The image width should not exceed 200 pixels'
+            maxImageWidth: 'The image width should not exceed 400 pixels'
         },
         bankDepositAmount: {
             min: "Application fee should be 50000"
@@ -15463,7 +15463,7 @@ function readURL(input, tar) {
                 img.on('load', function() {
                     var imageWidth = img.width();
                     $('#passport').data('imageWidth', imageWidth);
-                    if (imageWidth > 200) {
+                    if (imageWidth > 1200) {
                         $(".passportUpload").css({
                             'display': 'none'
                         });
@@ -15501,7 +15501,7 @@ function readMemberURL(input, tar) {
                 img.on('load', function() {
                     var imageWidth = img.width();
                     $('#passport').data('imageWidth', imageWidth);
-                    if (imageWidth > 200) {
+                    if (imageWidth > 1200) {
                         $(".passportUpload").css({
                             'display': 'none'
                         });

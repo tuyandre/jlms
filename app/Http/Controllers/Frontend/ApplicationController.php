@@ -9,6 +9,8 @@ use App\Models\BankPayment;
 use App\Models\MobilePayment;
 use App\Models\Order;
 use App\Models\OrderItem;
+use App\Models\Sponsorship;
+use App\Models\SponsorshipPayment;
 use App\Notifications\Frontend\Auth\StudentRegistration;
 use App\Notifications\Frontend\Auth\WelcomeStudent;
 use Illuminate\Http\Request;
@@ -111,6 +113,7 @@ class ApplicationController extends Controller
     }
     public function submitApplication (Request $request){
 
+//        return response()->json(['customers' => $request->all()], 200);
         $reg=$this->getReg();
 
         $length = 10;
@@ -143,6 +146,19 @@ class ApplicationController extends Controller
             'information'=>$request['learnAboutUs'],
             'password' => Hash::make($password),
         ]);
+        if ($request['sponsorshipType']!="SelfSponsored"){
+
+            $sponsor = Sponsorship::firstOrCreate(
+                [
+                    'sponsor_name'             => $request['sponsorNameReg'],
+                ],
+                [
+                    'sponsor_name'            => $request['sponsorNameReg'],
+                    'sponsor_email'             => $request['sponsorEmail'],
+                    'sponsor_contact'             => $request['sponsorContact'],
+                ]
+            );
+        }
         if ($user){
 
             $userForRole = User::find($user->id);
@@ -159,6 +175,9 @@ class ApplicationController extends Controller
             }elseif (($request['payment']=="MobileMoneyDeposit")){
                 $amounts=$request['mobileMoneyAmount'];
                 $pay_type=1;
+            }elseif (($request['payment']=="SponsorDeposit")){
+                $amounts=$request['sponsorDepositAmount'];
+                $pay_type=2;
             }
 
             $order = new Order();
@@ -205,6 +224,22 @@ class ApplicationController extends Controller
                     $payment->mobileMoneyPhoneNumber=$request['mobileMoneyPhoneNumber'];
                     $payment->mobileMoneyAmount=$request['mobileMoneyAmount'];
                     $payment->save();
+                }elseif ($request['payment']=="SponsorDeposit"){
+                    $sponsor_id=$request['sponsorName'];
+                    if ($request['sponsorName']==0){
+                        $sponsor_id=$sponsor->id;
+                    }
+                    $payment=new SponsorshipPayment();
+                    $payment->user_id=$user->id;
+                    $payment->order_id=$order->id;
+                    $payment->sponsor_id=$sponsor_id;
+                    $payment->service="Registration";
+                    $payment->sponsorDepositPaymentRefNo=$request["sponsorDepositPaymentRefNo"];
+                    $payment->sponsorDepositAmount=$request["sponsorDepositAmount"];
+                    $payment->sponsorDepositDate=$request["sponsorDepositDate"];
+                    $payment->sponsorAttachment=$request["sponsorAttachment"];
+                    $payment->save();
+
                 }
 
             }

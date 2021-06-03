@@ -8,6 +8,7 @@ use App\Models\BankPayment;
 use App\Models\Bundle;
 use App\Models\MobilePayment;
 use App\Models\Order;
+use App\Models\SponsorshipPayment;
 use Hashids\Hashids;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Response;
@@ -157,6 +158,155 @@ class PaymentController extends Controller
         return abort(404);
     }
 
+
+
+//    sposnorship function
+
+    public function sponsorshipDeposit(){
+        return view("backend.transactions.sponsorship_deposit");
+    }
+    public function sponsorshipGetData(Request $request){
+        $bank=SponsorshipPayment::with(['User'])
+            ->orderBy('updated_at', 'desc')
+            ->get();
+
+//        return response()->json(['result' => $bank], 200);
+        return DataTables::of($bank)
+            ->addIndexColumn()
+            ->addColumn('actions', function ($q) use ($request) {
+                $view = "";
+
+                $view = view('backend.datatable.action-view')
+                    ->with(['route' => route('admin.transactions.showSponsorshipPayment', ['order' => $q->id])])->render();
+
+                if ($q->status == 0) {
+//                    $reject_order = view('backend.datatable.action-reject')
+//                        ->with(['route' => route('admin.orders.complete', ['order' => $q->id])])
+//                        ->render();
+                    $complete_order = view('backend.datatable.action-accept')
+                        ->with(['route' => route('admin.orders.complete', ['order' => $q->order_id])])
+                        ->render();
+                    $view .= $complete_order;
+//                    $view .= $reject_order;
+                }
+
+                if ($q->status == 0) {
+                    $delete = view('backend.datatable.action-delete')
+                        ->with(['route' => route('admin.orders.destroy', ['order' => $q->order_id])])
+                        ->render();
+
+                    $view .= $delete;
+                }
+
+                return $view;
+
+            })
+            ->addColumn('sponsor', function ($q) {
+                return $q->sponsor->sponsor_name;
+            })
+            ->addColumn('user_name', function ($q) {
+                return $q->user->full_name;
+            })
+            ->addColumn('date', function ($q) {
+                return $q->updated_at->diffforhumans();
+            })
+            ->addColumn('payment', function ($q) {
+                if ($q->status == 0) {
+                    $payment_status = trans('labels.backend.orders.fields.payment_status.pending');
+                } elseif ($q->status == 1) {
+                    $payment_status = trans('labels.backend.orders.fields.payment_status.completed');
+                } else {
+                    $payment_status = trans('labels.backend.orders.fields.payment_status.failed');
+                }
+                return $payment_status;
+            })
+            ->editColumn('amount', function ($q) {
+                return  floatval($q->sponsorDepositAmount);
+            })
+            ->rawColumns(['items', 'actions'])
+            ->make();
+
+    }
+    public function completeSponsorshipDeposit(Request $request){
+        $sponsor = SponsorshipPayment::findOrfail($request->sponsor_id);
+        $sponsor->status = 1;
+        $sponsor->save();
+
+        $order = Order::findOrfail($sponsor->order_id);
+        $order->status = 1;
+        $order->save();
+
+        (new EarningHelper)->insert($order);
+
+        //Generating Invoice
+        generateInvoice($order);
+
+        foreach ($order->items as $orderItem) {
+            //Bundle Entries
+            if($orderItem->item_type == Bundle::class){
+                foreach ($orderItem->item->courses as $course){
+                    $course->students()->attach($order->user_id);
+                }
+            }
+            $orderItem->item->students()->attach($order->user_id);
+        }
+        return back()->withFlashSuccess(trans('alerts.backend.general.updated'));
+    }
+    public function showSponsorshipPayment($id)
+    {
+        $order = SponsorshipPayment::with(['Order','Sponsor'])->findOrFail($id);
+//        $order = MobilePayment::findOrFail($id);
+        return view('backend.transactions.sponsorship_detail', compact('order'));
+    }
+
+    public function destroySponsorshipPayment($id){
+        $sponsor = BankPayment::findOrFail($id);
+        $sponsor->delete();
+
+
+        $order = Order::findOrFail($sponsor->order_id);
+        $order->items()->delete();
+        $order->delete();
+
+        return redirect()->route('admin.orders.index')->withFlashSuccess(trans('alerts.backend.general.deleted'));
+
+    }
+
+
+    public function viewSponsorshipReceipt(Request $request){
+        if (auth()->check()) {
+            $hashid = new Hashids('',5);
+            $order_id = $hashid->decode($request->code);
+            $order_id = array_first($order_id);
+
+            $order = SponsorshipPayment::findOrFail($order_id);
+            if (auth()->user()->isAdmin() || ($order->user_id == auth()->user()->id)) {
+                return response()->file(public_path() . "/students/payments/" . $order->sponsorAttachment);
+
+            }
+        }
+        return abort(404);
+    }
+    public function downloadSponsorshipReceipt(Request $request){
+        if (auth()->check()) {
+            $hashid = new Hashids('',5);
+            $order_id = $hashid->decode($request->order);
+            $order_id = array_first($order_id);
+
+            $order = SponsorshipPayment::findOrFail($order_id);
+            if (auth()->user()->isAdmin() || ($order->user_id == auth()->user()->id)) {
+                $file = public_path() . "/students/payments/" . $order->sponsorAttachment;
+                return Response::download($file);
+            }
+        }
+        return abort(404);
+    }
+
+
+
+
+
+//        mobile money functions
     public function mobileDeposit(){
         return view("backend.transactions.mobilePayments");
     }

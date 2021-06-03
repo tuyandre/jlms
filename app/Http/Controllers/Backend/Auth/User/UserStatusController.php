@@ -4,9 +4,10 @@ namespace App\Http\Controllers\Backend\Auth\User;
 
 use App\Models\Auth\User;
 use App\Http\Controllers\Controller;
+use App\Notifications\Frontend\Auth\StudentRegistration;
 use App\Repositories\Backend\Auth\UserRepository;
 use App\Http\Requests\Backend\Auth\User\ManageUserRequest;
-
+use Illuminate\Support\Facades\Notification;
 /**
  * Class UserStatusController.
  */
@@ -58,7 +59,12 @@ class UserStatusController extends Controller
     public function mark(ManageUserRequest $request, User $user, $status)
     {
         $this->userRepository->mark($user, $status);
+        if (!$user->isConfirmed()){
+            $user->confirmed=1;
+            $user->save();
+        }
         if ($status==1){
+
             Notification::send($user, new StudentRegistration($user));
 
             $name=$user->first_name." ".$user->last_name;

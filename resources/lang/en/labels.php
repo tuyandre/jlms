@@ -85,6 +85,7 @@ return array (
           'paypal' => 'Paypal',
           'bank' => 'Bank Deposit/Transfer',
           'mobile' => 'Mobile Money Payment',
+          'sponsor' => 'SponsorShip Deposit Payment',
           'offline' => 'Offline',
           'title' => 'Payment Type',
         ),

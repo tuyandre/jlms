@@ -46,8 +46,12 @@
                             <th>@lang('labels.backend.orders.fields.items')</th>
                             <td>
                                 @foreach($order->order->items as $key=>$item)
-                                    @php $key++ @endphp
-                                    {{$key.'. '.$item->item->title}}<br>
+                                    @if($item->item_type=="Registration")
+                                        {{$item->item_type}}
+                                    @else
+                                        @php $key++ @endphp
+                                        {{$key.'. '.$item->item->title}}<br>
+                                    @endif
                                 @endforeach
                             </td>
                         </tr>
@@ -58,11 +62,14 @@
                         <tr>
                             <th>@lang('labels.backend.orders.fields.payment_type.title')</th>
                             <td>
+                                {{--{{$order->order->payment_type}}--}}
 
                                 @if($order->order->payment_type == 0)
                                     {{trans('labels.backend.orders.fields.payment_type.bank') }}
                                 @elseif($order->order->payment_type == 1)
                                     {{trans('labels.backend.orders.fields.payment_type.mobile')}}
+                                @elseif($order->order->payment_type == 2)
+                                    {{trans('labels.backend.orders.fields.payment_type.sponsor')}}
                                 @else
                                     {{trans('labels.backend.orders.fields.payment_type.offline')}}
                                 @endif
@@ -84,35 +91,47 @@
                                         </form>
                                     </a>
                                 @elseif($order->status == 1)
-                                    {{trans('labels.backend.orders.fields.payment_status.completed')}}
+                                    <span class="btn btn-success">   {{trans('labels.backend.orders.fields.payment_status.completed')}}</span>
                                 @else
+                                    <span class="btn btn-warning">
                                     {{trans('labels.backend.orders.fields.payment_status.failed')}}
+                                    </span>
                                 @endif
 
                             </td>
                         </tr>
 
                         <tr>
-                            <th>Payment Date</th>
-                            <td>{{ $order->mobileMoneyDate }}</td>
+                            <th>Sponsor Name</th>
+                            <td>{{ $order->sponsor->sponsor_name}}</td>
                         </tr>
                         <tr>
-                            <th>Depositor/Payer Name</th>
-                            <td>{{ $order->mobileMoneyDepositorNames }}</td>
+                            <th>Sponsor Payment Ref</th>
+                            <td>{{ $order->sponsorDepositPaymentRefNo}}</td>
                         </tr>
                         <tr>
-                            <th>Telephone Number</th>
-                            <td>{{ $order->mobileMoneyPhoneNumber }}</td>
-                        </tr>
-                        <tr>
-                            <th>Reference Number</th>
-                            <td>{{ $order->mobileMoneyPaymentRefNo }}</td>
+                            <th>Sponsor Deposit Date</th>
+                            <td>{{ $order->sponsorDepositDate}}</td>
                         </tr>
                         <tr>
                             <th>@lang('labels.backend.orders.fields.date')</th>
                             <td>{{ $order->created_at->format('d M, Y | h:i A') }}</td>
                         </tr>
-
+                        <tr>
+                            <th>View Bank Receipt</th>
+                            <td>
+                                @php
+                                    $hashids = new \Hashids\Hashids('',5);
+                                         $order_id = $hashids->encode($order->id);
+                                @endphp
+                                <a class="btn btn-success" target="_blank" href="{{route('admin.sponsorship_receipt.view', ['code' => $order_id])}}">
+                                    View Receipt
+                                </a>
+                                <a class="btn btn-primary" href="{{route('admin.sponsorship_receipt.download',['order'=>$order_id])}}">
+                                    Download Receipt
+                                </a>
+                            </td>
+                        </tr>
 
                     </table>
                 </div>

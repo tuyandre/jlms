@@ -42,7 +42,7 @@ class WelcomeStudent extends Notification
     {
         return (new MailMessage)
                     ->line('Welcome on JDD & ASSOCIATES Ltd.')
-                    ->line($this->user->first_name." ".$this->user->last_name.'Your Registered Successfully Please wait Confirmation Email or SMS with credential.')
+                    ->line($this->user->first_name." ".$this->user->last_name.' '.'Your Registered Successfully Please wait Confirmation Email or SMS with credential.')
                     ->action('Visit Websites', url('/'))
                     ->line('Thank you for using our application!');
     }

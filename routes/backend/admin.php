@@ -53,7 +53,28 @@ Route::group(['middleware' => 'role:administrator'], function () {
     Route::get('bank_receipt/download/{order}', ['uses' => 'Admin\PaymentController@downloadBankReceipt', 'as' => 'bank_receipt.download']);
     Route::get('bank_receipt/view/{code}', ['uses' => 'Admin\PaymentController@viewBankReceipt', 'as' => 'bank_receipt.view']);
 
+//    sponsorship payments
+    Route::get('transaction/sponsorship-deposit',
+        ['uses' => 'Admin\PaymentController@sponsorshipDeposit',
+            'as' => 'transaction.sponsorshipDeposit']);
+    Route::get('sponsorship-deposit/get-data',
+        ['uses' => 'Admin\PaymentController@sponsorshipGetData',
+            'as' => 'transaction.sponsorship.getData']);
+    Route::get('sponsorship-payment/show/{order}',
+        ['uses' => 'Admin\PaymentController@showSponsorshipPayment',
+            'as' => 'transactions.showSponsorshipPayment']);
 
+
+    Route::delete('sponsorship-payment/destroy/{id}',
+        ['uses' => 'Admin\PaymentController@destroySponsorshipPayment',
+            'as' => 'transaction.destroySponsorshipPayment']);
+
+
+    Route::get('sponsorship_receipt/download/{order}', ['uses' => 'Admin\PaymentController@downloadSponsorshipReceipt', 'as' => 'sponsorship_receipt.download']);
+    Route::get('sponsorship_receipt/view/{code}', ['uses' => 'Admin\PaymentController@viewSponsorshipReceipt', 'as' => 'sponsorship_receipt.view']);
+
+
+//    mobile money payment
     Route::get('transaction/mobile-deposit',
         ['uses' => 'Admin\PaymentController@mobileDeposit',
             'as' => 'transaction.mobileDeposit']);
