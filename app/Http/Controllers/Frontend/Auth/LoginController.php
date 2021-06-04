@@ -77,12 +77,13 @@ class LoginController extends Controller
             if($authSuccess) {
                 $request->session()->regenerate();
                 if(auth()->user()->active > 0){
-                    if(auth()->user()->isAdmin()){
-                        $redirect = 'dashboard';
-                    }else{
-
-                        $redirect = 'back';
-                    }
+                    $redirect = 'dashboard';
+//                    if(auth()->user()->isAdmin()){
+//                        $redirect = 'dashboard';
+//                    }else{
+//
+//                        $redirect = 'back';
+//                    }
                     auth()->user()->update([
                         'last_login_at' => Carbon::now()->toDateTimeString(),
                         'last_login_ip' => $request->getClientIp()

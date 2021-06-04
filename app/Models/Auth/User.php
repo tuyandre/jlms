@@ -6,6 +6,7 @@ use App\Models\Bundle;
 use App\Models\Certificate;
 use App\Models\ChapterStudent;
 use App\Models\Course;
+use App\Models\EducationBackground;
 use App\Models\Invoice;
 use App\Models\Lesson;
 use App\Models\LessonSlotBooking;
@@ -123,7 +124,10 @@ class User extends Authenticatable
         'confirmed' => 'boolean',
     ];
 
-
+    public function EducationBackground()
+    {
+        return $this->hasOne(EducationBackground::class,'user_id');
+    }
 
     public function lessons()
     {

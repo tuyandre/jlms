@@ -17,7 +17,8 @@ class AddHelpasToUsersTable extends Migration
             $table->string('program')->nullable();
             $table->string('username')->unique()->nullable();
             $table->string('helpas')->nullable();
-            $table->string('nid')->unique()->nullable();
+            $table->string('nid')->nullable();
+//            $table->string('nid')->unique()->nullable();
             $table->string('education')->nullable();
             $table->string('sponsorship')->default('SelfSponsored');
             $table->integer('payment_mode')->default(0);

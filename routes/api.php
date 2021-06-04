@@ -16,6 +16,8 @@ use Illuminate\Http\Request;
 //Route::middleware('auth:api')->get('/user', function (Request $request) {
 //    return $request->user();
 //});
+Route::post('jdd/test/curl', 'TestController@testCurl');
+Route::post('jdd/test/checkEmail', 'TestController@checkEmail');
 
 
 Route::group(['prefix' => 'v1','namespace'=>'v1'],function (){

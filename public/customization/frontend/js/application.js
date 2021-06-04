@@ -13607,18 +13607,15 @@ var validator = form.validate({
         email: {
             required: true,
             email: true,
-            remote: {
-                url: icparContext + "/studentApplication/checkEmail",
-                type: 'get',
-                data: {
-                    email: function() {
-                        return $("#email").val();
-                    },
-                    program: function() {
-                        return $("#program").val();
-                    }
-                }
-            }
+            // remote: {
+            //     url: "/jdd/studentApplication/checkEmail",
+            //     type: 'get',
+            //     data: {
+            //         email: function() {
+            //             return $("#email").val();
+            //         }
+            //     }
+            // }
         },
         bankDepositDate: {
 
@@ -13739,7 +13736,7 @@ var validator = form.validate({
         },
         sponsorID: {
             required: function() {
-                return ($('#sponsorshipType').val() == 'School') || ($('#sponsorshipType').val() == 'WorkPlace');
+                return ($('#sponsorshipType').val() == 'Sponsored');
             }
 
         }
@@ -13751,7 +13748,7 @@ var validator = form.validate({
             minlength: 'Please enter a valid ID No!'
         },
         email: {
-            remote: "This email is already registered!",
+            // remote: "This email is already registered!",
             email: 'Please use a valid email address!'
         },
         passport: {
@@ -13855,40 +13852,55 @@ form.steps({
             confirmButtonText: 'Yes, Send It!'
         }).then((result) => {
             if (result.isConfirmed) {
-                Swal.fire(
-                    'Sent!',
-                    'Your Your Registration Sent.',
-                    'success'
-                )
-            }
-        })
-        $("#progress-bar").width('0%');
-        $('#loader-icon').show();
-        var form = $(this);
-        $("#progress-bar").width('0%');
-        $.ajax({
-            type: $(form).attr('method'),
-            url: $(form).attr('action'),
-            data: $(form).serialize(),
-            dataType : 'json'
-        })
-            .done(function (response) {
-                console.log(response);
-                if (response.success == 'success') {
-                    swal.fire({
-                        position: 'top-end',
-                        icon: 'success',
-                        title: 'Your Registration has been successfuly; Please check Your Email and wait confirmation Email',
-                        showConfirmButton: false,
-                        timer: 60000
-                    })
-                    $('#loader-icon').hide();
-                    $("#progress-bar").html('<div id="progress-status">Your Registration Completed Succfull, Check Your Email or Phone SMS</div>');
 
-                    window.location.href = "/";
-                    // window.location="/jdd-portal/Student/home";
-                    // window.location="/jdd-portal/Student/home";
-                } else {
+                $("#progress-bar").width('0%');
+                $('#loader-icon').show();
+                var form = $(this);
+                $("#progress-bar").width('0%');
+                $.ajax({
+                    type: $(form).attr('method'),
+                    url: $(form).attr('action'),
+                    data: $(form).serialize(),
+                    dataType : 'json'
+                })
+                    .done(function (response) {
+                        console.log(response);
+                        if (response.success == 'success') {
+                            swal.fire({
+                                position: 'top-end',
+                                icon: 'success',
+                                title: 'Your Registration has been successfuly; Please check Your Email and wait confirmation Email',
+                                showConfirmButton: true,
+                                timer: 60000
+                            })
+                            $('#loader-icon').hide();
+                            $("#progress-bar").html('<div id="progress-status">Your Registration Completed Succfull, Check Your Email or Phone SMS</div>');
+
+                            window.location.href = "/";
+                            // window.location="/jdd-portal/Student/home";
+                            // window.location="/jdd-portal/Student/home";
+                        }else if(response.success == 'exist'){
+                            swal.fire({
+                                icon: 'warning',
+                                title: 'Oops...',
+                                text: 'Your Registration Email  Already Exist!'
+                            })
+                            // alert('Your Registration not  Completed, Please try Again');
+                            $('#loader-icon').hide();
+                            $("#progress-bar").html('<div id="progress-status">Your Registration not  Completed, Email Already exist</div>');
+
+                        } else {
+                            swal.fire({
+                                icon: 'warning',
+                                title: 'Oops...',
+                                text: 'Your Registration not  Completed, Please try Again!'
+                            })
+                            // alert('Your Registration not  Completed, Please try Again');
+                            $('#loader-icon').hide();
+                            $("#progress-bar").html('<div id="progress-status">Your Registration not  Completed, Please try Again</div>');
+
+                        }
+                    }).fail(function(response){
                     swal.fire({
                         icon: 'warning',
                         title: 'Oops...',
@@ -13896,10 +13908,22 @@ form.steps({
                     })
                     // alert('Your Registration not  Completed, Please try Again');
                     $('#loader-icon').hide();
-                    $("#progress-bar").html('<div id="progress-status">Your Registration not  Completed, Please try Again</div>');
+                    $("#progress-bar").html('<div id="progress-status">Your Registration not  Completed, Please try Again!</div>');
 
-                }
-            });
+                });
+
+
+
+
+
+                // Swal.fire(
+                //     'Sent!',
+                //     'Your Your Registration Sent.',
+                //     'success'
+                // )
+            }
+        })
+
         return false;
         form.submit();
     }
@@ -14215,15 +14239,15 @@ var sponsorDeposit = $('#sponsorDeposit');
 if (sponsorDeposit.length > 0) {
     $('#sponsorType').on('change', function() {
         $('#sponsorName').find('option').remove();
-        if ((this.value === 'School') || (this.value === 'WorkPlace')) {
+        if (this.value === 'Sponsored') {
             var data = new FormData();
             data.append("sponsorType", this.value);
             $.ajax({
-                url: icparContext + "/home/getSponsorsList",
+                url:"/jdd/sponsorship/home/getSponsorsList",
                 cache: false,
                 processData: false,
                 contentType: false,
-                type: 'POST',
+                type: 'GET',
                 success: function(items, status, req) {
                     $('#sponsorName').append($('<option>', {
                         value: '',
@@ -14232,7 +14256,7 @@ if (sponsorDeposit.length > 0) {
                     $.each(items, function(i, item) {
                         $('#sponsorName').append($('<option>', {
                             value: item.id,
-                            text: item.name
+                            text: item.sponsor_name
                         }));
                     });
                 },
@@ -14264,24 +14288,25 @@ if (studentSponsor.length > 0) {
         $('#emailSponsor').attr('placeholder', this.value + ' email');
         $('#contactSponsor').attr('placeholder', this.value + ' contact');
         $('#sponsorNameMis').find('option').remove();
-        if ((this.value === 'School') || (this.value === 'WorkPlace')) {
+        if ((this.value === 'Sponsored')) {
             var data = new FormData();
             data.append("sponsorType", this.value);
             $.ajax({
-                url: icparContext + "/home/getSponsorsList",
+                url:"/jdd/sponsorship/home/getSponsorsList",
                 cache: false,
                 processData: false,
                 contentType: false,
-                type: 'POST',
+                type: 'GET',
                 success: function(items, status, req) {
+                    console.log(items.sponsors);
                     $('#sponsorNameMis').append($('<option>', {
                         value: '',
                         text: 'Select ' + $('#sponsorshipType').val()
                     }));
-                    $.each(items, function(i, item) {
+                    $.each(items.sponsors, function(i, item) {
                         $('#sponsorNameMis').append($('<option>', {
                             value: item.id,
-                            text: item.name
+                            text: item.sponsor_name
                         }));
                     });
                 },
@@ -14293,6 +14318,9 @@ if (studentSponsor.length > 0) {
             $('#sponsor_names').css({
                 'display': 'none'
             });
+            $('#sponsorTypeDetail').css({
+                'display': 'none'
+            })
             $('#sponsorNameMis').css({
                 'display': 'block'
             })
@@ -14300,6 +14328,9 @@ if (studentSponsor.length > 0) {
             $('#sponsor_names').css({
                 'display': 'block'
             });
+            $('#sponsorTypeDetail').css({
+                'display': 'block'
+            })
             $('#sponsorNameMis').css({
                 'display': 'none'
             })

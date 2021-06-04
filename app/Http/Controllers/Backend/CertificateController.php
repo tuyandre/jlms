@@ -65,7 +65,7 @@ class CertificateController extends Controller
 
             $pdf = \PDF::loadView('certificate.index', compact('data'))->setPaper('', 'landscape');
 
-            $pdf->save(public_path('storage/certificates/' . $certificate_name));
+            $pdf->save(public_path('/storage/certificates/' . $certificate_name));
 
             return back()->withFlashSuccess(trans('alerts.frontend.course.completed'));
         }

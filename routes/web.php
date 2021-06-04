@@ -22,7 +22,8 @@ Route::get('/studentApplication/getApplicationFee/program/{program}','Frontend\A
 Route::get('/jdd-portal/jsms/adminLogin','Frontend\ApplicationController@getAdminLogin')->name('frontend.auth.adminLogin');
 Route::get('/jdd-portal/jsms/adminRegister','Frontend\ApplicationController@getAdminRegister')->name('frontend.auth.getAdminRegister');
 
-
+Route::get('/jdd/sponsorship/home/getSponsorsList','Frontend\ApplicationController@getSponsorList')->name('frontend.getSponsorList');
+Route::get('/jdd/studentApplication/checkEmail','Frontend\ApplicationController@checkEmail')->name('frontend.checkEmail');
 
 Route::post('/JSMS/submitApplication','Frontend\ApplicationController@submitApplication')->name('application.jsms.submitApplication');
 

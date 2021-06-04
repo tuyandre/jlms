@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Mail\Frontend\Auth\AdminRegistered;
 use App\Models\Auth\User;
 use App\Models\BankPayment;
+use App\Models\EducationBackground;
 use App\Models\MobilePayment;
 use App\Models\Order;
 use App\Models\OrderItem;
@@ -87,7 +88,10 @@ class ApplicationController extends Controller
             return response()->json(['amount' =>50000 ], 200);
         }
     }
-
+    public function getSponsorList(){
+        $sponsor=Sponsorship::all();
+        return response()->json(['sponsors' =>$sponsor ], 200);
+    }
     public function testApplication(Request $request){
         $currentYear=date("Y");
         $last2 = DB::table('student_infos')->orderBy('id', 'DESC')->first();
@@ -101,17 +105,20 @@ class ApplicationController extends Controller
         $currentYear=date("y");
         if ($last2){
             $count=($last2->id)+1;
-            $currentId=str_pad($count, 6, '0', STR_PAD_LEFT);
+            $currentId=str_pad($count, 4, '0', STR_PAD_LEFT);
             $reg="JDD/".$currentId."/".$currentYear;
 
         }else{
             $count=1;
-            $currentId=str_pad($count, 6, '0', STR_PAD_LEFT);
+            $currentId=str_pad($count, 4, '0', STR_PAD_LEFT);
             $reg="JDD/".$currentId."/".$currentYear;
         }
         return $reg;
     }
     public function submitApplication (Request $request){
+        if (User::where('email', $request['email'])->count() > 0) {
+            return response()->json(['success' => "exist"], 200);
+        }
 
 //        return response()->json(['customers' => $request->all()], 200);
         $reg=$this->getReg();
@@ -146,7 +153,7 @@ class ApplicationController extends Controller
             'information'=>$request['learnAboutUs'],
             'password' => Hash::make($password),
         ]);
-        if ($request['sponsorshipType']!="SelfSponsored"){
+        if ($request['sponsorshipType']!="SelfSponsored"&& $request['sponsorshipType']!="Sponsored"){
 
             $sponsor = Sponsorship::firstOrCreate(
                 [
@@ -166,6 +173,17 @@ class ApplicationController extends Controller
             $userForRole->confirmation_code = md5(uniqid(rand(), true));;
             $userForRole->save();
             $userForRole->assignRole('student');
+
+            $education=new EducationBackground();
+            $education->user_id=$user->id;
+            $education->degree=$request['educationLevel'];
+            $education->institutions=$request['educationRecordAttachment_0_institution'];
+            $education->subjects=$request['educationRecordAttachment_0_name'];
+            $education->certificates=$request['educationRecordAttachment_0_file'];
+            $education->professional=$request['professionalCourse'];
+            $education->attachments=$request['professionalAttachment'];
+            $education->save();
+
 
             $amounts=0;
             $pay_type=0;
@@ -243,39 +261,33 @@ class ApplicationController extends Controller
                 }
 
             }
-//            $name=$user->first_name." ".$user->last_name;
-//
-//            $data = array(
-//                "sender"=>'+250788866742',
-//                "recipients"=>$user->phone,
-//                "message"=>"Welcome ".$name. "Your Registration well done Please wait Confirmation Email or SMS\n "
-//            ,);
-//            $url = "https://www.intouchsms.co.rw/api/sendsms/.json";
-//            $data = http_build_query($data);
-//            $username="tuyandre20";
-//            $password="kamana1234567";
-//
-//            $ch = curl_init();
-//            curl_setopt($ch,CURLOPT_URL, $url);
-//            curl_setopt($ch, CURLOPT_USERPWD, $username . ":" . $password);
-//            curl_setopt($ch,CURLOPT_POST,true);
-//            curl_setopt($ch, CURLOPT_RETURNTRANSFER,1);
-//            curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
-//            curl_setopt($ch,CURLOPT_POSTFIELDS, $data);
-//            $result = curl_exec($ch);
-//            $httpcode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-//            curl_close($ch);
-//            if ($result) {
-//                return response()->json(['success' => "success"], 200);
-//            }else{
-//                return response()->json(['success' => "success"], 200);
-//            }
             if(config('access.users.registration_mail')) {
                 $this->sendAdminMail($user);
             }
 
+            if(function_exists('curl_init') === false){
+                return response()->json(['success' => "success"], 200);
+            }
 
-//            Auth::login($user);
+            $name=$user->first_name." ".$user->last_name;
+            $student_message="Welcome ".$name."  ". "Your Registration well done  on JDD & ASSOCIATES Ltd Please wait Confirmation Email or SMS\n ";
+            $this->sendMessage($user->phone,$student_message);
+
+            if ($request['payment']=="SponsorDeposit") {
+                $sponsor_name="";
+                $sponsor_phone="";
+                $sponsor_id = $request['sponsorName'];
+                if ($sponsor_id == 0) {
+                    $sponsor_name .=$sponsor->sponsor_name;
+                    $sponsor_phone .=$sponsor->sponsor_contact;
+                }else{
+                    $ss=Sponsorship::find($sponsor_id);
+                    $sponsor_name .=$ss->sponsor_name;
+                    $sponsor_phone .=$ss->sponsor_contact;
+                }
+                $sponsor_message="Hello ".$sponsor_name." "."You get This SMS Because your student ".$name." Send the Registration to JDD & ASSOCIATES Ltd. Thanks for your Partnership";
+                $this->sendMessage($sponsor_phone,$sponsor_message);
+            }
 
                 return response()->json(['success' => "success"], 200);
         }else{
@@ -295,6 +307,33 @@ class ApplicationController extends Controller
 //        Notification::send($user, new StudentRegistration($user));
     }
     public function checkEmail(Request $request){
+        if (User::where('email', $request->email)->count() > 0) {
+//            return false;
+        }
+    else{
+            return $request->email;
+        }
+    }
+    public function sendMessage($phone,$message){
+        $data = array(
+            "sender"=>'+250788866742',
+            "recipients"=>$phone,
+            "message"=>$message
+        ,);
+        $url = "https://www.intouchsms.co.rw/api/sendsms/.json";
+        $data = http_build_query($data);
+        $username="tuyandre20";
+        $password="kamana1234567";
 
+        $ch = curl_init();
+        curl_setopt($ch,CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_USERPWD, $username . ":" . $password);
+        curl_setopt($ch,CURLOPT_POST,true);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER,1);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+        curl_setopt($ch,CURLOPT_POSTFIELDS, $data);
+        $result = curl_exec($ch);
+        $httpcode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        curl_close($ch);
     }
 }

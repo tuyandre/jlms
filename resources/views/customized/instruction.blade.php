@@ -20,7 +20,7 @@
                                 <form action="#" method="post" class="form-basic form-horizontal how" style=" border:dotted 2px #2395ec;background-color: #ffffff;padding-top: 50px">
 
                                     <div class="form-title-row">
-                                        <h1>Application Requirements</h1>
+                                        <h1>Application Instruction</h1>
                                     </div>
                                     <div class="row">
 
@@ -31,12 +31,12 @@
 
                                                     <ol type="i">
                                                         <li>Image type - png, jpg, jpeg</li>
-                                                        <li>Maximum image size - 2MBs</li>
-                                                        <li>Maximum Pixel size - (200 x 200) Pixels</li>
+                                                        <li>Maximum image size - 5MBs</li>
+                                                        <li>Maximum Pixel size - (800 x 800) Pixels</li>
 
                                                     </ol>
 
-                                                <li style="font-weight: bold">National ID</li>
+                                                <li style="font-weight: bold">National ID Number</li>
                                                 <li style="font-weight: bold">Payment details
                                                     <ol type="i">
                                                         <li>Copy of payment slip if mode of payment is not mobile money</li>
@@ -45,7 +45,7 @@
 
                                                     </ol>
 
-                                                <li style="font-weight: bold">Academic History
+                                                <li style="font-weight: bold">Education Background
                                                     <ol type="i">
                                                         <li>Previous academic certificates and or, transcrips</li>
                                                         <li>File type - jpeg,jpg, png, pdf, docx,doc</li>
