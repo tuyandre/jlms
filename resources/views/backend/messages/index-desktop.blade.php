@@ -27,8 +27,8 @@
             </h3>
         </div>
         <div class="card-body">
-            <div class="messaging">
-                <div class="inbox_msg">
+            <div class="messaging" >
+                <div class="inbox_msg" >
                     <div class="inbox_people d-md-block d-lg-block ">
                         <div class="headind_srch">
                             @if(request()->has('thread'))
@@ -189,7 +189,7 @@
             //Get to the last message in conversation
             $('.msg_history').animate({
                 scrollTop: $('.msg_history')[0].scrollHeight
-            }, 1000);
+            },500);
 
             //Read message
             setTimeout(function () {

@@ -13866,12 +13866,22 @@ form.steps({
                     .done(function (response) {
                         console.log(response);
                         if (response.success == 'success') {
-                            swal.fire({
+
+                            const Toast = Swal.mixin({
+                                toast: true,
                                 position: 'top-end',
-                                icon: 'success',
-                                title: 'Your Registration has been successfuly; Please check Your Email and wait confirmation Email',
                                 showConfirmButton: true,
-                                timer: 60000
+                                timer: 18000,
+                                timerProgressBar: true,
+                                didOpen: (toast) => {
+                                    toast.addEventListener('mouseenter', Swal.stopTimer)
+                                    toast.addEventListener('mouseleave', Swal.resumeTimer)
+                                }
+                            })
+
+                            Toast.fire({
+                                icon: 'success',
+                                title: 'Your Registration has been successfuly; Please check Your Email or Phone and wait Registration confirmation Email and SMS'
                             })
                             $('#loader-icon').hide();
                             $("#progress-bar").html('<div id="progress-status">Your Registration Completed Succfull, Check Your Email or Phone SMS</div>');

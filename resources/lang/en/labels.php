@@ -96,7 +96,7 @@ return array (
         'user_email' => 'User Email',
         'date' => 'Order date',
       ),
-      'complete' => 'Complete Manually',
+      'complete' => 'Approve Payment',
       'offline_requests' => 'Offline Requests',
       'view_invoice' => 'View Invoice',
       'download_invoice' => 'Download Invoice',
