@@ -5955,7 +5955,7 @@ ul.product-tab li.active:after {
   font-weight: 500;
 }
 
-.payment-info input,
+.payment-info input,.payment-info select,
 .payment-info .register-form-area select,
 .register-form-area .payment-info select,
 .payment-info .register-form-area textarea,

@@ -3,10 +3,18 @@
   <component name="ChangeListManager">
     <list default="true" id="0bb6bf07-0f62-494f-83e7-479d346bf2f2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/customization/frontend/js/application.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/customization/frontend/js/application.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Backend/Admin/OrderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Backend/Admin/OrderController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CartController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CartController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/SponsorshipPayment.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/SponsorshipPayment.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/helpers.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/helpers.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/frontend.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/frontend.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/lang/en/labels.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en/labels.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/messages/index-desktop.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/messages/index-desktop.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/sessions/LxQJj2DwGR4eMS81ZIdEvjQHe0jukRDCaxkojU3h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/emails/offlineOrderMail.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/emails/offlineOrderMail.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/cart/checkout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/cart/checkout.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/vendor/invoices/default.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/vendor/invoices/default.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/sessions/CG7g9H2GM2ZmhEX6mEj1M7bs83udojmaC9GLSyfD" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/sessions/CG7g9H2GM2ZmhEX6mEj1M7bs83udojmaC9GLSyfD" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/sessions/geccvoM9lXKSy34P9wUC4rPz7KcRZMMOXTl9D6a1" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -33,7 +41,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/customization/frontend/js/application.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-50">
@@ -54,6 +62,213 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/customized/register.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="194">
+              <caret line="368" column="57" lean-forward="true" selection-start-line="359" selection-start-column="47" selection-end-line="368" selection-end-column="57" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/CoursesController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-2244" />
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Backend/PaymentController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-2631" />
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Backend/Admin/OrderController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="154">
+              <caret line="140" column="18" lean-forward="true" selection-start-line="140" selection-start-column="18" selection-end-line="140" selection-end-column="18" />
+              <folding>
+                <element signature="e#54#92#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/helpers.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-867">
+              <caret line="280" column="13" selection-start-line="280" selection-start-column="13" selection-end-line="280" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Traits/InvoiceGenerator.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-288" />
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/backend/invoices/index.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1071" />
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/vendor/invoices/default.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-427">
+              <caret line="60" column="45" lean-forward="true" selection-start-line="60" selection-start-column="45" selection-end-line="60" selection-end-column="45" />
+              <folding>
+                <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#style#0;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/CartController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="534">
+              <caret line="411" column="37" lean-forward="true" selection-start-line="411" selection-start-column="37" selection-end-line="411" selection-end-column="37" />
+              <folding>
+                <element signature="e#5990#7935#0#PHP" />
+                <element signature="e#7941#9325#0#PHP" />
+                <element signature="e#9331#11503#0#PHP" />
+                <element signature="e#11508#13384#0#PHP" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/frontend/cart/checkout.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="345">
+              <caret line="417" column="87" selection-start-line="417" selection-start-column="87" selection-end-line="417" selection-end-column="87" />
+              <folding>
+                <element signature="e#8456#17335#0#HTML" />
+                <element signature="e#0#36528#0#Blade" />
+                <element signature="e#0#36528#0#Blade" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/css/frontend.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="279">
+              <caret line="5957" column="40" selection-start-line="5957" selection-start-column="40" selection-end-line="5957" selection-end-column="40" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Mail/OfflineOrderMail.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-153" />
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/emails/offlineOrderMail.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="11" column="83" selection-start-line="11" selection-start-column="83" selection-end-line="11" selection-end-column="83" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/backend/transactions/sponsorship_deposit.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="58">
+              <caret line="51" column="52" lean-forward="true" selection-start-line="51" selection-start-column="52" selection-end-line="51" selection-end-column="71" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/routes/backend/admin.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1061">
+              <caret line="72" column="52" selection-start-line="72" selection-start-column="33" selection-end-line="72" selection-end-column="52" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Backend/Admin/PaymentController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-2601" />
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Models/SponsorshipPayment.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="16" column="52" selection-start-line="16" selection-start-column="52" selection-end-line="16" selection-end-column="52" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/emails/adminOrderMail.blade.php">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/routes/web.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="160">
+              <caret line="193" column="85" selection-start-line="193" selection-start-column="67" selection-end-line="193" selection-end-column="85" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Mail/Frontend/AdminOrederMail.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-153" />
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/lang/en/labels.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="160">
+              <caret line="1364" column="112" selection-start-line="1364" selection-start-column="112" selection-end-line="1364" selection-end-column="112" />
+              <folding>
+                <element signature="e#169#174#1" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Frontend/ApplicationController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="245">
+              <caret line="258" column="37" lean-forward="true" selection-start-line="249" selection-start-column="20" selection-end-line="258" selection-end-column="37" />
+              <folding>
+                <element signature="e#49#85#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -65,15 +280,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>210</find>
-      <find>swee</find>
-      <find>wishlist</find>
-      <find>c</find>
-      <find>stude</find>
-      <find>passport</find>
-      <find>200</find>
-      <find>payment_type</find>
-      <find>mobileDeposit</find>
       <find>ful</find>
       <find>incorrect</find>
       <find>deleted</find>
@@ -95,6 +301,15 @@
       <find>sponsore</find>
       <find>complete</find>
       <find>message-box</find>
+      <find>bank_request</find>
+      <find>bank_payment</find>
+      <find>bank_payment_note</find>
+      <find>payment_bank_instruction</find>
+      <find>bank.payment</find>
+      <find>payment-info</find>
+      <find>sponso</find>
+      <find>full_name</find>
+      <find>sponsorship.getData</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -103,12 +318,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/resources/views/backend/contacts/index.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Backend/ContactController.php" />
-        <option value="$PROJECT_DIR$/resources/views/backend/auth/user/show/tabs/overview.blade.php" />
-        <option value="$PROJECT_DIR$/resources/lang/en/menus.php" />
-        <option value="$PROJECT_DIR$/app/Rules/Auth/ChangePassword.php" />
-        <option value="$PROJECT_DIR$/resources/views/backend/account/tabs/profile.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/frontend/layouts/partials/footer.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/emails/welcomeStudentMail.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/frontend-rtl/courses/lesson.blade.php" />
@@ -120,8 +329,6 @@
         <option value="$PROJECT_DIR$/resources/views/backend/orders/show.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/backend/transactions/sponsorship_deposit.blade.php" />
         <option value="$PROJECT_DIR$/database/migrations/2021_06_02_154449_create_sponsorship_payments_table.php" />
-        <option value="$PROJECT_DIR$/app/Models/SponsorshipPayment.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Backend/Admin/OrderController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Backend/Admin/PaymentController.php" />
         <option value="$PROJECT_DIR$/resources/views/backend/transactions/sponsorship_detail.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/backend/transactions/bank_deposit_detail.blade.php" />
@@ -146,14 +353,22 @@
         <option value="$PROJECT_DIR$/app/Models/Auth/User.php" />
         <option value="$PROJECT_DIR$/app/Models/EducationBackground.php" />
         <option value="$PROJECT_DIR$/vendor/composer/platform_check.php" />
-        <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Frontend/ApplicationController.php" />
         <option value="$PROJECT_DIR$/resources/views/customized/register.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Frontend/Auth/LoginController.php" />
-        <option value="$PROJECT_DIR$/resources/lang/en/labels.php" />
         <option value="$PROJECT_DIR$/public/css/backend.css" />
         <option value="$PROJECT_DIR$/resources/views/backend/messages/index-desktop.blade.php" />
         <option value="$PROJECT_DIR$/public/customization/frontend/js/application.js" />
+        <option value="$PROJECT_DIR$/resources/views/emails/offlineOrderMail.blade.php" />
+        <option value="$PROJECT_DIR$/resources/lang/en/labels.php" />
+        <option value="$PROJECT_DIR$/routes/web.php" />
+        <option value="$PROJECT_DIR$/public/css/frontend.css" />
+        <option value="$PROJECT_DIR$/resources/views/frontend/cart/checkout.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/CartController.php" />
+        <option value="$PROJECT_DIR$/app/Models/SponsorshipPayment.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Backend/Admin/OrderController.php" />
+        <option value="$PROJECT_DIR$/app/helpers.php" />
+        <option value="$PROJECT_DIR$/resources/views/vendor/invoices/default.blade.php" />
       </list>
     </option>
   </component>
@@ -410,7 +625,7 @@
       <path value="$PROJECT_DIR$/vendor/spatie/temporary-directory" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1346" />
@@ -439,6 +654,18 @@
               <item name="jlms" type="b2602c69:ProjectViewProjectNode" />
               <item name="jlms" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Events" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jlms" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jlms" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Helpers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jlms" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jlms" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="Http" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -462,8 +689,52 @@
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="Http" type="462c0819:PsiDirectoryNode" />
               <item name="Controllers" type="462c0819:PsiDirectoryNode" />
+              <item name="Traits" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jlms" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jlms" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
+              <item name="Requests" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jlms" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jlms" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
+              <item name="Requests" type="462c0819:PsiDirectoryNode" />
+              <item name="Backend" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jlms" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jlms" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
+              <item name="Requests" type="462c0819:PsiDirectoryNode" />
+              <item name="Backend" type="462c0819:PsiDirectoryNode" />
+              <item name="Auth" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jlms" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jlms" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
+              <item name="Requests" type="462c0819:PsiDirectoryNode" />
               <item name="Frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="Auth" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jlms" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jlms" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Mail" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jlms" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jlms" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Mail" type="462c0819:PsiDirectoryNode" />
+              <item name="Frontend" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="jlms" type="b2602c69:ProjectViewProjectNode" />
@@ -474,35 +745,13 @@
             <path>
               <item name="jlms" type="b2602c69:ProjectViewProjectNode" />
               <item name="jlms" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Models" type="462c0819:PsiDirectoryNode" />
-              <item name="Auth" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="jlms" type="b2602c69:ProjectViewProjectNode" />
-              <item name="jlms" type="462c0819:PsiDirectoryNode" />
               <item name="public" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="jlms" type="b2602c69:ProjectViewProjectNode" />
               <item name="jlms" type="462c0819:PsiDirectoryNode" />
               <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="customization" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="jlms" type="b2602c69:ProjectViewProjectNode" />
-              <item name="jlms" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="customization" type="462c0819:PsiDirectoryNode" />
-              <item name="frontend" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="jlms" type="b2602c69:ProjectViewProjectNode" />
-              <item name="jlms" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="customization" type="462c0819:PsiDirectoryNode" />
-              <item name="frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="jlms" type="b2602c69:ProjectViewProjectNode" />
@@ -520,15 +769,38 @@
               <item name="jlms" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="jlms" type="b2602c69:ProjectViewProjectNode" />
               <item name="jlms" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="courses" type="462c0819:PsiDirectoryNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
+              <item name="invoices" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jlms" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jlms" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
+              <item name="transactions" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jlms" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jlms" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="vendor" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jlms" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jlms" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="vendor" type="462c0819:PsiDirectoryNode" />
+              <item name="invoices" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="jlms" type="b2602c69:ProjectViewProjectNode" />
@@ -607,12 +879,12 @@
       <workItem from="1622493755656" duration="3122000" />
       <workItem from="1622594524930" duration="57095000" />
       <workItem from="1622810764683" duration="661000" />
-      <workItem from="1622841438560" duration="5380000" />
+      <workItem from="1622841438560" duration="15188000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="278679000" />
+    <option name="totallyTimeSpent" value="288487000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -644,155 +916,12 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/views/backend/transactions/bankDeposit.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="6" selection-end-line="121" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2021_05_09_041718_create_mobile_payments_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="26" column="11" selection-start-line="26" selection-start-column="11" selection-end-line="27" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Models/MobilePayment.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="4" selection-start-line="4" selection-end-line="4" selection-end-column="25" />
-          <folding>
-            <element signature="e#30#55#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Models/Order.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-17" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2021_06_02_154449_create_sponsorship_payments_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="24" column="45" selection-start-line="24" selection-start-column="28" selection-end-line="24" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/backend/transactions/sponsorship_deposit.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="397">
-          <caret line="87" column="55" selection-start-line="87" selection-start-column="55" selection-end-line="87" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Models/SponsorshipPayment.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="11" column="69" selection-start-line="11" selection-start-column="51" selection-end-line="11" selection-end-column="69" />
-          <folding>
-            <element signature="e#30#84#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Models/Sponsorship.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="11" column="40" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Backend/Admin/PaymentController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="278">
-          <caret line="256" column="59" selection-start-line="256" selection-start-column="59" selection-end-line="256" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/backend/transactions/sponsorship_detail.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="59" column="71" selection-start-line="59" selection-start-column="71" selection-end-line="59" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/backend/transactions/bank_deposit_detail.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="59" column="71" selection-start-line="59" selection-start-column="71" selection-end-line="59" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/backend/transactions/momo_payment_detail.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="55" column="71" selection-start-line="55" selection-start-column="71" selection-end-line="55" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/backend/includes/sidebar.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="30" column="62" selection-start-line="30" selection-start-column="62" selection-end-line="30" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/backend/sponsorship/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="46" column="51" selection-start-line="46" selection-start-column="51" selection-end-line="46" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/backend/admin.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="37" column="41" selection-start-line="37" selection-start-column="41" selection-end-line="37" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/lang/en/alerts.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="16" column="27" selection-start-line="16" selection-start-column="27" selection-end-line="16" selection-end-column="113" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Backend/Admin/SponsorshipController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="27" column="80" selection-start-line="27" selection-start-column="80" selection-end-line="27" selection-end-column="80" />
-          <folding>
-            <element signature="e#54#90#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/backend/sponsorship/show.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="159">
-          <caret line="35" column="43" selection-start-line="35" selection-start-column="43" selection-end-line="35" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Backend/Auth/User/UserStatusController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="90" column="30" lean-forward="true" selection-start-line="71" selection-start-column="13" selection-end-line="90" selection-end-column="30" />
           <folding>
             <element signature="e#58#83#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Backend/Admin/OrderController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="278">
-          <caret line="136" column="9" lean-forward="true" selection-start-line="136" selection-start-column="9" selection-end-line="136" selection-end-column="9" />
-          <folding>
-            <element signature="e#54#92#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -852,13 +981,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/customized/register.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7633">
-          <caret line="449" column="120" selection-start-line="449" selection-start-column="120" selection-end-line="449" selection-end-column="120" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Frontend/Auth/LoginController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1156">
@@ -894,23 +1016,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="13" column="87" selection-start-line="11" selection-start-column="4" selection-end-line="13" selection-end-column="87" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="25" column="46" selection-start-line="25" selection-start-column="46" selection-end-line="25" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Frontend/ApplicationController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5032">
-          <caret line="312" column="4" selection-start-line="312" selection-start-column="4" selection-end-line="312" selection-end-column="4" />
-          <folding>
-            <element signature="e#49#85#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -976,16 +1081,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/lang/en/labels.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="143">
-          <caret line="1501" column="41" selection-start-line="1501" selection-start-column="33" selection-end-line="1501" selection-end-column="41" />
-          <folding>
-            <element signature="e#169#174#1" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/css/backend.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="143">
@@ -1029,6 +1124,174 @@
             <element signature="n#style#0;n#button#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#button#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#p#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/CoursesController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2244" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Backend/PaymentController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2631" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Frontend/ApplicationController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="245">
+          <caret line="258" column="37" lean-forward="true" selection-start-line="249" selection-start-column="20" selection-end-line="258" selection-end-column="37" />
+          <folding>
+            <element signature="e#49#85#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Mail/Frontend/AdminOrederMail.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-153" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Mail/OfflineOrderMail.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-153" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/emails/adminOrderMail.blade.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/lang/en/labels.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="1364" column="112" selection-start-line="1364" selection-start-column="112" selection-end-line="1364" selection-end-column="112" />
+          <folding>
+            <element signature="e#169#174#1" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/customized/register.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="368" column="57" lean-forward="true" selection-start-line="359" selection-start-column="47" selection-end-line="368" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="193" column="85" selection-start-line="193" selection-start-column="67" selection-end-line="193" selection-end-column="85" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/frontend.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="279">
+          <caret line="5957" column="40" selection-start-line="5957" selection-start-column="40" selection-end-line="5957" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/frontend/cart/partials/order-stats.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-408" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/frontend/cart/checkout.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="417" column="87" selection-start-line="417" selection-start-column="87" selection-end-line="417" selection-end-column="87" />
+          <folding>
+            <element signature="e#8456#17335#0#HTML" />
+            <element signature="e#0#36528#0#Blade" />
+            <element signature="e#0#36528#0#Blade" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/CartController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="534">
+          <caret line="411" column="37" lean-forward="true" selection-start-line="411" selection-start-column="37" selection-end-line="411" selection-end-column="37" />
+          <folding>
+            <element signature="e#5990#7935#0#PHP" />
+            <element signature="e#7941#9325#0#PHP" />
+            <element signature="e#9331#11503#0#PHP" />
+            <element signature="e#11508#13384#0#PHP" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/emails/offlineOrderMail.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="83" selection-start-line="11" selection-start-column="83" selection-end-line="11" selection-end-column="83" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/backend/transactions/sponsorship_deposit.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="58">
+          <caret line="51" column="52" lean-forward="true" selection-start-line="51" selection-start-column="52" selection-end-line="51" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/backend/admin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1061">
+          <caret line="72" column="52" selection-start-line="72" selection-start-column="33" selection-end-line="72" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/SponsorshipPayment.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="16" column="52" selection-start-line="16" selection-start-column="52" selection-end-line="16" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Backend/Admin/PaymentController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2601" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Traits/InvoiceGenerator.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-288" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/backend/invoices/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1071" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Backend/Admin/OrderController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="140" column="18" lean-forward="true" selection-start-line="140" selection-start-column="18" selection-end-line="140" selection-end-column="18" />
+          <folding>
+            <element signature="e#54#92#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/helpers.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-867">
+          <caret line="280" column="13" selection-start-line="280" selection-start-column="13" selection-end-line="280" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/vendor/invoices/default.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-427">
+          <caret line="60" column="45" lean-forward="true" selection-start-line="60" selection-start-column="45" selection-end-line="60" selection-end-column="45" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>

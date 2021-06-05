@@ -323,7 +323,8 @@ if (!function_exists('generateInvoice')) {
         $invoice->customer([
                 'name' => $user->full_name,
                 'id' => $user->id,
-                'email' => $user->email
+                'email' => $user->email,
+                'phone' => $user->phone
             ])
             ->save('public/invoices/invoice-'.$order->id.'.pdf');
 //                ->download('invoice-'.$order->id.'.pdf');

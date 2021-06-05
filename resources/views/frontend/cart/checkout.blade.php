@@ -391,6 +391,106 @@
                                                     </div>
                                                 </div>
                                             @endif
+
+                                            <div class="payment-method w-100 mb-0">
+                                                <div class="payment-method-header">
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <div class="method-header-text">
+                                                                <div class="radio">
+                                                                    <label>
+                                                                        <input data-toggle="collapse"
+                                                                               href="#collapsePaymentSponsor" type="radio"
+                                                                               name="paymentMethod" value="0">
+                                                                        @lang('labels.frontend.cart.sponsor_payment')
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                                <div class="check-out-form collapse disabled" id="collapsePaymentSponsor"
+                                                     data-parent="#accordion">
+                                                    <p> @lang('labels.frontend.cart.sponsor_payment_note')</p>
+                                                    <p>{{ config('payment_sponsor_instruction')  }}</p>
+                                                    <form accept-charset="UTF-8"
+                                                          action="{{route('cart.sponsor.payment')}}"
+                                                          class="require-validation"
+                                                          id="bank-payment-form"
+                                                          enctype="multipart/form-data"
+                                                          method="POST">
+
+                                                        <div style="margin:0;padding:0;display:inline">
+                                                            <input name="utf8" type="hidden"
+                                                                   value="✓"/>
+                                                            @csrf
+                                                        </div>
+
+                                                        <div class="payment-info">
+                                                            <label class=" control-label">Sponsor Name
+                                                                :</label>
+                                                            <?php
+                                                            $sponsors=\App\Models\Sponsorship::all();
+                                                            ?>
+                                                            <select name="sponsorName" class="form-control required">
+                                                                <option value="" selected>Select Sponsor Name</option>
+                                                                @foreach($sponsors as $sponsor)
+                                                                    <option value="{{$sponsor->id}}" >{{$sponsor->sponsor_name}}</option>
+                                                                @endforeach
+                                                            </select>
+                                                        </div>
+                                                        <div class="payment-info">
+                                                            <label class=" control-label">Ref No.
+                                                                :</label>
+
+                                                            <input autocomplete='off' type="text"
+                                                                   class="form-control required "
+                                                                   placeholder="Enter reference number for Sponsor Receipt or Sponsor name"
+                                                                   value="" name="sponsorDepositPaymentRefNo">
+                                                        </div>
+                                                        <div class="payment-info">
+                                                            <label class=" control-label">Deposit Amount
+                                                                :</label>
+                                                            <input type="number" class="form-control  required"
+                                                                   placeholder="Enter Amount"
+                                                                   value="" name="sponsorDepositAmount">
+                                                        </div>
+                                                        <div class="payment-info ">
+                                                            <label class=" control-label">Payment Date
+                                                                :</label>
+                                                            <input type="date" class="form-control  required"
+                                                                   value="" name="sponsorDepositDate">
+                                                        </div>
+                                                        <div class="payment-info ">
+                                                            <label class=" control-label">Upload Receipt/Document
+                                                                :</label>
+                                                            <input type="file" class="form-control  required" required name="file" accept="image/*,.pdf">
+                                                        </div>
+
+                                                        <button type="submit"
+                                                                class="text-white genius-btn mt25 gradient-bg text-center text-uppercase  bold-font">
+                                                            @lang('labels.frontend.cart.pay_now') <i
+                                                                    class="fas fa-caret-right"></i>
+                                                        </button>
+                                                        <div class="row mt-3">
+                                                            <div class="col-12 error form-group d-none">
+                                                                <div class="alert-danger alert">
+                                                                    @lang('labels.frontend.cart.stripe_error_message')
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                    {{--                                                        <form method="post" action="{{route('cart.offline.payment')}}">--}}
+                                                    {{--                                                            @csrf--}}
+                                                    {{--                                                            <button type="submit"--}}
+                                                    {{--                                                                    class="text-white genius-btn mt25 gradient-bg text-center text-uppercase  bold-font">--}}
+                                                    {{--                                                                @lang('labels.frontend.cart.request_assistance') <i--}}
+                                                    {{--                                                                        class="fas fa-caret-right"></i>--}}
+                                                    {{--                                                            </button>--}}
+                                                    {{--                                                        </form>--}}
+                                                </div>
+                                            </div>
                                     </div>
 
                                     <div class="terms-text pb45 mt25">

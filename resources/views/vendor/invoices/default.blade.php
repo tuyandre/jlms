@@ -64,6 +64,7 @@
             {!! $invoice->customer_details->count() == 0 ? '<i>No customer details</i><br />' : '' !!}
             <h4 style="font-weight: bold; font-family: DejaVu Sans;"> {{ $invoice->customer_details->get('name') }}</h4>
             <span>Email :</span> {{ $invoice->customer_details->get('email') }}
+            <span>Telephone :</span> {{ $invoice->customer_details->get('phone') }}
         </div>
     </div>
 </div>

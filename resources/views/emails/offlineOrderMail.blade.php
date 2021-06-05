@@ -9,7 +9,7 @@ Order Reference No. {{$content['reference_no']}}
 
 #Total Amount : {{$appCurrency['symbol']}} {{$content['total']}}
 
-Our representatives will contact you soon regarding order payments.
+Our representatives will contact you soon regarding order payments Via Email or SMS.
 Happy Shopping.
 
 

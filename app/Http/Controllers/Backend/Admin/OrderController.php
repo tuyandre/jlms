@@ -187,6 +187,10 @@ class OrderController extends Controller
             $mobile=MobilePayment::where('order_id','=',$order->id)->first();
             $mobile->delete();
         }
+        if($order->payment_type==2){
+            $sponsor=SponsorshipPayment::where('order_id','=',$order->id)->first();
+            $sponsor->delete();
+        }
         return redirect()->route('admin.orders.index')->withFlashSuccess(trans('alerts.backend.general.deleted'));
     }
 
