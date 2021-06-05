@@ -22,7 +22,7 @@
     <div style="float: right;width: 180pt;">
         <h5>Date: <b> {{ $invoice->date->formatLocalized('%A %d %B %Y') }}</b></h5>
         @if ($invoice->number)
-            <h5>Invoice #: <b>{{strval($invoice->number) }}</b></h5>
+            <h5>Invoice N<sup>o</sup>: <b>{{strval($invoice->number) }}</b></h5>
         @endif
     </div>
 </div>

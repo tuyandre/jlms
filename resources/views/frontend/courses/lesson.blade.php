@@ -160,6 +160,37 @@
                     @include('includes.partials.messages')
 
                     <div class="course-details-item border-bottom-0 mb-0">
+
+
+
+                        @if($lesson->mediaVideo && $lesson->mediavideo->count() > 0)
+                            <div class="course-single-text">
+                                @if($lesson->mediavideo != "")
+                                    <div class="course-details-content mt-3">
+                                        <div class="video-container mb-5" data-id="{{$lesson->mediavideo->id}}">
+                                            @if($lesson->mediavideo->type == 'youtube')
+
+
+                                                <div id="player" class="js-player" data-plyr-provider="youtube"
+                                                     data-plyr-embed-id="{{$lesson->mediavideo->file_name}}"></div>
+                                            @elseif($lesson->mediavideo->type == 'vimeo')
+                                                <div id="player" class="js-player" data-plyr-provider="vimeo"
+                                                     data-plyr-embed-id="{{$lesson->mediavideo->file_name}}"></div>
+                                            @elseif($lesson->mediavideo->type == 'upload')
+
+
+                                                <video poster="" id="player" class="js-player" playsinline controls>
+                                                    <source src="{{$lesson->mediavideo->url}}" type="video/mp4"/>
+                                                </video>
+                                            @elseif($lesson->mediavideo->type == 'embed')
+                                                {!! $lesson->mediavideo->url !!}
+                                            @endif
+                                        </div>
+                                    </div>
+                                @endif
+                            </div>
+                        @endif
+
                         @if($lesson->lesson_image != "")
                             <div class="course-single-pic mb30">
                                 <img src="{{asset('storage/uploads/'.$lesson->lesson_image)}}"
@@ -346,33 +377,7 @@
                         @endif
 
 
-                        @if($lesson->mediaVideo && $lesson->mediavideo->count() > 0)
-                            <div class="course-single-text">
-                                @if($lesson->mediavideo != "")
-                                    <div class="course-details-content mt-3">
-                                        <div class="video-container mb-5" data-id="{{$lesson->mediavideo->id}}">
-                                            @if($lesson->mediavideo->type == 'youtube')
 
-
-                                                <div id="player" class="js-player" data-plyr-provider="youtube"
-                                                     data-plyr-embed-id="{{$lesson->mediavideo->file_name}}"></div>
-                                            @elseif($lesson->mediavideo->type == 'vimeo')
-                                                <div id="player" class="js-player" data-plyr-provider="vimeo"
-                                                     data-plyr-embed-id="{{$lesson->mediavideo->file_name}}"></div>
-                                            @elseif($lesson->mediavideo->type == 'upload')
-
-
-                                                <video poster="" id="player" class="js-player" playsinline controls>
-                                                    <source src="{{$lesson->mediavideo->url}}" type="video/mp4"/>
-                                                </video>
-                                            @elseif($lesson->mediavideo->type == 'embed')
-                                                {!! $lesson->mediavideo->url !!}
-                                            @endif
-                                        </div>
-                                    </div>
-                                @endif
-                            </div>
-                        @endif
 
                         @if($lesson->mediaAudio)
                             <div class="course-single-text mb-5">
@@ -690,6 +695,13 @@
 
         @endif
         @endif
+
+
+
+
+
+
+
 
         function courseCompleted(id, type) {
             $.ajax({
