@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0bb6bf07-0f62-494f-83e7-479d346bf2f2" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/transactions/momo_payment_detail.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/transactions/momo_payment_detail.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/sessions/CG7g9H2GM2ZmhEX6mEj1M7bs83udojmaC9GLSyfD" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/sessions/EfsZGRfBku5cw1XW7yt3TkAdFxG3ob0eB9PtRGqo" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/sessions/rlb3iV2QnC3NsjxtTVkiskCsuZYA9uxwoFiay12l" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Backend/Auth/User/UserStatusController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Backend/Auth/User/UserStatusController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/sessions/zvUE1kooMHn7gN9OGCT04HzkGbH1W6P9iZbx7Vhn" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/sessions/zvUE1kooMHn7gN9OGCT04HzkGbH1W6P9iZbx7Vhn" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -112,11 +109,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/backend/transactions/bank_deposit_detail.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="323">
               <caret line="53" column="42" lean-forward="true" selection-start-line="48" selection-start-column="34" selection-end-line="53" selection-end-column="42" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Backend/Auth/User/UserStatusController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-237">
+              <caret line="69" column="57" lean-forward="true" selection-start-line="69" selection-start-column="57" selection-end-line="69" selection-end-column="57" />
             </state>
           </provider>
         </entry>
@@ -393,7 +399,6 @@
         <option value="$PROJECT_DIR$/routes/backend/admin.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Backend/Admin/SponsorshipController.php" />
         <option value="$PROJECT_DIR$/resources/views/backend/sponsorship/show.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Backend/Auth/User/UserStatusController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Backend/CertificateController.php" />
         <option value="$PROJECT_DIR$/resources/views/customized/instruction.blade.php" />
         <option value="$PROJECT_DIR$/database/migrations/2021_06_03_145640_create_countries_table.php" />
@@ -425,6 +430,7 @@
         <option value="$PROJECT_DIR$/resources/views/frontend/courses/lesson.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/vendor/invoices/default.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/backend/transactions/momo_payment_detail.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Backend/Auth/User/UserStatusController.php" />
       </list>
     </option>
   </component>
@@ -748,29 +754,6 @@
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="Http" type="462c0819:PsiDirectoryNode" />
               <item name="Controllers" type="462c0819:PsiDirectoryNode" />
-              <item name="Traits" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="jlms" type="b2602c69:ProjectViewProjectNode" />
-              <item name="jlms" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
-              <item name="Requests" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="jlms" type="b2602c69:ProjectViewProjectNode" />
-              <item name="jlms" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
-              <item name="Requests" type="462c0819:PsiDirectoryNode" />
-              <item name="Backend" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="jlms" type="b2602c69:ProjectViewProjectNode" />
-              <item name="jlms" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
-              <item name="Requests" type="462c0819:PsiDirectoryNode" />
               <item name="Backend" type="462c0819:PsiDirectoryNode" />
               <item name="Auth" type="462c0819:PsiDirectoryNode" />
             </path>
@@ -779,27 +762,10 @@
               <item name="jlms" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="Http" type="462c0819:PsiDirectoryNode" />
-              <item name="Requests" type="462c0819:PsiDirectoryNode" />
-              <item name="Frontend" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="jlms" type="b2602c69:ProjectViewProjectNode" />
-              <item name="jlms" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Mail" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="jlms" type="b2602c69:ProjectViewProjectNode" />
-              <item name="jlms" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Mail" type="462c0819:PsiDirectoryNode" />
-              <item name="Frontend" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="jlms" type="b2602c69:ProjectViewProjectNode" />
-              <item name="jlms" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Models" type="462c0819:PsiDirectoryNode" />
+              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
+              <item name="Backend" type="462c0819:PsiDirectoryNode" />
+              <item name="Auth" type="462c0819:PsiDirectoryNode" />
+              <item name="User" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="jlms" type="b2602c69:ProjectViewProjectNode" />
@@ -953,12 +919,12 @@
       <workItem from="1622493755656" duration="3122000" />
       <workItem from="1622594524930" duration="57095000" />
       <workItem from="1622810764683" duration="661000" />
-      <workItem from="1622841438560" duration="19786000" />
+      <workItem from="1622841438560" duration="20728000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="293085000" />
+    <option name="totallyTimeSpent" value="294027000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -990,13 +956,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Models/Country.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="11" column="69" selection-start-line="11" selection-start-column="69" selection-end-line="11" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Mail/Mailable.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1130">
@@ -1369,6 +1328,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
           <caret line="53" column="42" lean-forward="true" selection-start-line="48" selection-start-column="34" selection-end-line="53" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Backend/Auth/User/UserStatusController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-237">
+          <caret line="69" column="57" lean-forward="true" selection-start-line="69" selection-start-column="57" selection-end-line="69" selection-end-column="57" />
         </state>
       </provider>
     </entry>
