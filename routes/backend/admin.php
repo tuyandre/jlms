@@ -243,6 +243,7 @@ Route::group(['middleware' => 'role:administrator|teacher'], function () {
     Route::get('report/students', ['uses' => 'ReportController@getStudentsReport', 'as' => 'reports.students']);
 
     Route::get('get-course-reports-data', ['uses' => 'ReportController@getCourseData', 'as' => 'reports.get_course_data']);
+    Route::get('get-students-reports-data', ['uses' => 'ReportController@getRegisteredStudents', 'as' => 'reports.get_students_data']);
     Route::get('get-bundle-reports-data', ['uses' => 'ReportController@getBundleData', 'as' => 'reports.get_bundle_data']);
     Route::get('get-students-reports-data', ['uses' => 'ReportController@getStudentsData', 'as' => 'reports.get_students_data']);
 

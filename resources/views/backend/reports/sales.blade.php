@@ -65,13 +65,31 @@
                 <div class="col-12 col-lg-5">
                     <div class="card text-white bg-primary text-center">
                         <div class="card-body">
-                            <h2 class="">{{$appCurrency['symbol'].' '.$total_earnings}}</h2>
+                            <h2 class="">{{$appCurrency['symbol'].' '.number_format($registration_earnings)}}</h2>
+                            <h5>Registration Fees</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-5 ml-auto">
+                    <div class="card text-white bg-secondary text-center">
+                        <div class="card-body">
+                            <h2 class="">{{$registrations_sales}}</h2>
+                            <h5>Total Students</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-lg-5">
+                    <div class="card text-white bg-primary text-center">
+                        <div class="card-body">
+                            <h2 class="">{{$appCurrency['symbol'].' '. number_format($total_earnings)}}</h2>
                             <h5>@lang('labels.backend.reports.total_earnings')</h5>
                         </div>
                     </div>
                 </div>
                 <div class="col-12 col-lg-5 ml-auto">
-                    <div class="card text-white bg-success text-center">
+                    <div class="card text-white bg-secondary text-center">
                         <div class="card-body">
                             <h2 class="">{{$total_sales}}</h2>
                             <h5>@lang('labels.backend.reports.total_sales')</h5>
@@ -79,6 +97,51 @@
                     </div>
                 </div>
             </div>
+            <div class="row">
+                <div class="col-6 col-lg-6 offset-3">
+                    <div class="card text-white bg-success text-center">
+                        <div class="card-body">
+                            <h2 class="">{{$appCurrency['symbol'].' '.number_format($total_incomes)}}</h2>
+                            <h5>Total Income</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+            <div class="row">
+                <div class="col-12">
+                    <h4>Registered Students</h4>
+                    <div class="table-responsive">
+                        <table id="myStudentTable" class="table table-bordered table-striped ">
+                            <thead>
+                            <tr>
+                                <th>@lang('labels.general.sr_no')</th>
+                                <th>@lang('labels.general.id')</th>
+                                <th>@lang('labels.backend.reports.fields.student')</th>
+                                <th>@lang('labels.backend.reports.fields.transaction')</th>
+                                <th>@lang('labels.backend.reports.fields.amount') <span style="font-weight: lighter">(in {{$appCurrency['symbol']}})</span></th>
+                                <th>@lang('labels.backend.reports.fields.date')</th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <hr>
+
+
+
+
+
             <div class="row">
                 <div class="col-12">
                     <h4>@lang('labels.backend.reports.courses')</h4>
@@ -156,6 +219,7 @@
         $(document).ready(function () {
             var course_route = '{{route('admin.reports.get_course_data')}}?'+queryParams;
             var bundle_route = '{{route('admin.reports.get_bundle_data')}}?'+queryParams;
+            var student_route = '{{route('admin.reports.get_students_data')}}?'+queryParams;
 
             $('#myCourseTable').DataTable({
                 processing: true,
@@ -230,6 +294,56 @@
                     {data: "title", name: 'item.title', orderable: false, searchable: false},
                     {data: "transaction", name: 'order.transaction_id', orderable: false, searchable: false},
                     {data: "amount", name: 'order.amount', orderable: false, searchable: false},
+                    {data: "created_at", name: 'created_at'},
+                ],
+                language:{
+                    url : "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/{{$locale_full_name}}.json",
+                    buttons :{
+                        colvis : '{{trans("datatable.colvis")}}',
+                        pdf : '{{trans("datatable.pdf")}}',
+                        csv : '{{trans("datatable.csv")}}',
+                    }
+                },
+
+
+                createdRow: function (row, data, dataIndex) {
+                    $(row).attr('data-entry-id', data.id);
+                },
+            });
+
+
+
+            $('#myStudentTable').DataTable({
+                processing: true,
+                serverSide: true,
+                iDisplayLength: 10,
+                retrieve: true,
+                order: [
+                    [5, 'desc']
+                ],
+                dom: 'lfBrtip<"actions">',
+                buttons: [
+                    {
+                        extend: 'csv',
+                        exportOptions: {
+                            columns: ':visible',
+                        }
+                    },
+                    {
+                        extend: 'pdf',
+                        exportOptions: {
+                            columns: ':visible',
+                        }
+                    },
+                    'colvis'
+                ],
+                ajax: student_route,
+                columns: [
+                    {data: "DT_RowIndex", name: 'DT_RowIndex', width: '8%',  orderable: false, searchable: false},
+                    {data: "id", name: 'id', width: '8%'},
+                    {data: "title", name: 'title', orderable: false, searchable: false},
+                    {data: "price", name: 'price', orderable: false, searchable: false},
+                    {data: "amount", name: 'amount', orderable: false, searchable: false},
                     {data: "created_at", name: 'created_at'},
                 ],
                 language:{

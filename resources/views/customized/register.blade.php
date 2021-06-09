@@ -18,7 +18,7 @@
                             <div class="container" style="margin-top: 40px;">
                                 <form action="{{route('application.jsms.submitApplication')}}" method="post" class="form-basic form-horizontal" style="background-color: #ffffff;padding-top: 50px" name="studentReg" id="studentReg">
                                     @csrf
-                                    <h3>General Information</h3>
+                                    <h3>Basic Information</h3>
                                     <section>
 
                                         <label for="idNo">National ID No <font style="color: crimson">*</font></label>
@@ -72,7 +72,7 @@
                                         </select>
                                     </section>
 
-                                    <h3>Bio Information</h3>
+                                    <h3>Personal Information</h3>
                                     <section>
 
                                         <label for="fname">First Name <font style="color: crimson">*</font></label>
@@ -134,8 +134,10 @@
 
                                     </section>
 
-                                    <h3>Sponsorship And Contact</h3>
+                                    <h3>Address And Financing</h3>
                                     <section>
+                                        <label for="address"><b style="font-size: 17px">Address <font style="color: crimson">*</font>
+                                            </b></label>
                                         <label for="address">Student Address <font style="color: crimson">*</font></label>
 
                                         <input type="text" name="address" class="form-control required" id="address" placeholder="Your Address">
@@ -155,12 +157,12 @@
 
                                         <input type="text" name="phoneNo2" class="form-control" id="contact2" placeholder="eg... +250 754678564">
 
-                                        <label for="sponsorshipType"><b style="font-size: 17px">Sponsorship <font style="color: crimson">*</font>
+                                        <label for="sponsorshipType"><b style="font-size: 17px">Financing <font style="color: crimson">*</font>
                                             </b></label>
 
                                         <select name="sponsorshipType" id="sponsorshipType" class="form-control sponsor required">
-                                            <option value="">-Choose Sponsorship-</option>
-                                            <option value="SelfSponsored" selected>Self Sponsored</option>
+                                            <option value="">-Choose Financing-</option>
+                                            <option value="SelfSponsored" selected>Self Financing</option>
                                             {{--<option value="Parent" >Parent</option>--}}
                                             {{--<option value="Guardian" >Guardian</option>--}}
                                             {{--<option value="WorkPlace" >WorkPlace</option>--}}
@@ -190,7 +192,7 @@
 
                                     </section>
 
-                                    <h3>Academic History</h3>
+                                    <h3>Attained Education</h3>
                                     <section>
 
                                         <div class="form-group" style="margin-top: 10px">
@@ -248,7 +250,7 @@
 
                                     </section>
 
-                                    <h3>Make Payment</h3>
+                                    <h3>Payment Details</h3>
                                     <section>
                                         <label for="payment">Select Payment Method <font style="color: crimson">*</font></label>
                                         <select name="payment" id="payment" class="form-control required payment">

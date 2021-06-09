@@ -20,7 +20,7 @@
                                 <form action="#" method="post" class="form-basic form-horizontal how" style=" border:dotted 2px #2395ec;background-color: #ffffff;padding-top: 50px">
 
                                     <div class="form-title-row">
-                                        <h1>Application Instruction</h1>
+                                        <h1>Application Pre-conditions</h1>
                                     </div>
                                     <div class="row">
 
@@ -36,7 +36,7 @@
 
                                                     </ol>
 
-                                                <li style="font-weight: bold">National ID Number</li>
+                                                <li style="font-weight: bold">National ID Number/Passport</li>
                                                 <li style="font-weight: bold">Payment details
                                                     <ol type="i">
                                                         <li>Copy of payment slip if mode of payment is not mobile money</li>
@@ -45,7 +45,7 @@
 
                                                     </ol>
 
-                                                <li style="font-weight: bold">Education Background
+                                                <li style="font-weight: bold">Education Attained
                                                     <ol type="i">
                                                         <li>Previous academic certificates and or, transcrips</li>
                                                         <li>File type - jpeg,jpg, png, pdf, docx,doc</li>

@@ -9,6 +9,9 @@ use App\Http\Controllers\Frontend\HomeController;
  */
 
 
+Route::get('/test/test/get-students-reports-data', ['uses' => 'Backend\ReportController@getRegisteredStudents', 'as' => 'reports.get_students_data']);
+
+
 Route::get('/instructions','Frontend\FrontendController@instructions')->name('frontend.instructions');
 Route::get('/jsms/apply','Frontend\FrontendController@apply')->name('frontend.jsms.apply');
 Route::post('/studentApplication/passport','Frontend\ApplicationController@uploadPassport')->name('application.jsms.uploadPassport');

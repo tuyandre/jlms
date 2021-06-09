@@ -46,6 +46,13 @@ class ReportController extends Controller
             });
         }
 
+        //  Registrations fees query
+        $registrations_fees = Order::query()->with('items')->where('status', '=', 1);
+
+        $registrations_fees->whereHas('items', function ($q) use ($courses) {
+                $q->where('item_type', '=', "Registration");
+            });
+
 
         if($request->get('student')){
             $bundle_earnings->whereHas('user', function (Builder $query) use($request){
@@ -53,6 +60,10 @@ class ReportController extends Controller
             });
 
             $course_earnings->whereHas('user', function (Builder $query) use($request){
+                $query->where('id', '=', $request->get('student'));
+            });
+
+            $registrations_fees->whereHas('user', function (Builder $query) use($request){
                 $query->where('id', '=', $request->get('student'));
             });
         }
@@ -69,8 +80,13 @@ class ReportController extends Controller
         $course_sales = $course_earnings->count();
         $course_earnings = $course_earnings->sum('amount');
 
+        $registrations_sales=$registrations_fees->count();
+        $registration_earnings=$registrations_fees->sum('amount');
+
         $total_earnings = $course_earnings + $bundle_earnings;
         $total_sales = $course_sales + $bundle_sales;
+
+        $total_incomes=$registration_earnings+$total_sales;
 
         $students = User::query()->role('student')->get(['id', 'first_name', 'last_name']);
 
@@ -78,7 +94,7 @@ class ReportController extends Controller
 
         $bundles = Bundle::ofTeacher()->get(['id', 'title']);
 
-        return view('backend.reports.sales', compact('total_earnings', 'total_sales', 'students', 'courses', 'bundles'));
+        return view('backend.reports.sales', compact('total_earnings', 'total_sales', 'students', 'courses', 'bundles','total_incomes','registration_earnings','registrations_sales'));
     }
 
     public function getStudentsReport()
@@ -213,6 +229,56 @@ class ReportController extends Controller
             ->rawColumns(['course'])
             ->rawColumns(['bundle'])
             ->make();
+    }
+
+    public function getRegisteredStudents(Request $request){
+
+        $courses = Course::ofTeacher()->pluck('id');
+
+
+
+
+        $registrations_fees = Order::query()->with('items')->where('status', '=', 1);
+
+        $registrations_fees->whereHas('items', function ($q) use ($courses) {
+            $q->where('item_type', '=', "Registration");
+        });
+
+        if($request->get('student')){
+            $registrations_fees->whereHas('user', function (Builder $query) use($request){
+                $query->where('id', '=', $request->get('student'));
+            });
+        }
+
+        $course_orders =  $this->dateFilter($registrations_fees);
+
+//        print_r($course_orders);
+
+        return \DataTables::of($course_orders)
+            ->addColumn('course', function ($query) {
+              return "Registration";
+            })
+            ->addColumn('title', function () {
+                return "Registration Fees";
+            })
+            ->addColumn('amount', function ($query) {
+                return $query->amount;
+            })
+            ->addColumn('student', function ($query) {
+                return $query->user->full_name;
+            })
+            ->addColumn('transaction', function ($query) {
+                if ($query->transaction_id) {
+                    return $query->order->transaction_id;
+                }
+                return;
+            })
+            ->editColumn('created_at', function ($query) {
+                return $query->created_at->format('d-m-y H:i:s A');
+            })
+            ->addIndexColumn()
+            ->make();
+
     }
 
     public function getStudentsData(Request $request)
