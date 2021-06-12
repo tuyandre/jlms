@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0bb6bf07-0f62-494f-83e7-479d346bf2f2" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/auth/user/show/tabs/overview.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/auth/user/show/tabs/overview.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/certificate/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/certificate/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/teachers/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/teachers/edit.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -35,15 +34,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-1972">
               <caret line="17" column="6" selection-start-line="17" selection-start-column="6" selection-end-line="17" selection-end-column="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/database/migrations/2021_06_12_053254_add_passing_to_tests_table.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="86">
-              <caret line="16" column="50" selection-start-line="16" selection-start-column="50" selection-end-line="16" selection-end-column="50" />
             </state>
           </provider>
         </entry>
@@ -116,7 +106,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/backend/auth/user/show/tabs/overview.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="102">
@@ -124,6 +114,15 @@
               <folding>
                 <element signature="n#style#0;n#img#0;n#td#0;n#tr#0;n#table#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/backend/teachers/edit.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="239">
+              <caret line="91" column="31" lean-forward="true" selection-start-line="88" selection-start-column="23" selection-end-line="91" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -177,7 +176,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/resources/views/backend/orders/show.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/backend/transactions/sponsorship_deposit.blade.php" />
         <option value="$PROJECT_DIR$/database/migrations/2021_06_02_154449_create_sponsorship_payments_table.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Backend/Admin/PaymentController.php" />
@@ -228,6 +226,7 @@
         <option value="$PROJECT_DIR$/resources/views/frontend/courses/lesson.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/certificate/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/backend/auth/user/show/tabs/overview.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/backend/teachers/edit.blade.php" />
       </list>
     </option>
   </component>
@@ -484,7 +483,7 @@
       <path value="$PROJECT_DIR$/vendor/spatie/temporary-directory" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1346" />
@@ -638,6 +637,14 @@
               <item name="jlms" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
+              <item name="teachers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jlms" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jlms" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
               <item name="frontend" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -740,15 +747,15 @@
       <workItem from="1622594524930" duration="57095000" />
       <workItem from="1622810764683" duration="661000" />
       <workItem from="1622841438560" duration="31284000" />
-      <workItem from="1623435898701" duration="18190000" />
+      <workItem from="1623435898701" duration="18942000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="322773000" />
+    <option name="totallyTimeSpent" value="323525000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Designer" />
@@ -789,18 +796,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/views/frontend/cart/checkout.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="417" column="87" selection-start-line="417" selection-start-column="87" selection-end-line="417" selection-end-column="87" />
-          <folding>
-            <element signature="e#8456#17335#0#HTML" />
-            <element signature="e#0#36528#0#Blade" />
-            <element signature="e#0#36528#0#Blade" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/CartController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="534">
@@ -1132,6 +1127,13 @@
           <folding>
             <element signature="n#style#0;n#img#0;n#td#0;n#tr#0;n#table#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/backend/teachers/edit.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="239">
+          <caret line="91" column="31" lean-forward="true" selection-start-line="88" selection-start-column="23" selection-end-line="91" selection-end-column="31" />
         </state>
       </provider>
     </entry>
