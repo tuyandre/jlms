@@ -86,10 +86,10 @@
                         </div>
                     </div>
 
-{{--                    @php--}}
-{{--                        $teacherProfile = $teacher->teacherProfile?:'';--}}
-{{--                        $payment_details = $teacher->teacherProfile?json_decode($teacher->teacherProfile->payment_details):new stdClass();--}}
-{{--                    @endphp--}}
+                    @php
+                        $teacherProfile = $teacher->teacherProfile?:'';
+                        $payment_details = $teacher->teacherProfile?json_decode($teacher->teacherProfile->payment_details):new stdClass();
+                    @endphp
 
 {{--                    <div class="form-group row">--}}
 {{--                        {{ html()->label(__('labels.teacher.facebook_link'))->class('col-md-2 form-control-label')->for('facebook_link') }}--}}
