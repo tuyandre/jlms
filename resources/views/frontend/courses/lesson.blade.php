@@ -191,12 +191,12 @@
                             </div>
                         @endif
 
-                        @if($lesson->lesson_image != "")
-                            <div class="course-single-pic mb30">
-                                <img src="{{asset('storage/uploads/'.$lesson->lesson_image)}}"
-                                     alt="">
-                            </div>
-                        @endif
+{{--                        @if($lesson->lesson_image != "")--}}
+{{--                            <div class="course-single-pic mb30">--}}
+{{--                                <img src="{{asset('storage/uploads/'.$lesson->lesson_image)}}"--}}
+{{--                                     alt="">--}}
+{{--                            </div>--}}
+{{--                        @endif--}}
 
 
                         @if ($test_exists)
@@ -214,7 +214,7 @@
                             <hr/>
                             @if (!is_null($test_result))
                                 <div class="alert alert-info">@lang('labels.frontend.course.your_test_score')
-                                    : {{ $test_result->test_result }}</div>
+                                    : {{ $test_result->test_result }}%</div>
                                 @if(config('retest'))
                                     <form action="{{route('lessons.retest',[$test_result->test->slug])}}" method="post">
                                         @csrf
@@ -420,6 +420,7 @@
                 <div class="col-md-3">
                     <div id="sidebar" class="sidebar">
                         <div class="course-details-category ul-li">
+
                             @if ($previous_lesson)
                                 <p><a class="btn btn-block gradient-bg font-weight-bold text-white"
                                       href="{{ route('lessons.show', [$previous_lesson->course_id, $previous_lesson->model->slug]) }}"><i
@@ -440,21 +441,25 @@
                                     @endif
                                 @endif
                             </p>
-                            @if($lesson->course->progress() == 100)
-                                @if(!$lesson->course->isUserCertified())
-                                    <form method="post" action="{{route('admin.certificates.generate')}}">
-                                        @csrf
-                                        <input type="hidden" value="{{$lesson->course->id}}" name="course_id">
-                                        <button class="btn btn-success btn-block text-white mb-3 text-uppercase font-weight-bold"
-                                                id="finish">@lang('labels.frontend.course.finish_course')</button>
-                                    </form>
-                                @else
-                                    <div class="alert alert-success">
-                                        @lang('labels.frontend.course.certified')
-                                    </div>
-                                @endif
-                            @endif
+                                @if ($test_result)
+                                @if(!$test_result->test_result<$passing)
 
+                                    @if($lesson->course->progress() == 100)
+                                        @if(!$lesson->course->isUserCertified())
+                                            <form method="post" action="{{route('admin.certificates.generate')}}">
+                                                @csrf
+                                                <input type="hidden" value="{{$lesson->course->id}}" name="course_id">
+                                                <button class="btn btn-success btn-block text-white mb-3 text-uppercase font-weight-bold"
+                                                        id="finish">@lang('labels.frontend.course.finish_course')</button>
+                                            </form>
+                                        @else
+                                            <div class="alert alert-success">
+                                                @lang('labels.frontend.course.certified')
+                                            </div>
+                                        @endif
+                                    @endif
+                                @endif
+                                @endif
 
                             <span class="float-none">@lang('labels.frontend.course.course_timeline')</span>
                             <ul class="course-timeline-list">
@@ -522,6 +527,8 @@
 
 
     <script>
+
+        var video_durations=0;
         @if($lesson->mediaPDF)
         $(function () {
             $("#myPDF").pdf({
@@ -564,7 +571,8 @@
         player.on('ready', event => {
             player.currentTime = parseInt(current_progress);
             duration = event.detail.plyr.duration;
-
+            video_durations=duration;
+            console.log("video duration posibility:"+video_durations);
 
             if (!storedDuration || (parseInt(storedDuration) === 0)) {
                 Cookies.set("duration_" + "{{auth()->user()->id}}" + "_" + "{{$lesson->id}}" + "_" + "{{$lesson->course->id}}", duration);
@@ -618,9 +626,16 @@
 
         $("#sidebar").stick_in_parent();
 
-
+        {{--console.log("test score:"+"{{$test_result->test_result}}")--}}
+        {{--console.log("passing score:"+"{{$passing}}")--}}
+        @if ($test_result)
+            @if($test_result->test_result<$passing)
+            $('#nextButton').html("<a class='btn btn-block bg-danger font-weight-bold text-white' href='#'>@lang('labels.frontend.course.fail_test')</a>")
+            @endif
+        @endif
         @if((int)config('lesson_timer') != 0)
         //Next Button enables/disable according to time
+
 
         var readTime, totalQuestions, testTime;
         user_lesson = Cookies.get("user_lesson_" + "{{auth()->user()->id}}" + "_" + "{{$lesson->id}}" + "_" + "{{$lesson->course->id}}");
@@ -629,7 +644,8 @@
             totalQuestions = '{{count($lesson->questions)}}'
         readTime = parseInt(totalQuestions) * 30;
         @else
-            readTime = parseInt("{{$lesson->readTime()}}") * 60;
+            {{--readTime = parseInt("{{$lesson->readTime()}}") * 60;--}}
+            readTime = parseInt("{{$lesson->readTime()}}") * video_durations;
         @endif
 
         @if(!$lesson->isCompleted())
@@ -674,6 +690,9 @@
                 @if ($test_exists && (is_null($test_result)))
                 $('#nextButton').html("<a class='btn btn-block bg-danger font-weight-bold text-white' href='#'>@lang('labels.frontend.course.complete_test')</a>")
                 @else
+                @if($test_result->test_result<$passing)
+                $('#nextButton').html("<a class='btn btn-block bg-danger font-weight-bold text-white' href='#'>@lang('labels.frontend.course.fail_test')</a>")
+                @endif
                 @if($next_lesson)
                 $('#nextButton').html("<a class='btn btn-block gradient-bg font-weight-bold text-white'" +
                     " href='{{ route('lessons.show', [$next_lesson->course_id, $next_lesson->model->slug]) }}'>@lang('labels.frontend.course.next')<i class='fa fa-angle-double-right'></i> </a>");

@@ -1503,6 +1503,7 @@ return array (
       'bundle_reviews' => 'Bundle <span>Reviews:</span>',
       'available_in_bundles' => 'Also available in Bundles',
       'complete_test' => 'Please Complete Test',
+      'fail_test' => 'Please Pass Test You failed',
       'looking_for' => 'Looking For?',
       'not_attempted' => 'Not Attempted',
       'explanation' => 'Explanation',

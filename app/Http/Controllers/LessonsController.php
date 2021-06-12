@@ -39,12 +39,14 @@ class LessonsController extends Controller
     {
         $test_result = "";
         $completed_lessons = "";
+        $passing=50;
         $lesson = Lesson::where('slug', $lesson_slug)->where('course_id', $course_id)->where('published', '=', 1)->first();
 
         if ($lesson == "") {
             $lesson = Test::where('slug', $lesson_slug)->where('course_id', $course_id)->where('published', '=', 1)->firstOrFail();
             $lesson->full_text = $lesson->description;
 
+            $passing=$lesson->passing;
             $test_result = NULL;
             if ($lesson) {
                 $test_result = TestsResult::where('test_id', $lesson->id)
@@ -103,7 +105,7 @@ class LessonsController extends Controller
             ->toArray();
 
         return view($this->path . '.courses.lesson', compact('lesson', 'previous_lesson', 'next_lesson', 'test_result',
-            'purchased_course', 'test_exists', 'lessons', 'completed_lessons'));
+            'purchased_course', 'test_exists', 'lessons', 'completed_lessons','passing'));
     }
 
     public function test($lesson_slug, Request $request)
@@ -111,6 +113,7 @@ class LessonsController extends Controller
         $test = Test::where('slug', $lesson_slug)->firstOrFail();
         $answers = [];
         $test_score = 0;
+        $total_score=0;
         if(!$request->get('questions')){
 
             return back()->with(['flash_warning'=>'No options selected']);
@@ -130,16 +133,18 @@ class LessonsController extends Controller
                     $test_score += $question->score;
                 }
             }
+            $total_score +=$question->score;
             /*
              * Save the answer
              * Check if it is correct and then add points
              * Save all test result and show the points
              */
         }
+        $percentage=($test_score*100)/$total_score;
         $test_result = TestsResult::create([
             'test_id' => $test->id,
             'user_id' => \Auth::id(),
-            'test_result' => $test_score,
+            'test_result' => $percentage,
         ]);
         $test_result->answers()->createMany($answers);
 
@@ -154,7 +159,8 @@ class LessonsController extends Controller
         }
 
 
-        return back()->with(['message'=>'Test score: ' . $test_score,'result'=>$test_result]);
+
+        return back()->with(['message'=>'Test score: ' . $percentage.'%','result'=>$test_result]);
     }
 
     public function retest(Request $request)
