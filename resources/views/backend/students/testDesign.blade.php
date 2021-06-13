@@ -55,7 +55,7 @@
         #card {
             position: absolute;
             width: 600px;
-            height: 335px;
+            height: 350px;
             padding: 25px;
             padding-top: 15px;
             padding-bottom: 25px;
@@ -102,37 +102,35 @@
 <body>
 <div id="gradient"></div>
 <div id="card">
-
     <div class="row">
         <div class="col-md-4">
-            <img style="width: 120px; height: 70px !important;" src="{{public_path('/images/company.png')}}"/>
+            <img style="width: 120px; height: 70px !important;" src="{{asset('/images/company.png')}}"/>
 
         </div>
         <div class="col-md-8">
             <h3> <b>JDD & ASSOCIATES Ltd</b></h3>
         </div>
     </div>
-
-{{--    <img src="{{$user->picture}}"/>--}}
-    <img style="width: 150px !important; height: 150px !important; " src="{{public_path('/storage/'.$data['photo'])}}"/>
+        <img src="{{asset('/students/passport/passport.png')}}"/>
+{{--    <img style="width: 150px !important; height: 150px !important; " src="{{public_path('/storage/'.$data['photo'])}}"/>--}}
     <h2><b>STUDENT CARD</b></h2><p style="height: 5px"></p>
     <hr>
     <p>
-        <b>NAMES:</b><span>{{$data['full_name']}}</span><br>
-        <b>Reg No:</b><span>{{$data['username']}}</span><br>
-    <b>PROGRAM:</b><span>{{$data['program']}}</span><br>
-        <b>TELEPHONE:</b><span>{{$data['phone']}}</span><br>
-        <b>ISSUE DATE:</b><span>{{$data['issue_date']}}</span><br>
-        <b>EXPIRATION DATE:</b><span>{{$data['expire_date']}}</span><br>
+        <b>NAMES:</b><span>Andre</span><br>
+        <b>Reg No:</b><span>hdhdh</span><br>
+        <b>PROGRAM:</b><span>CAT</span><br>
+        <b>TELEPHONE:</b><span>0788744</span><br>
+        <b>ISSUE DATE:</b><span>2021-3-2</span><br>
+        <b>EXPIRATION DATE:</b><span>2021-23-12</span><br>
     </p>
     <div class="row">
         <div class="col-md-5">
+
         </div>
         <div class="col-md-7">
-{{--                <span class="bottom" style="margin-top: 30px">--}}
-        <b>Registration Office</b><br>
-        <b>www.jddauditors.com</b>
-{{--    </span>--}}
+            <b>Registration Office</b><br>
+            <b>www.jddauditors.com</b>
+            {{--    </span>--}}
         </div>
     </div>
 

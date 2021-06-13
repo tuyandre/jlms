@@ -11,6 +11,7 @@ use App\Http\Controllers\Frontend\HomeController;
 
 Route::get('/test/test/get-students-reports-data', ['uses' => 'Backend\ReportController@getRegisteredStudents', 'as' => 'reports.get_students_data']);
 
+Route::get('/test_design/studentCard','Frontend\FrontendController@testDesign')->name('frontend.testDesign');
 
 Route::get('/instructions','Frontend\FrontendController@instructions')->name('frontend.instructions');
 Route::get('/jsms/apply','Frontend\FrontendController@apply')->name('frontend.jsms.apply');

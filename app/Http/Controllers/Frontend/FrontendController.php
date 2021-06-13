@@ -14,4 +14,7 @@ class FrontendController extends Controller
     public function apply(){
         return view('customized.register');
     }
+    public function testDesign(){
+        return view('backend.students.testDesign');
+    }
 }
