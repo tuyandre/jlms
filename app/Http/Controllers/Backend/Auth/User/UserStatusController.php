@@ -66,8 +66,9 @@ class UserStatusController extends Controller
             $user->confirmed=1;
             $user->save();
         }
+
+        $name=$user->first_name." ".$user->last_name;
         if ($status==1){
-            $name=$user->first_name." ".$user->last_name;
 
             if ($user){
 

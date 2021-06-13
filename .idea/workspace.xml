@@ -1,34 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0bb6bf07-0f62-494f-83e7-479d346bf2f2" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Backend/StudentCardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Backend/StudentCardController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/students/studentCardDesign.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/students/studentCardDesign.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/students/studentcardList.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/students/studentcardList.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/students/testDesign.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/students/testDesign.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/sessions/0XKWHpIvynpcwU0NY9hUpwCWAvrgV3NuBjKSIdkl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/sessions/4eqY2iGPuQ1n3bmIMf3X0gJymy0soHjJ5PerxixO" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/sessions/5HAunziVlMYxRXJVXpcseGDU3aOQrucV5XlGSirm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/sessions/5UsvDnp3yPJhqLUzm3Bmrc4FSmOZ1ZLjgvOUObx2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/sessions/EZX1aJPAH6OV4oh1PJP7CXRoHOu886gtzVUpJ0DP" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/sessions/FAndPKEQ5I7Sct0wlTNUtINE3vFkMBEPNXPDzlTK" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/sessions/HHXQC8tmn1398XCYXd0cb1sTy0Fpiapy8GY83yBc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/sessions/L2Bq0pu3GnsMXLF9ym1P6ssLMAiNTlr7vmeVZqSB" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/sessions/LgVekyDCvnjVuVLhCU4Deq5YA1ter5wOiKfnznpS" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/sessions/Za2MTbGbgDL6sQdlgIiuEF3GWjK7Wflp2LYel4yi" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/sessions/cK7Ydoi7YVgbCiHxzVydNDyN15inPJ0RUZnDx9vT" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/sessions/gNWwlPsmQJQh2UBi9FndK3xkpWGZh6KpB1ruyHYQ" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/sessions/hn8sAPIr5G4IoSGSfvAD9sW6PV4TTIkL8dYaT6G6" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/sessions/jjsbLtQfvghVyoeDgH5qvflx4rLRDo4p03EcSwgA" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/sessions/jnnXgqGxorH4eV8cGZ2r1nGWiW0ssuLR3QFK8vEn" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/sessions/kmF2RngSmAvfsywuN9dCPduEHZCdiQ8lAv1qYT3Z" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/sessions/l4f5EySzbd290qq2OKRiRy7j4aBaaijitiXD6A63" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/sessions/lAi3Sg4obVAGMYATLoQk1euZNM5iupDSXTrXsYZ9" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/sessions/nUG6SV8ABrh1TonJtBe8fv49BFHgW2mI9d3Dtvbz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/sessions/qLCFxc8UTksHefodrcApCs6i3FrxroNAJlDwGC5A" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/sessions/qkjONiBH1VySUvb1a3SA38D7dpwFO1CqZIBxNRrQ" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/sessions/qoq1O2jQnc6qYbVDt3VDCqmWElSXAxZl3eOY0sPr" beforeDir="false" />
-    </list>
+    <list default="true" id="0bb6bf07-0f62-494f-83e7-479d346bf2f2" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -131,7 +104,7 @@
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Backend/StudentCardController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="187">
-              <caret line="16" column="69" selection-start-line="16" selection-start-column="69" selection-end-line="16" selection-end-column="69" />
+              <caret line="16" column="76" selection-start-line="16" selection-start-column="76" selection-end-line="16" selection-end-column="76" />
               <folding>
                 <element signature="e#48#74#0#PHP" expanded="true" />
               </folding>
@@ -650,7 +623,7 @@
       <path value="$PROJECT_DIR$/vendor/spatie/temporary-directory" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1346" />
@@ -738,7 +711,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../PROJECTS/website" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="yarn" />
@@ -802,16 +775,15 @@
       <workItem from="1622594524930" duration="57095000" />
       <workItem from="1622810764683" duration="661000" />
       <workItem from="1622841438560" duration="31284000" />
-      <workItem from="1623435898701" duration="51949000" />
+      <workItem from="1623435898701" duration="52102000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="356532000" />
+    <option name="totallyTimeSpent" value="356685000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Designer" />
       <window_info id="Image Layers" />
@@ -1202,7 +1174,7 @@
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Backend/StudentCardController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
-          <caret line="16" column="69" selection-start-line="16" selection-start-column="69" selection-end-line="16" selection-end-column="69" />
+          <caret line="16" column="76" selection-start-line="16" selection-start-column="76" selection-end-line="16" selection-end-column="76" />
           <folding>
             <element signature="e#48#74#0#PHP" expanded="true" />
           </folding>
