@@ -693,8 +693,10 @@
                 @if ($test_exists && (is_null($test_result)))
                 $('#nextButton').html("<a class='btn btn-block bg-danger font-weight-bold text-white' href='#'>@lang('labels.frontend.course.complete_test')</a>")
                 @else
+                @if ($test_result)
                 @if($test_result->test_result<$passing)
                 $('#nextButton').html("<a class='btn btn-block bg-danger font-weight-bold text-white' href='#'>@lang('labels.frontend.course.fail_test')</a>")
+                @endif
                 @endif
                 @if($next_lesson)
                 $('#nextButton').html("<a class='btn btn-block gradient-bg font-weight-bold text-white'" +
