@@ -15,7 +15,7 @@ class StudentCardController extends Controller
     {
 //        $students = auth()->user()->studentCard;
         $students = StudentCard::where('user_id','=',auth()->user()->id)->get();
-        return view('backend.students.studentCardList', compact('students'));
+        return view('backend.students.studentcardList', compact('students'));
     }
 
     public function downloadStudentCard(Request $request)
