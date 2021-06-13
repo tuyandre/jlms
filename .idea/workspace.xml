@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0bb6bf07-0f62-494f-83e7-479d346bf2f2" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Backend/StudentCardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Backend/StudentCardController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/frontend/courses/lesson.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/courses/lesson.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -103,8 +102,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Backend/StudentCardController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="16" column="71" selection-start-line="16" selection-start-column="71" selection-end-line="16" selection-end-column="71" />
+            <state relative-caret-position="272">
+              <caret line="21" column="5" lean-forward="true" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
               <folding>
                 <element signature="e#48#74#0#PHP" expanded="true" />
               </folding>
@@ -115,8 +114,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/frontend/courses/lesson.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="358">
-              <caret line="699" column="22" selection-start-line="699" selection-start-column="22" selection-end-line="699" selection-end-column="22" />
+            <state relative-caret-position="290">
+              <caret line="695" column="17" lean-forward="true" selection-start-line="695" selection-start-column="17" selection-end-line="699" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -202,8 +201,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/backend/students/studentcardList.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="748">
-              <caret line="44" column="45" selection-start-line="44" selection-start-column="45" selection-end-line="44" selection-end-column="45" />
+            <state relative-caret-position="154">
+              <caret line="34" column="13" selection-start-line="34" selection-start-column="12" selection-end-line="34" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -368,9 +367,9 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/Frontend/FrontendController.php" />
         <option value="$PROJECT_DIR$/resources/views/backend/students/testDesign.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/backend/students/studentCardDesign.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/backend/students/studentcardList.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Backend/Auth/User/UserStatusController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Backend/StudentCardController.php" />
+        <option value="$PROJECT_DIR$/resources/views/backend/students/studentcardList.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/frontend/courses/lesson.blade.php" />
       </list>
     </option>
@@ -716,6 +715,21 @@
               <item name="jlms" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jlms" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jlms" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
+              <item name="students" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jlms" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jlms" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
               <item name="frontend" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -808,18 +822,18 @@
       <workItem from="1622810764683" duration="661000" />
       <workItem from="1622841438560" duration="31284000" />
       <workItem from="1623435898701" duration="52102000" />
-      <workItem from="1623594459949" duration="1010000" />
+      <workItem from="1623594459949" duration="1865000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="357695000" />
+    <option name="totallyTimeSpent" value="358550000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2987897" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2987897" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -838,7 +852,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.1685761" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.1685761" />
       <window_info anchor="bottom" id="Flutter Performance" order="12" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -1119,13 +1133,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/backend/students/studentcardList.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="748">
-          <caret line="44" column="45" selection-start-line="44" selection-start-column="45" selection-end-line="44" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/backend/students/studentCardDesign.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1819">
@@ -1193,18 +1200,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Backend/StudentCardController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="16" column="71" selection-start-line="16" selection-start-column="71" selection-end-line="16" selection-end-column="71" />
+        <state relative-caret-position="272">
+          <caret line="21" column="5" lean-forward="true" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
           <folding>
             <element signature="e#48#74#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/backend/students/studentcardList.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="34" column="13" selection-start-line="34" selection-start-column="12" selection-end-line="34" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/frontend/courses/lesson.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="358">
-          <caret line="699" column="22" selection-start-line="699" selection-start-column="22" selection-end-line="699" selection-end-column="22" />
+        <state relative-caret-position="290">
+          <caret line="695" column="17" lean-forward="true" selection-start-line="695" selection-start-column="17" selection-end-line="699" selection-end-column="26" />
         </state>
       </provider>
     </entry>
