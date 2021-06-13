@@ -26,8 +26,8 @@
                             </thead>
 
                             <tbody>
-                            @if(count(students) > 0)
-                                @foreach(students as $key=>$certificate)
+                            @if(count($students) > 0)
+                                @foreach($students as $key=>$certificate)
                                     @php $key++; @endphp
                                     <tr>
                                         <td>{{$key}}</td>
