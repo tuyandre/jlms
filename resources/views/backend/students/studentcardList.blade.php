@@ -31,9 +31,9 @@
                                     @php $key++; @endphp
                                     <tr>
                                         <td>{{$key}}</td>
-                                        <td>{{$certificate}}</td>
-                                        <td>{{$certificate}}</td>
-                                        <td>{{$certificate}}</td>
+                                        <td>{{$certificate->full_name}}</td>
+                                        <td>{{$certificate->issue_date}}</td>
+                                        <td>{{$certificate->expired_date}}</td>
                                         <th>
                                             {{--                                            @if($certificate->course->progress() == 100)--}}
                                             <a href="{{asset('students/cards/'.$certificate->url)}}" target="_blank" class="btn btn-success">

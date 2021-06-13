@@ -103,13 +103,13 @@
 <div id="gradient"></div>
 <div id="card">
     <div class="row">
-        <div class="col-md-4">
-            <img style="width: 120px; height: 70px !important;" src="{{asset('/images/company.png')}}"/>
+        <div class="col-md-6 offset-3">
+            <img src="{{asset('/images/company.png')}}"/>
 
         </div>
-        <div class="col-md-8">
-            <h3> <b>JDD & ASSOCIATES Ltd</b></h3>
-        </div>
+{{--        <div class="col-md-8">--}}
+{{--            <h3> <b>JDD & ASSOCIATES Ltd</b></h3>--}}
+{{--        </div>--}}
     </div>
         <img src="{{asset('/students/passport/passport.png')}}"/>
 {{--    <img style="width: 150px !important; height: 150px !important; " src="{{public_path('/storage/'.$data['photo'])}}"/>--}}

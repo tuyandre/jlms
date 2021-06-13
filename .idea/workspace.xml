@@ -2,11 +2,32 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0bb6bf07-0f62-494f-83e7-479d346bf2f2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/backend/students/testDesign.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Frontend/FrontendController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Frontend/FrontendController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Backend/StudentCardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Backend/StudentCardController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/backend/students/studentCardDesign.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/students/studentCardDesign.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/students/studentcardList.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/students/studentcardList.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/students/testDesign.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/students/testDesign.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/sessions/0XKWHpIvynpcwU0NY9hUpwCWAvrgV3NuBjKSIdkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/sessions/4eqY2iGPuQ1n3bmIMf3X0gJymy0soHjJ5PerxixO" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/sessions/5HAunziVlMYxRXJVXpcseGDU3aOQrucV5XlGSirm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/sessions/5UsvDnp3yPJhqLUzm3Bmrc4FSmOZ1ZLjgvOUObx2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/sessions/EZX1aJPAH6OV4oh1PJP7CXRoHOu886gtzVUpJ0DP" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/sessions/FAndPKEQ5I7Sct0wlTNUtINE3vFkMBEPNXPDzlTK" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/sessions/HHXQC8tmn1398XCYXd0cb1sTy0Fpiapy8GY83yBc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/sessions/L2Bq0pu3GnsMXLF9ym1P6ssLMAiNTlr7vmeVZqSB" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/sessions/LgVekyDCvnjVuVLhCU4Deq5YA1ter5wOiKfnznpS" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/sessions/Za2MTbGbgDL6sQdlgIiuEF3GWjK7Wflp2LYel4yi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/sessions/cK7Ydoi7YVgbCiHxzVydNDyN15inPJ0RUZnDx9vT" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/sessions/gNWwlPsmQJQh2UBi9FndK3xkpWGZh6KpB1ruyHYQ" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/sessions/hn8sAPIr5G4IoSGSfvAD9sW6PV4TTIkL8dYaT6G6" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/sessions/jjsbLtQfvghVyoeDgH5qvflx4rLRDo4p03EcSwgA" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/sessions/jnnXgqGxorH4eV8cGZ2r1nGWiW0ssuLR3QFK8vEn" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/sessions/kmF2RngSmAvfsywuN9dCPduEHZCdiQ8lAv1qYT3Z" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/sessions/l4f5EySzbd290qq2OKRiRy7j4aBaaijitiXD6A63" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/sessions/lAi3Sg4obVAGMYATLoQk1euZNM5iupDSXTrXsYZ9" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/sessions/nUG6SV8ABrh1TonJtBe8fv49BFHgW2mI9d3Dtvbz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/sessions/qLCFxc8UTksHefodrcApCs6i3FrxroNAJlDwGC5A" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/sessions/qkjONiBH1VySUvb1a3SA38D7dpwFO1CqZIBxNRrQ" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/sessions/qoq1O2jQnc6qYbVDt3VDCqmWElSXAxZl3eOY0sPr" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -53,7 +74,7 @@
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Backend/Auth/User/UserStatusController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="273">
-              <caret line="138" lean-forward="true" selection-start-line="138" selection-end-line="138" />
+              <caret line="138" selection-start-line="138" selection-end-line="138" />
             </state>
           </provider>
         </entry>
@@ -97,21 +118,23 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/backend/students/testDesign.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="104" column="2" lean-forward="true" selection-start-line="104" selection-start-column="2" selection-end-line="112" selection-end-column="10" />
+            <state relative-caret-position="86">
+              <caret line="106" column="16" selection-start-line="106" selection-start-column="16" selection-end-line="106" selection-end-column="16" />
               <folding>
-                <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#p#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Backend/StudentCardController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="187">
-              <caret line="15" column="73" selection-start-line="15" selection-start-column="65" selection-end-line="15" selection-end-column="73" />
+              <caret line="16" column="69" selection-start-line="16" selection-start-column="69" selection-end-line="16" selection-end-column="69" />
+              <folding>
+                <element signature="e#48#74#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -197,19 +220,18 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/backend/students/studentcardList.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="307">
-              <caret line="41" column="103" selection-start-line="41" selection-start-column="103" selection-end-line="41" selection-end-column="103" />
+            <state relative-caret-position="324">
+              <caret line="44" column="45" lean-forward="true" selection-start-line="44" selection-start-column="45" selection-end-line="44" selection-end-column="45" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/backend/students/studentCardDesign.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="122" column="50" selection-start-line="122" selection-start-column="50" selection-end-line="122" selection-end-column="50" />
+            <state relative-caret-position="85">
+              <caret line="107" column="16" selection-start-line="107" selection-start-column="16" selection-end-line="107" selection-end-column="16" />
               <folding>
-                <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#img#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#p#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -364,14 +386,14 @@
         <option value="$PROJECT_DIR$/app/Models/StudentCard.php" />
         <option value="$PROJECT_DIR$/database/migrations/2021_06_13_012217_create_student_cards_table.php" />
         <option value="$PROJECT_DIR$/app/Models/Auth/User.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Backend/StudentCardController.php" />
-        <option value="$PROJECT_DIR$/resources/views/backend/students/studentcardList.blade.php" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Backend/Auth/User/UserStatusController.php" />
         <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Frontend/FrontendController.php" />
         <option value="$PROJECT_DIR$/resources/views/backend/students/testDesign.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/backend/students/studentCardDesign.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/backend/students/studentcardList.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Backend/StudentCardController.php" />
       </list>
     </option>
   </component>
@@ -780,12 +802,12 @@
       <workItem from="1622594524930" duration="57095000" />
       <workItem from="1622810764683" duration="661000" />
       <workItem from="1622841438560" duration="31284000" />
-      <workItem from="1623435898701" duration="50839000" />
+      <workItem from="1623435898701" duration="51949000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="355422000" />
+    <option name="totallyTimeSpent" value="356532000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -1108,20 +1130,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/backend/students/studentcardList.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="307">
-          <caret line="41" column="103" selection-start-line="41" selection-start-column="103" selection-end-line="41" selection-end-column="103" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Backend/StudentCardController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="15" column="73" selection-start-line="15" selection-start-column="65" selection-end-line="15" selection-end-column="73" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/certificate/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="112">
@@ -1145,7 +1153,7 @@
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Backend/Auth/User/UserStatusController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="273">
-          <caret line="138" lean-forward="true" selection-start-line="138" selection-end-line="138" />
+          <caret line="138" selection-start-line="138" selection-end-line="138" />
         </state>
       </provider>
     </entry>
@@ -1165,10 +1173,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/backend/students/testDesign.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="104" column="2" lean-forward="true" selection-start-line="104" selection-start-column="2" selection-end-line="112" selection-end-column="10" />
+        <state relative-caret-position="86">
+          <caret line="106" column="16" selection-start-line="106" selection-start-column="16" selection-end-line="106" selection-end-column="16" />
           <folding>
-            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#p#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
@@ -1176,12 +1183,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/backend/students/studentCardDesign.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="122" column="50" selection-start-line="122" selection-start-column="50" selection-end-line="122" selection-end-column="50" />
+        <state relative-caret-position="85">
+          <caret line="107" column="16" selection-start-line="107" selection-start-column="16" selection-end-line="107" selection-end-column="16" />
           <folding>
-            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#img#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#p#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/backend/students/studentcardList.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="44" column="45" lean-forward="true" selection-start-line="44" selection-start-column="45" selection-end-line="44" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Backend/StudentCardController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="16" column="69" selection-start-line="16" selection-start-column="69" selection-end-line="16" selection-end-column="69" />
+          <folding>
+            <element signature="e#48#74#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>

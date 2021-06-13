@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Backend;
 
+use App\Helpers\Auth\Auth;
 use App\Http\Controllers\Controller;
 use App\Models\StudentCard;
 use App\Models\UnitCertificate;
@@ -12,7 +13,8 @@ class StudentCardController extends Controller
 {
     public function getStudentCard()
     {
-        $students = auth()->user()->studentCard;
+//        $students = auth()->user()->studentCard;
+        $students = StudentCard::where('user_id','=',Auth::user()->id)->get();
         return view('backend.students.studentCardList', compact('students'));
     }
 

@@ -104,13 +104,14 @@
 <div id="card">
 
     <div class="row">
-        <div class="col-md-4">
-            <img style="width: 120px; height: 70px !important;" src="{{public_path('/images/company.png')}}"/>
+        <div class="col-md-6 offset-3">
+            <img src="{{public_path('/images/company.png')}}"/>
+{{--            <img style="width: 120px; height: 70px !important;" src="{{public_path('/images/company.png')}}"/>--}}
 
         </div>
-        <div class="col-md-8">
-            <h3> <b>JDD & ASSOCIATES Ltd</b></h3>
-        </div>
+{{--        <div class="col-md-8">--}}
+{{--            <h3> <b>JDD & ASSOCIATES Ltd</b></h3>--}}
+{{--        </div>--}}
     </div>
 
 {{--    <img src="{{$user->picture}}"/>--}}
