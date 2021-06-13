@@ -324,6 +324,20 @@
                                 class="title">@lang('menus.backend.sidebar.certificates.title')</span>
                     </a>
                 </li>
+                <li class="nav-item ">
+                    <a class="nav-link {{ $request->segment(1) == 'unit_certificates' ? 'active' : '' }}"
+                       href="{{ route('admin.unitCertificates.index') }}">
+                        <i class="nav-icon icon-badge"></i> <span
+                                class="title">@lang('menus.backend.sidebar.certificates.unit_lesson')</span>
+                    </a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link {{ $request->segment(1) == 'student_card' ? 'active' : '' }}"
+                       href="{{ route('admin.studentCard.index') }}">
+                        <i class="nav-icon icon-badge"></i> <span
+                                class="title">Student Card</span>
+                    </a>
+                </li>
             @endif
             @if ($logged_in_user->hasRole('teacher'))
                 <li class="nav-item ">

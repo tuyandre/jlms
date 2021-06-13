@@ -262,6 +262,9 @@
                                     @if(count($lesson->questions) > 0  )
                                         <form action="{{ route('lessons.test', [$lesson->slug]) }}" method="post">
                                             {{ csrf_field() }}
+                                            @if($previous_lesson)
+                                                <input type="number" hidden name="previous_lesson" value="{{$previous_lesson->course_id}}"/>
+                                                @endif
                                             @foreach ($lesson->questions as $question)
                                                 <h4 class="mb-0">{{ $loop->iteration }}. {!! $question->question !!}  </h4>
                                                 <br/>

@@ -116,7 +116,8 @@ return array (
       ),
       'certificates' =>
       array (
-        'title' => 'Certificates',
+        'title' => 'Course Certificates',
+        'unit_lesson' => 'Unit Certificates',
       ),
       'contacts' =>
       array (

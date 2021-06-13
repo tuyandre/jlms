@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers\Backend;
 
+use App\Helpers\Auth\Auth;
 use App\Http\Controllers\Controller;
 use App\Models\Certificate;
 use App\Models\Course;
+use App\Models\UnitCertificate;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -37,6 +39,11 @@ class CertificateController extends Controller
         return view('backend.certificates.index', compact('certificates'));
     }
 
+    public function getUnitCertificates(){
+//        $certificates = auth()->user()->unitCertificates;
+        $certificates =UnitCertificate::with(['lesson','course'])->where('user_id','=',\Auth::id())->get();
+        return view('backend.certificates.unitCertificate', compact('certificates'));
+    }
 
     /**
      * Generate certificate for completed course
@@ -78,6 +85,17 @@ class CertificateController extends Controller
     public function download(Request $request)
     {
         $certificate = Certificate::findOrFail($request->certificate_id);
+        if($certificate != null){
+            $file = public_path() . "/storage/certificates/" . $certificate->url;
+            return Response::download($file);
+        }
+        return back()->withFlashDanger('No Certificate found');
+
+
+    }
+    public function downloadUnitCertificate(Request $request)
+    {
+        $certificate = UnitCertificate::findOrFail($request->certificate_id);
         if($certificate != null){
             $file = public_path() . "/storage/certificates/" . $certificate->url;
             return Response::download($file);

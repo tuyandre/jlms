@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Helpers\Auth\Auth;
 use App\Mail\Frontend\LiveLesson\StudentMeetingSlotMail;
+use App\Models\Certificate;
+use App\Models\Course;
 use App\Models\Lesson;
 use App\Models\LessonSlotBooking;
 use App\Models\LiveLessonSlot;
@@ -12,7 +14,9 @@ use App\Models\Question;
 use App\Models\QuestionsOption;
 use App\Models\Test;
 use App\Models\TestsResult;
+use App\Models\UnitCertificate;
 use App\Models\VideoProgress;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class LessonsController extends Controller
@@ -146,6 +150,36 @@ class LessonsController extends Controller
             'user_id' => \Auth::id(),
             'test_result' => $percentage,
         ]);
+
+
+        if ($percentage>=50) {
+            $lessonss = Lesson::where('id', '=', $request->previous_lesson)->first();
+
+            if (($lessonss != null)) {
+                $certificate = UnitCertificate::firstOrCreate([
+                    'user_id' => auth()->user()->id,
+                    'course_id' => $lessonss->course_id,
+                    'lesson_id' => $request->previous_lesson
+                ]);
+
+                $caus = Course::find($lessonss->course_id);
+                $data = [
+                    'name' => auth()->user()->name,
+                    'course_name' => $caus->title,
+                    'lesson_name' => $lessonss->title,
+                    'date' => Carbon::now()->format('d M, Y'),
+                ];
+                $certificate_name = 'UnitCertificate-' . $caus->id . '-' . $lessonss->id . '-' . auth()->user()->id . '.pdf';
+                $certificate->name = auth()->user()->name;
+                $certificate->url = $certificate_name;
+                $certificate->save();
+
+                $pdf = \PDF::loadView('certificate.unitCertificate', compact('data'))->setPaper('', 'landscape');
+
+                $pdf->save(public_path('/storage/certificates/' . $certificate_name));
+            }
+
+        }
         $test_result->answers()->createMany($answers);
 
 

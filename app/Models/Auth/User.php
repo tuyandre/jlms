@@ -13,7 +13,9 @@ use App\Models\LessonSlotBooking;
 use App\Models\Media;
 use App\Models\Order;
 use App\Models\OrderItem;
+use App\Models\StudentCard;
 use App\Models\Traits\Uuid;
+use App\Models\UnitCertificate;
 use App\Models\VideoProgress;
 use App\Models\WishList;
 use Illuminate\Support\Collection;
@@ -191,7 +193,14 @@ class User extends Authenticatable
     {
         return $this->hasMany(Certificate::class);
     }
-
+    public function studentCard()
+    {
+        return $this->hasMany(StudentCard::class);
+    }
+    public function unitCertificates()
+    {
+        return $this->hasMany(UnitCertificate::class);
+    }
     public function pendingOrders()
     {
         $orders = Order::where('status', '=', 0)

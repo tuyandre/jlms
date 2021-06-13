@@ -114,10 +114,10 @@
 <body>
 <div class="container-fluid px-0" style="height: 600px">
     <div style="position: relative;text-align: center" class="row h-100 justify-content-center text-center position-relative m-0">
-        <img style="width: 100px !important;" class="logo" src="{{public_path('storage/logos/'.config('logo_b_image'))}}">
-
+{{--        <img style="width: 100px !important;" class="logo" src="{{public_path('storage/logos/'.config('logo_b_image'))}}">--}}
+        <img style="width: 250px !important;" class="logo" src="{{public_path('/images/company.png')}}">
         <div class="col-12 text-block align-self-center">
-            <p class="text-center mb-0">This is to certify that <br> <span class="font-weight-bold" style="font-family: DejaVu Sans;">{{$data['name']}}</span> successfully completed
+            <p class="text-center mb-0">This is to certify that <br> <span class="font-weight-bold" style="font-family: DejaVu Sans;">{{$data['name']}}</span> <br>successfully completed
             </p>
             <p style="word-wrap: break-word;white-space: nowrap"> <span class="font-weight-bold" style="font-family: DejaVu Sans;">{{$data['lesson_name']}}</span></p>
             <p style="word-wrap: break-word;white-space: nowrap"><b>Module:</b> <span class="font-weight-bold" style="font-family: DejaVu Sans;">{{$data['course_name']}}</span></p>

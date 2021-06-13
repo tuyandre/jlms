@@ -349,6 +349,12 @@ Route::group(['middleware' => 'role:student'], function () {
     Route::get('certificates', 'CertificateController@getCertificates')->name('certificates.index');
     Route::post('certificates/generate', 'CertificateController@generateCertificate')->name('certificates.generate');
     Route::get('certificates/download', ['uses' => 'CertificateController@download', 'as' => 'certificates.download']);
+
+    Route::get('unit_certificates', 'CertificateController@getUnitCertificates')->name('unitCertificates.index');
+    Route::get('unit_certificates/download', ['uses' => 'CertificateController@downloadUnitCertificate', 'as' => 'unitCertificates.download']);
+
+    Route::get('student_card', 'StudentCardController@getStudentCard')->name('studentCard.index');
+    Route::get('student_card/download', ['uses' => 'StudentCardController@downloadStudentCard', 'as' => 'studentCard.download']);
 });
 
 
