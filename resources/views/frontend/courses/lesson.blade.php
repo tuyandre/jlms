@@ -167,11 +167,11 @@
                             <div class="course-single-text">
                                 @if($lesson->mediavideo != "")
                                     <div class="course-details-content mt-3">
-                                        <div class="video-container mb-5" data-id="{{$lesson->mediavideo->id}}">
+                                        <div class="video-container mb-5"  data-id="{{$lesson->mediavideo->id}}">
                                             @if($lesson->mediavideo->type == 'youtube')
 
 
-                                                <div id="player" class="js-player" data-plyr-provider="youtube"
+                                                <div id="player" class="js-player"  data-plyr-provider="youtube"
                                                      data-plyr-embed-id="{{$lesson->mediavideo->file_name}}"></div>
                                             @elseif($lesson->mediavideo->type == 'vimeo')
                                                 <div id="player" class="js-player" data-plyr-provider="vimeo"
@@ -179,7 +179,7 @@
                                             @elseif($lesson->mediavideo->type == 'upload')
 
 
-                                                <video poster="" id="player" class="js-player" playsinline controls>
+                                                <video poster="" id="player" class="js-player" playsinline controls autoplay>
                                                     <source src="{{$lesson->mediavideo->url}}" type="video/mp4"/>
                                                 </video>
                                             @elseif($lesson->mediavideo->type == 'embed')
@@ -568,6 +568,7 @@
         const player2 = new Plyr('#audioPlayer');
 
         const player = new Plyr('#player');
+        // player.allow("autoplay");
         duration = 10;
         var progress = 0;
         var video_id = $('#player').parents('.video-container').data('id');
@@ -693,11 +694,11 @@
                 @if ($test_exists && (is_null($test_result)))
                 $('#nextButton').html("<a class='btn btn-block bg-danger font-weight-bold text-white' href='#'>@lang('labels.frontend.course.complete_test')</a>")
                 @else
-{{--                @if ($test_result)--}}
-{{--                @if($test_result->test_result<$passing)--}}
-{{--                $('#nextButton').html("<a class='btn btn-block bg-danger font-weight-bold text-white' href='#'>@lang('labels.frontend.course.fail_test')</a>")--}}
-{{--                @endif--}}
-{{--                @endif--}}
+                @if ($test_result)
+                @if($test_result->test_result<$passing)
+                $('#nextButton').html("<a class='btn btn-block bg-danger font-weight-bold text-white' href='#'>@lang('labels.frontend.course.fail_test')</a>")
+                @endif
+                @endif
                 @if($next_lesson)
                 $('#nextButton').html("<a class='btn btn-block gradient-bg font-weight-bold text-white'" +
                     " href='{{ route('lessons.show', [$next_lesson->course_id, $next_lesson->model->slug]) }}'>@lang('labels.frontend.course.next')<i class='fa fa-angle-double-right'></i> </a>");
