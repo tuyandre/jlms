@@ -3,15 +3,19 @@
 namespace App\Http\Controllers\Backend\Admin;
 
 use App\Helpers\General\EarningHelper;
+use App\Models\Auth\User;
 use App\Models\BankPayment;
 use App\Models\Bundle;
 use App\Models\Course;
 use App\Models\MobilePayment;
 use App\Models\Order;
 use App\Models\SponsorshipPayment;
+use App\Notifications\Frontend\Auth\StudentApprovedOrder;
+use App\Notifications\Frontend\Auth\WelcomeStudent;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Gate;
+use Illuminate\Support\Facades\Notification;
 use Yajra\DataTables\Facades\DataTables;
 use Illuminate\Support\Facades\Response;
 
@@ -119,6 +123,9 @@ class OrderController extends Controller
         $order = Order::findOrfail($request->order);
         $order->status = 1;
         $order->save();
+//        $students=User::find($order->user_id);
+//        return response()->json(['passport' => $students], 200);
+
         if($order->payment_type==0){
             $bank=BankPayment::where('order_id','=',$order->id)->first();
             $bank->status=1;
@@ -150,6 +157,14 @@ class OrderController extends Controller
                 }
                 $orderItem->item->students()->attach($order->user_id);
             }
+        }
+        try{
+        $students=User::find($order->user_id);
+        Notification::send($students, new StudentApprovedOrder($students));
+        $message="Welcome "." ".$students->full_name." " ."Your Order Approved check Invoice in your account";
+        $this->sendMessage($students->phone,$message);
+        } catch (\Exception $e) {
+            \Log::info($e->getMessage() . ' for order ' . $order->id);
         }
         return back()->withFlashSuccess(trans('alerts.backend.general.updated'));
     }
@@ -218,5 +233,26 @@ class OrderController extends Controller
         }
     }
 
+    public function sendMessage($phone,$message){
+        $data = array(
+            "sender"=>'+250788866742',
+            "recipients"=>$phone,
+            "message"=>$message
+        ,);
+        $url = "https://www.intouchsms.co.rw/api/sendsms/.json";
+        $data = http_build_query($data);
+        $username="tuyandre20";
+        $password="kamana1234567";
 
+        $ch = curl_init();
+        curl_setopt($ch,CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_USERPWD, $username . ":" . $password);
+        curl_setopt($ch,CURLOPT_POST,true);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER,1);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+        curl_setopt($ch,CURLOPT_POSTFIELDS, $data);
+        $result = curl_exec($ch);
+        $httpcode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        curl_close($ch);
+    }
 }

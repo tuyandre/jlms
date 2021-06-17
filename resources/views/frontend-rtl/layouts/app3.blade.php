@@ -182,7 +182,8 @@
                                         @else
                                             <li class="log-in mt-0">
                                                 @if(!auth()->check())
-                                                    <a href="{{url('/instructions')}}">Apply</a>
+{{--                                                    <a href="{{url('/instructions')}}">Apply</a>--}}
+                                                    <a href="{{route('frontend.jsms.apply')}}">Apply</a>
                                                     <a href="{{url('/jsms/login')}}">@lang('navs.general.login')</a>
                                                     <!-- The Modal -->
                                                     {{--@include('frontend.layouts.modals.loginModal')--}}

@@ -109,7 +109,7 @@
                                         </div>
 
                                         <label>
-                                            <p style="text-align: left;margin-top: 10px"><b>Allowed file types: png, jpg (Max 2MBs). Max width 200 pixels</b>
+                                            <p style="text-align: left;margin-top: 10px"><b>Allowed file types: png, jpg (Max 5MBs). Max width 800 pixels</b>
                                             </p></label><br/>
 
 
@@ -138,9 +138,9 @@
                                     <section>
                                         <label for="address"><b style="font-size: 17px">Address <font style="color: crimson">*</font>
                                             </b></label>
-                                        <label for="address">Student Address <font style="color: crimson">*</font></label>
+{{--                                        <label for="address">Student Address <font style="color: crimson">*</font></label>--}}
 
-                                        <input type="text" name="address" class="form-control required" id="address" placeholder="Your Address">
+{{--                                        <input type="text" name="address" class="form-control required" id="address" placeholder="Your Address">--}}
 
                                         <label for="email">Student Email Address <font style="color: crimson">*</font></label>
 
@@ -277,8 +277,8 @@
                                                 <label for="studentRadio" style="margin-top: 10px;margin-bottom: 0px;text-align: left">
                                                     <input type="radio" style="min-width: 5px;height: auto ;display: inline-block"
                                                            name="accountNumber"
-                                                           id="studentRadio" value="00040-0335616-29"/>
-                                                    <span style="margin-bottom: 5px;text-align: left">000-400335616-29 (Bank of Kigali Account)
+                                                           id="studentRadio" value="4002200572869"/>
+                                                    <span style="margin-bottom: 5px;text-align: left">400-22005728-69 (Equity Bank Rwanda Ltd)
                         </span>
                                                 </label>
                                                 <br>
@@ -297,8 +297,8 @@
                                                 <label for="haha" style="margin-top: 10px;margin-bottom: 0px;text-align: left">
                                                     <input type="radio" style="min-width: 5px;height: auto;text-align: left;display: inline-block"
                                                            id="haha"
-                                                           name="accountNumber" value="0011013802846601"/>
-                                                    <span>001-10138028466-01 (Ecobank USD Account)</span>
+                                                           name="accountNumber" value="4002200572869"/>
+                                                    <span>400-22005728-70 (Equit Bank Rwanda USD Account)</span>
                                                 </label>
                                                 <br>
 
@@ -322,9 +322,9 @@
 
                                             <input type="text" name="bankDepositorNames" class="form-control required" id="depositor" placeholder="Name Of Depositor">
 
-                                            <label for="amount">Amount Deposit (frw)<font style="color: crimson">*</font></label>
+                                            <label for="amount">Amount Deposit (frw/usd)<font style="color: crimson">*</font></label>
 
-                                            <input type="number" value=50000 min=50000 name="bankDepositAmount" class="form-control required">
+                                            <input type="number" disabled value=30000 min=30000 name="bankDepositAmount" class="form-control required">
 
 
                                             <p>
@@ -380,9 +380,9 @@
                                                 <input type="text" name="sponsorDepositorNames" class="form-control required" placeholder="Depositor's Name">
                                             </div>
 
-                                            <label>Amount (frw)<font style="color: crimson">*</font></label>
+                                            <label>Amount (frw/usd)<font style="color: crimson">*</font></label>
 
-                                            <input type="number" name="sponsorDepositAmount" value=50000 min=50000 class="form-control required" placeholder="Amount">
+                                            <input type="number" name="sponsorDepositAmount" value=30000 min=30000 disabled class="form-control required" placeholder="Amount">
 
 
                                             <p>
@@ -428,9 +428,9 @@
 
                                             <input type="text" name="mobileMoneyPhoneNumber" class="form-control required" id="phone" placeholder="eg... +250 754678564">
 
-                                            <label for="amount">Amount (frw)</label>
+                                            <label for="amount">Amount (frw/usd)</label>
 
-                                            <input type="number" name="mobileMoneyAmount" value=50000 min=50000 data-validation="required" class="form-control" id="amount" placeholder="Amount">
+                                            <input type="number" name="mobileMoneyAmount" value=30000 min=30000 disabled data-validation="required" class="form-control" id="amount" placeholder="Amount">
 
                                         </div>
 

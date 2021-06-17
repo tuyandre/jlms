@@ -88,6 +88,10 @@
                                     </thead>
                                     <tbody>
                                     @if(count($courses) > 0)
+                                        <?php
+                                        $amount=0;
+                                        ?>
+
                                         @foreach($courses as $course)
                                             <tr class="position-relative">
 
@@ -110,6 +114,9 @@
                                                                             <span>{{trans('labels.backend.bundles.fields.free')}}</span>
                                                                         @else
                                                                             <span> {{$appCurrency['symbol'].' '.$course->price}}</span>
+                                                                                         <?php
+                                                                                         $amount +=$course->price;
+                                                                                         ?>
                                                                         @endif</a></span>
                                                                 <span class="bold-font">{{$course->category->name}}</span>
                                                                 <div class="course-rate ul-li">
@@ -220,8 +227,8 @@
                                                                 <label class=" control-label">Deposit Amount
                                                                     :</label>
                                                                 <input type="number" class="form-control  required"
-                                                                       placeholder="Enter Amount"
-                                                                       value="" name="bankDepositAmount">
+                                                                       placeholder="Enter Amount" disabled
+                                                                       value="{{$amount}}" name="bankDepositAmount">
                                                             </div>
                                                             <div class="payment-info ">
                                                                 <label class=" control-label">Payment Date
@@ -357,8 +364,8 @@
                                                                 <label class=" control-label">Deposit Amount
                                                                     :</label>
                                                                 <input type="number" class="form-control  required"
-                                                                       placeholder="Enter Amount"
-                                                                       value="" name="mobileMoneyAmount">
+                                                                       placeholder="Enter Amount" disabled
+                                                                       value="{{$amount}}" name="mobileMoneyAmount">
                                                             </div>
                                                             <div class="payment-info ">
                                                                 <label class=" control-label">Payment Date
@@ -453,8 +460,8 @@
                                                             <label class=" control-label">Deposit Amount
                                                                 :</label>
                                                             <input type="number" class="form-control  required"
-                                                                   placeholder="Enter Amount"
-                                                                   value="" name="sponsorDepositAmount">
+                                                                   placeholder="Enter Amount" disabled
+                                                                   value="{{$course}}" name="sponsorDepositAmount">
                                                         </div>
                                                         <div class="payment-info ">
                                                             <label class=" control-label">Payment Date

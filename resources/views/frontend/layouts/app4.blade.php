@@ -205,7 +205,8 @@
                                     @else
                                         <li>
                                             <div class="login">
-                                                <a href="{{url('/instructions')}}">Apply</a>
+{{--                                                <a href="{{url('/instructions')}}">Apply</a>--}}
+                                                <a href="{{route('frontend.jsms.apply')}}">Apply</a>
                                                 <a  href="{{url('/jsms/login')}}">@lang('navs.general.login')</a>
                                                 {{--@include('frontend.layouts.modals.loginModal')--}}
 

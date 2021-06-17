@@ -13647,7 +13647,7 @@ var validator = form.validate({
 
         },
         bankDepositAmount: {
-            min: 50000,
+            min: 30000,
             required: function(el) {
                 return $(el).closest('form').find('.payment').val() == 'BankDeposit';
             }
@@ -13675,7 +13675,7 @@ var validator = form.validate({
 
         },
         sponsorDepositAmount: {
-            min: 50000,
+            min: 30000,
             required: function(el) {
                 return $(el).closest('form').find('.payment').val() == 'SponsorDeposit';
             }
@@ -13728,7 +13728,7 @@ var validator = form.validate({
 
         },
         mobileMoneyAmount: {
-            min: 50000,
+            min: 30000,
             required: function(el) {
                 return $(el).closest('form').find('.payment').val() == 'MobileMoneyDeposit';
             }
@@ -13758,13 +13758,13 @@ var validator = form.validate({
             maxImageWidth: 'The image width should not exceed 400 pixels'
         },
         bankDepositAmount: {
-            min: "Application fee should be 50000"
+            min: "Application fee should be 30000"
         },
         sponsorDepositAmount: {
             min: "Application fee should be 50000"
         },
         mobileMoneyAmount: {
-            min: "Application fee should be 50000"
+            min: "Application fee should be 30000"
 
         },
         bankAttachment: {
@@ -13867,28 +13867,24 @@ form.steps({
                         console.log(response);
                         if (response.success == 'success') {
 
-                            const Toast = Swal.mixin({
-                                toast: true,
-                                position: 'top-end',
-                                showConfirmButton: true,
-                                timer: 18000,
-                                timerProgressBar: true,
-                                didOpen: (toast) => {
-                                    toast.addEventListener('mouseenter', Swal.stopTimer)
-                                    toast.addEventListener('mouseleave', Swal.resumeTimer)
+
+
+                            swal.fire({
+                                title: 'Registered SuccessFully',
+                                text: "Your Registration has been successfuly; Please check Your Email or Phone and wait Registration confirmation Email and SMS!",
+                                icon: 'success',
+                                showCancelButton: true,
+                                confirmButtonColor: '#3085d6',
+                                cancelButtonColor: '#d33',
+                                confirmButtonText: 'Ok, Thanks!'
+                            }).then((result) => {
+                                if (result.isConfirmed) {
+                                    $('#loader-icon').hide();
+                                    $("#progress-bar").html('<div id="progress-status">Your Registration Completed Succfull, Check Your Email or Phone SMS</div>');
+
+                                    window.location.href = "/";
                                 }
                             })
-
-                            Toast.fire({
-                                icon: 'success',
-                                title: 'Your Registration has been successfuly; Please check Your Email or Phone and wait Registration confirmation Email and SMS'
-                            })
-                            $('#loader-icon').hide();
-                            $("#progress-bar").html('<div id="progress-status">Your Registration Completed Succfull, Check Your Email or Phone SMS</div>');
-
-                            window.location.href = "/";
-                            // window.location="/jdd-portal/Student/home";
-                            // window.location="/jdd-portal/Student/home";
                         }else if(response.success == 'exist'){
                             swal.fire({
                                 icon: 'warning',
@@ -13919,18 +13915,7 @@ form.steps({
                     // alert('Your Registration not  Completed, Please try Again');
                     $('#loader-icon').hide();
                     $("#progress-bar").html('<div id="progress-status">Your Registration not  Completed, Please try Again!</div>');
-
                 });
-
-
-
-
-
-                // Swal.fire(
-                //     'Sent!',
-                //     'Your Your Registration Sent.',
-                //     'success'
-                // )
             }
         })
 
@@ -14018,7 +14003,7 @@ var memberValidator = memberForm.validate({
 
         },
         bankDepositAmount: {
-            min: 50000,
+            min: 30000,
             required: function() {
                 return $('.payment').val() == 'BankDeposit';
             }
@@ -14051,7 +14036,7 @@ var memberValidator = memberForm.validate({
 
         },
         bankDepositAmountb: {
-            min: 50000,
+            min: 30000,
             required: true
 
         },
@@ -14078,10 +14063,10 @@ var memberValidator = memberForm.validate({
             maxImageWidth: 'The image width should not exceed 400 pixels'
         },
         bankDepositAmount: {
-            min: "Application fee should be 50000"
+            min: "Application fee should be 30000"
         },
         mobileMoneyAmount: {
-            min: "Application fee should be 50000"
+            min: "Application fee should be 30000"
 
         },
         bankAttachment: {

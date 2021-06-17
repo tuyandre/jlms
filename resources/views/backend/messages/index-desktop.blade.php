@@ -16,7 +16,7 @@
     </style>
 @endpush
 @section('content')
-    <div class="card message-box">
+    <div class="card message-box" style="height: 70vh !important;">
         <div class="card-header">
             <h3 class="page-title mb-0">@lang('labels.backend.messages.title')
 
@@ -26,17 +26,20 @@
                 </a>
             </h3>
         </div>
+
+
         <div class="card-body">
             <div class="messaging" >
                 <div class="inbox_msg" >
+
                     <div class="inbox_people d-md-block d-lg-block ">
                         <div class="headind_srch">
                             @if(request()->has('thread'))
-                            <div class="recent_heading btn-sm btn btn-dark">
-                                <a class="text-decoration-none" href="{{route('admin.messages')}}">
-                                    <h5 class="text-white mb-0"><i class="icon-plus"></i>&nbsp;&nbsp; @lang('labels.backend.messages.compose')</h5>
-                                </a>
-                            </div>
+                                <div class="recent_heading btn-sm btn btn-dark">
+                                    <a class="text-decoration-none" href="{{route('admin.messages')}}">
+                                        <h5 class="text-white mb-0"><i class="icon-plus"></i>&nbsp;&nbsp; @lang('labels.backend.messages.compose')</h5>
+                                    </a>
+                                </div>
                             @endif
                             <div class="srch_bar @if(!request()->has('thread')) text-left @endif">
                                 <div class="stylish-input-group">
@@ -62,10 +65,10 @@
                                                     <div class="chat_ib">
                                                         <h5>{{ $item->participants()->with('user')->where('user_id','<>', auth()->user()->id)->first()->user->name }}
                                                             @if($item->participants()->count() > 2)
-                                                            + {{ ($item->participants()->count()-2) }} @lang('labels.general.more')
+                                                                + {{ ($item->participants()->count()-2) }} @lang('labels.general.more')
                                                             @endif
                                                             <span
-                                                                class="chat_date">{{ $item->messages()->orderBy('id', 'desc')->first()->created_at->diffForHumans() }}</span>
+                                                                    class="chat_date">{{ $item->messages()->orderBy('id', 'desc')->first()->created_at->diffForHumans() }}</span>
                                                             @if($item->userUnreadMessagesCount(auth()->user()->id) > 0)
                                                                 <span class="badge badge-primary mr-5">{{$item->userUnreadMessagesCount(auth()->user()->id)}}</span>
                                                             @endif
@@ -82,6 +85,7 @@
                         </div>
                     </div>
                     @if(request()->has('thread'))
+
                         <form method="post" action="{{route('admin.messages.reply')}}">
                             @csrf
 
@@ -108,7 +112,7 @@
                                 </div>
                             </div>
                             <div class="mesgs">
-                                <div class="msg_history">
+                                <div class="msg_history" style="height: 33vh !important;">
                                     @if(count($thread->messages) > 0 )
                                         @foreach($thread->messages as $message)
                                             @if($message->user_id == auth()->user()->id)
@@ -147,8 +151,7 @@
                         </form>
                     @else
                         <form method="post" action="{{route('admin.messages.send')}}">
-                            @csrf
-
+                        @csrf
                             <div class="headind_srch bg-dark">
                                 <div class="chat_people header row">
                                     <div class="col-12 col-lg-3">
@@ -159,8 +162,10 @@
                                     </div>
                                 </div>
                             </div>
+
+
                             <div class="mesgs">
-                                <div class="msg_history">
+                                <div class="msg_history" style="height: 33vh !important;">
                                     <p class="text-center">{{trans('labels.backend.messages.start_conversation')}}</p>
                                 </div>
                                 <div class="type_msg">
@@ -173,13 +178,18 @@
                                         </button>
                                     </div>
                                 </div>
+
                             </div>
+
                         </form>
+
                     @endif
+
 
                 </div>
             </div>
         </div>
+
     </div>
 @endsection
 @push('after-scripts')

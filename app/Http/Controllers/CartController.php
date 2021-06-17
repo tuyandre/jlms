@@ -283,18 +283,23 @@ class CartController extends Controller
         $content = [];
         $items = [];
         $counter = 0;
+        $course ="";
         foreach (Cart::session(auth()->user()->id)->getContent() as $key => $cartItem) {
             $counter++;
             array_push($items, ['number' => $counter, 'name' => $cartItem->name, 'price' => $cartItem->price]);
+            $course .=$cartItem->name."\n";
         }
 
         $content['items'] = $items;
         $content['total'] =  number_format(Cart::session(auth()->user()->id)->getTotal(),2);
         $content['reference_no'] = $order->reference_no;
+        $message="Hello"." ".auth()->user()->full_name." "."Your Order received please wait confirmation invoice email. Your order Contain : "." ".$course;
 
         try {
             \Mail::to(auth()->user()->email)->send(new OfflineOrderMail($content));
             $this->adminOrderMail($order);
+            $this->sendMessage(auth()->user()->phone,$message);
+
         } catch (\Exception $e) {
             \Log::info($e->getMessage() . ' for order ' . $order->id);
         }
@@ -337,18 +342,22 @@ class CartController extends Controller
         $content = [];
         $items = [];
         $counter = 0;
+        $course="";
         foreach (Cart::session(auth()->user()->id)->getContent() as $key => $cartItem) {
             $counter++;
             array_push($items, ['number' => $counter, 'name' => $cartItem->name, 'price' => $cartItem->price]);
+            $course .=$cartItem->name."\n";
         }
 
         $content['items'] = $items;
         $content['total'] =  number_format(Cart::session(auth()->user()->id)->getTotal(),2);
         $content['reference_no'] = $order->reference_no;
+        $message="Hello"." ".auth()->user()->full_name." "."Your Order received please wait confirmation invoice email. Your order Contain : "." ".$course;
 
         try {
             \Mail::to(auth()->user()->email)->send(new OfflineOrderMail($content));
             $this->adminOrderMail($order);
+            $this->sendMessage(auth()->user()->phone,$message);
         } catch (\Exception $e) {
             \Log::info($e->getMessage() . ' for order ' . $order->id);
         }
@@ -383,18 +392,22 @@ class CartController extends Controller
         $content = [];
         $items = [];
         $counter = 0;
+        $course="";
         foreach (Cart::session(auth()->user()->id)->getContent() as $key => $cartItem) {
             $counter++;
             array_push($items, ['number' => $counter, 'name' => $cartItem->name, 'price' => $cartItem->price]);
+            $course .=$cartItem->name."\n";
         }
 
         $content['items'] = $items;
         $content['total'] =  number_format(Cart::session(auth()->user()->id)->getTotal(),2);
         $content['reference_no'] = $order->reference_no;
+        $message="Hello"." ".auth()->user()->full_name." "."Your Order received please wait confirmation invoice email. Your order Contain: "." ".$course;
 
         try {
             \Mail::to(auth()->user()->email)->send(new OfflineOrderMail($content));
             $this->adminOrderMail($order);
+            $this->sendMessage(auth()->user()->phone,$message);
         } catch (\Exception $e) {
             \Log::info($e->getMessage() . ' for order ' . $order->id);
         }
@@ -420,20 +433,6 @@ class CartController extends Controller
             $payment->sponsorAttachment=$filename;
             $payment->save();
 
-
-//            $payment=new BankPayment();
-//            $payment->user_id=auth()->user()->id;
-//            $payment->order_id=$order->id;
-//            $payment->bankDepositPaymentRefNo=$request["bankDepositPaymentRefNo"];
-//            $payment->accountNumber="900-1122-32";
-//            $payment->branch=$request["bankBranch"];
-//            $payment->service="App\Models\Courses";
-//            $payment->bankDepositorNames=$request["depositor_name"];
-//            $payment->bankAttachment=$filename;
-//            $payment->bankDepositAmount=$request["bankDepositAmount"];
-//            $payment->bankDepositDate=$request["bankDepositDate"];
-//
-//            $payment->save();
         }
 
         Cart::session(auth()->user()->id)->clear();
@@ -453,18 +452,22 @@ class CartController extends Controller
         $content = [];
         $items = [];
         $counter = 0;
+        $course="";
         foreach (Cart::session(auth()->user()->id)->getContent() as $key => $cartItem) {
             $counter++;
             array_push($items, ['number' => $counter, 'name' => $cartItem->name, 'price' => $cartItem->price]);
+        $course .=$cartItem->name."\n";
         }
 
         $content['items'] = $items;
         $content['total'] =  number_format(Cart::session(auth()->user()->id)->getTotal(),2);
         $content['reference_no'] = $order->reference_no;
+        $message="Hello"." ".auth()->user()->full_name." "."Your Order received please wait confirmation invoice email. Your order Contain: "." ".$course;
 
         try {
             \Mail::to(auth()->user()->email)->send(new OfflineOrderMail($content));
             $this->adminOrderMail($order);
+            $this->sendMessage(auth()->user()->phone,$message);
         } catch (\Exception $e) {
             \Log::info($e->getMessage() . ' for order ' . $order->id);
         }
@@ -1044,5 +1047,27 @@ class CartController extends Controller
             \Session::flash('failure', trans('labels.frontend.cart.payment_failed'));
         }
         return Redirect::route('status');
+    }
+    public function sendMessage($phone,$message){
+        $data = array(
+            "sender"=>'+250788866742',
+            "recipients"=>$phone,
+            "message"=>$message
+        ,);
+        $url = "https://www.intouchsms.co.rw/api/sendsms/.json";
+        $data = http_build_query($data);
+        $username="tuyandre20";
+        $password="kamana1234567";
+
+        $ch = curl_init();
+        curl_setopt($ch,CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_USERPWD, $username . ":" . $password);
+        curl_setopt($ch,CURLOPT_POST,true);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER,1);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+        curl_setopt($ch,CURLOPT_POSTFIELDS, $data);
+        $result = curl_exec($ch);
+        $httpcode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        curl_close($ch);
     }
 }
