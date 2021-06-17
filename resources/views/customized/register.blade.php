@@ -136,8 +136,7 @@
 
                                     <h3>Address And Financing</h3>
                                     <section>
-                                        <label for="address"><b style="font-size: 17px">Address <font style="color: crimson">*</font>
-                                            </b></label>
+                                        <label for="address"><b style="font-size: 17px">Address</b></label><br>
 {{--                                        <label for="address">Student Address <font style="color: crimson">*</font></label>--}}
 
 {{--                                        <input type="text" name="address" class="form-control required" id="address" placeholder="Your Address">--}}
@@ -324,7 +323,7 @@
 
                                             <label for="amount">Amount Deposit (frw/usd)<font style="color: crimson">*</font></label>
 
-                                            <input type="number" disabled value=30000 min=30000 name="bankDepositAmount" class="form-control required">
+                                            <input type="number" readonly value=30000 min=30000 name="bankDepositAmount" class="form-control required">
 
 
                                             <p>
@@ -382,7 +381,7 @@
 
                                             <label>Amount (frw/usd)<font style="color: crimson">*</font></label>
 
-                                            <input type="number" name="sponsorDepositAmount" value=30000 min=30000 disabled class="form-control required" placeholder="Amount">
+                                            <input type="number" name="sponsorDepositAmount" value=30000 min=30000 readonly class="form-control required" placeholder="Amount">
 
 
                                             <p>
@@ -430,7 +429,7 @@
 
                                             <label for="amount">Amount (frw/usd)</label>
 
-                                            <input type="number" name="mobileMoneyAmount" value=30000 min=30000 disabled data-validation="required" class="form-control" id="amount" placeholder="Amount">
+                                            <input type="number" name="mobileMoneyAmount" value=30000 min=30000 readonly data-validation="required" class="form-control" id="amount" placeholder="Amount">
 
                                         </div>
 

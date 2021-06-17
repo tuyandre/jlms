@@ -185,16 +185,16 @@ class ApplicationController extends Controller
             $education->save();
 
 
-            $amounts=0;
+            $amounts=30000;
             $pay_type=0;
             if ($request['payment']=="BankDeposit"){
-                $amounts=$request["bankDepositAmount"];
+//                $amounts=$request["bankDepositAmount"];
                 $pay_type=0;
             }elseif (($request['payment']=="MobileMoneyDeposit")){
-                $amounts=$request['mobileMoneyAmount'];
+//                $amounts=$request['mobileMoneyAmount'];
                 $pay_type=1;
             }elseif (($request['payment']=="SponsorDeposit")){
-                $amounts=$request['sponsorDepositAmount'];
+//                $amounts=$request['sponsorDepositAmount'];
                 $pay_type=2;
             }
 
